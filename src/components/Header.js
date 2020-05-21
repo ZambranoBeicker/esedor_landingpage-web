@@ -3,7 +3,7 @@ import React from 'react';
 
 const Logo = (props) =>{
     const imgInfo = {
-        src:"images/logo-header.png",
+        src:props.src,
         alt:props.alt,
     }
 
@@ -20,7 +20,7 @@ const Header = ()=>{
     return(
           <React.Fragment>
               <header>
-                <Logo alt="Image"/>
+                <Logo src="images/logo-header.png" alt="Image"/>
               </header>
           </React.Fragment>
       )
