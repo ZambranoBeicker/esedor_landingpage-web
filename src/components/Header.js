@@ -25,5 +25,5 @@ const Header = ()=>{
           </React.Fragment>
       )
   }
-  export default Header;
+  export {Logo,Header};
     
