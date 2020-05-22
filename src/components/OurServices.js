@@ -61,10 +61,10 @@ const OurService = () =>{
                 {/* <div className="text-white">
                     <p className="text-sm">Realidad aumentada(AR), realidad virtual(VR), Goby</p>
                 </div>             */}
-                <div className="mx-auto my-40 w-6/12 text-center">
-                    <h2 className="text-4xl">Aprendemos lo antes posible <br/>las lecciones que nos permitirán crear <br/>una solución para tu negocio.</h2>
-                </div>
             </section>
+            <div className="mx-auto my-40 w-6/12 text-center">
+                <h2 className="text-4xl">Aprendemos lo antes posible <br/>las lecciones que nos permitirán crear <br/>una solución para tu negocio.</h2>
+            </div>
         </React.Fragment>
     )
 }
