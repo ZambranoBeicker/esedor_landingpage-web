@@ -21,7 +21,7 @@ const DynamicFlex = (props)=>{
 const InfoParagraph = (props)=>{
     return(
         <div className="w-10/12 my-5">
-            <p className="text-2xl ml-2">{props.info}</p>
+            <p className={'text-2xl ml-2 ' +  props.class}>{props.info}</p>
         </div>
     )
 }
