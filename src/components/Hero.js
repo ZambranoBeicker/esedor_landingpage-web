@@ -20,17 +20,17 @@ const DynamicFlex = (props)=>{
 
 const InfoParagraph = (props)=>{
     return(
-        <div>
-            <p className="text-xl">{props.info}</p>
+        <div className="w-10/12">
+            <p className="text-2xl ml-2">{props.info}</p>
         </div>
     )
 }
 
 const HeroInfo = (props)=>{
     return (
-        <div>
-            <h1 className="text-3xl">Estas listo para ser parte de la nueva era digital?</h1>
-            <InfoParagraph info="Creamos soluciones en todas las industrias para  empresas grandes, pequeñas y startups."/>
+        <div className="ml-20 w-8/12">
+            <h1 className="text-6xl">Estás listo para ser parte de la nueva era digital?</h1>
+            <InfoParagraph info="Creamos soluciones en todas las industrias para empresas grandes, pequeñas y startups"/>
         </div>
     )
 }
@@ -62,7 +62,7 @@ const info = <p className="">{props.info}</p>
 const HeroPrincipal = () =>{
  
     return(
-        <section className="hero-principal">
+        <section className="flex">
             <HeroInfo />   
             <ArrowCta  title="CONOZCÁMONOS" info="Solicite una evaluación de digital gratuita y agenda una videollamada"/>
         </section>
