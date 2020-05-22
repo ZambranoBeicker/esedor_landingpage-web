@@ -3,6 +3,7 @@ import './App.css';
 import {Header} from './components/Header.js';
 import {Hero} from './components/Hero.js';
 import OurServices from './components/OurServices.js';
+import Steps from './components/Steps.js';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Hero />
       <OurServices />
+      <Steps />
     </React.Fragment>
   );
 }
