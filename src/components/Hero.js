@@ -18,10 +18,10 @@ const DynamicFlex = (props)=>{
 
 }
 
-const InfoParagraph = (props)=>{
+const InfoParagraph = ({info,textClass = 'text-2xl ml-2', containerClass = 'w-10/12 my-5'})=>{
     return(
-        <div className="w-10/12 my-5">
-            <p className={'text-2xl ml-2 ' +  props.class}>{props.info}</p>
+        <div className={containerClass}>
+            <p className={textClass}>{info}</p>
         </div>
     )
 }
@@ -65,7 +65,7 @@ const Hero = () =>{
  
     return(
         <section className="h-screen flex pt-32">
-            <HeroInfo />   
+            <HeroInfo />
             <ArrowCta  title="CONOZCÁMONOS" info="Solicite una evaluación de digital gratuita y agenda una videollamada"/>
         </section>
     )
