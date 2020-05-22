@@ -18,9 +18,22 @@ const DynamicFlex = (props)=>{
 
 }
 
-// const HeroInfo = ()=>{
+const InfoParagraph = (props)=>{
+    return(
+        <div>
+            <p className="text-xl">{props.info}</p>
+        </div>
+    )
+}
 
-// }
+const HeroInfo = (props)=>{
+    return (
+        <div>
+            <h1 className="text-3xl">Estas listo para ser parte de la nueva era digital?</h1>
+            <InfoParagraph info="Creamos soluciones en todas las industrias para  empresas grandes, pequeñas y startups."/>
+        </div>
+    )
+}
 
 const ArrowCta = (props)=>{
 
@@ -50,10 +63,10 @@ const HeroPrincipal = () =>{
  
     return(
         <section className="hero-principal">
-            {/* <HeroInfo />    */}
+            <HeroInfo />   
             <ArrowCta  title="CONOZCÁMONOS" info="Solicite una evaluación de digital gratuita y agenda una videollamada"/>
         </section>
     )
 }
 
-export default HeroPrincipal
+export {HeroPrincipal,ArrowCta,InfoParagraph}
