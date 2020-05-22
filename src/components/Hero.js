@@ -4,9 +4,9 @@ const DynamicFlex = (props)=>{
     
     let container = null;
     if(props.flex){
-        container = <div className="flex">{props.children}</div>
+        container = <div className="flex my-4 max-w-full">{props.children}</div>
     }else{
-        container = <div className="block">{props.children}</div>
+        container = <div className="block my-4 max-w-full">{props.children}</div>
     }
 
  
@@ -20,7 +20,7 @@ const DynamicFlex = (props)=>{
 
 const InfoParagraph = (props)=>{
     return(
-        <div className="w-10/12">
+        <div className="w-10/12 my-5">
             <p className="text-2xl ml-2">{props.info}</p>
         </div>
     )
@@ -28,8 +28,8 @@ const InfoParagraph = (props)=>{
 
 const HeroInfo = (props)=>{
     return (
-        <div className="ml-20 w-8/12">
-            <h1 className="text-6xl">Estás listo para ser parte de la nueva era digital?</h1>
+        <div className="mx-20 w-7/12">
+            <h1 className="text-6xl w-11/12">Estás listo para ser parte de la nueva era digital?</h1>
             <InfoParagraph info="Creamos soluciones en todas las industrias para empresas grandes, pequeñas y startups"/>
         </div>
     )
@@ -41,32 +41,34 @@ const ArrowCta = (props)=>{
     const titleImg = (
         <React.Fragment>
             {title}
-            <div className="arrow-container ml-auto">
-                <img src="images/arrow_meet.png" alt="Arrow"/>
+            <div className="arrow-cta__container ml-auto">
+                <img className="arrow-cta__arrow-image" src="images/arrow_meet.png" alt="Arrow"/>
             </div>
         </React.Fragment>    
 
     )
-const info = <p className="">{props.info}</p>
+const info = <p className="max-w-full">{props.info}</p>
 
 
  
     return (
+        <div className="arrow-cta bg-black text-white w-3/12 ml-auto mr-20 mt-8 pt-5 pb-2 px-5 h-40 rounded-md">
             <DynamicFlex flex={true}>
                 {titleImg}
-                {info}
             </DynamicFlex>
+            {info}
+        </div>
         )
 }
 
-const HeroPrincipal = () =>{
+const Hero = () =>{
  
     return(
-        <section className="flex">
+        <section className="h-screen flex pt-32">
             <HeroInfo />   
             <ArrowCta  title="CONOZCÁMONOS" info="Solicite una evaluación de digital gratuita y agenda una videollamada"/>
         </section>
     )
 }
 
-export {HeroPrincipal,ArrowCta,InfoParagraph}
+export {Hero,ArrowCta,InfoParagraph}

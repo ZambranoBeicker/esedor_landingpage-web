@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 import {Header} from './components/Header.js';
-import {HeroPrincipal} from './components/Hero.js';
+import {Hero} from './components/Hero.js';
 
 
 function App() {
   return (
     <React.Fragment>
       <Header />
-      <HeroPrincipal />
+      <Hero />
     </React.Fragment>
   );
 }
