@@ -39,12 +39,12 @@ const ArrowCta = (props)=>{
 
     const title = <h4>{props.title}</h4>     
     const titleImg = (
-        <div id="arrowTitleImg" className="">
+        <React.Fragment>
             {title}
             <div className="arrow-container ml-auto">
                 <img src="images/arrow_meet.png" alt="Arrow"/>
             </div>
-        </div>
+        </React.Fragment>    
 
     )
 const info = <p className="">{props.info}</p>
