@@ -23,8 +23,8 @@ const stepsContent = (data)=>{
         if(steps.orientate){
 
             return(
-                <div key={index} className={"relative flex py-10 my-56 index " + steps.containerClass}>
-                    {setTitles(steps,"text-md leading-loose", steps.stepTitle.toLowerCase() + " mb-56 w-6/12")}
+                <div key={index} className={"flex my-56 index " + steps.containerClass}>
+                    {setTitles(steps,"text-md leading-loose", steps.stepTitle.toLowerCase() + " w-6/12")} {/* colocar más margin-bottom*/}
                     <img className={steps.imgClass} src={steps.img} alt={steps.stepTitle}/>
                 </div>
                 )
@@ -51,7 +51,7 @@ const Steps = () =>{
             stepTitle:"PRIMER",
             infoTitle:"Agregamos valor a tu negocio y estructuramos el problema",
             img:"images/man_top.png",
-            containerClass:"ml-auto w-10/12 mr-10",
+            containerClass:"ml-auto w-10/12 py-10 mr-10 relative ",
             orientate:true,
             imgClass:""
  
@@ -62,7 +62,7 @@ const Steps = () =>{
             infoTitle:"Pensamos en la lógica y creamos un prototipo",
             img:"images/man_left.png",
             imgClass:"",
-            containerClass:"w-11/12 ml-10",
+            containerClass:"w-11/12 py-10 ml-10",
             orientate:false,
  
         },
@@ -72,18 +72,41 @@ const Steps = () =>{
             infoTitle:"Diseñamos el producto digital y creamos la estetica",
             img:"images/man_bottom.png",
             imgClass:"absolute right-0 bottom-0",
-            containerClass:"w-11/12 ml-auto mr-10",
+            containerClass:"w-11/12 py-10 ml-auto mr-10 relative ",
             orientate:true,
  
         },
     ]
- 
 
-
+    /* CUARTO PASO Definimos la tecnologia y empezamos a implementar Ya sea una app, ecommerce o sistema web, te ayudamos a realizar un seguimiento de tus usuarios usando google analitycs y fullstory. */
+    /* QUINTO PASO Lanzamos al mercado tu producto digital y optimizamos el rendimiento Ya sea una app, ecommerce o sistema web, te ayudamos a realizar un seguimiento de tus usuarios usando google analitycs y fullstory. */
+    const lastData = [
+        {
+            
+            info: "Ya sea una app, ecommerce o sistema web, te ayudamos a realizar un seguimiento de tus usuarios usando google analitycs y fullstory.",
+            stepTitle:"CUARTO",
+            infoTitle:"Definimos la tecnologia y empezamos a implementar",
+            img:"images/four_step.png",
+            containerClass:"w-full p-32 bg-black text-white",
+            imgClass:"",
+            orientate:true,
+        },
+        {
+            
+            info: "Ya sea una app, ecommerce o sistema web, te ayudamos a realizar un seguimiento de tus usuarios usando google analitycs y fullstory",
+            stepTitle:"QUINTO",
+            infoTitle:"Lanzamos al mercado tu producto digital y optimizamos el rendimiento",
+            img:"images/fifth_step.png",
+            imgClass:"",
+            containerClass:"w-full p-32 bg-black text-white",
+            orientate:true,
+        }
+    ]
 
     return(
         <section className="min-h-0">
             {stepsContent(data)}
+            {stepsContent(lastData)}
         </section>
     )
 }
