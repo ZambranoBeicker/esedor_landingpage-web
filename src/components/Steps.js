@@ -31,7 +31,7 @@ const stepsContent = (data)=>{
             }else{
             return(
                 <div key={index} className={"relative flex py-20 my-56 " + steps.containerClass}>
-                    <img className="absolute left-0 top-0" src={steps.img} alt={steps.stepTitle}/>
+                    <img className={steps.imgClass} src={steps.img} alt={steps.stepTitle}/>
                     {setTitles(steps,"text-md leading-loose",steps.stepTitle.toLowerCase() + " mb-20 w-4/12 ml-auto relative z-50")}
                 </div>
                 )
