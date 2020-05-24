@@ -5,6 +5,7 @@ import {Hero} from './components/Hero.js';
 import OurServices from './components/OurServices.js';
 import Steps from './components/Steps.js';
 import Brands from './components/Brands.js';
+import Projects from './components/Projects.js';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <OurServices />
       <Steps />
       <Brands />
+      <Projects />
     </React.Fragment>
   );
 }
