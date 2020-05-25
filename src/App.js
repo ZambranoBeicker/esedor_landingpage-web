@@ -6,6 +6,7 @@ import OurServices from './components/OurServices.js';
 import Steps from './components/Steps.js';
 import Brands from './components/Brands.js';
 import Projects from './components/Projects.js';
+import Footer from './components/Footer.js';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Steps />
       <Brands />
       <Projects />
+      <Footer />
     </React.Fragment>
   );
 }
