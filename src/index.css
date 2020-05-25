@@ -10,6 +10,10 @@ body h1, body h2, body h3, body h4 {
   font-family: 'Poppins';
 }
 
+body h2 {
+  font-weight: 300;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
@@ -28,5 +32,16 @@ code {
 
 .arrow-cta h4 {
   font-weight: 300;
+}
+
+.img-segundo {
+  top: 10%;
+  max-height: 100%;
+}
+
+.img-tercer {
+  max-height: 140%;
+  top: 50%;
+  right: 0;
 }
 /*# sourceMappingURL=index.css.map */

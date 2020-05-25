@@ -8,7 +8,7 @@ const Logo = (props) =>{
     }
 
     return (
-        <div className="ml-20 min-w-0">
+        <div className="ml-16 min-w-0">
             <img src={imgInfo.src} alt={imgInfo.alt}/>
         </div>
     )

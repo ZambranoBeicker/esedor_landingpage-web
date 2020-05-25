@@ -10,6 +10,10 @@ body {
     font-family: 'Poppins'
     
   }
+
+  h2{
+    font-weight: 300;
+  }
 }
 
 code {
@@ -25,3 +29,4 @@ code {
 }
 
 @import 'sass/_hero.scss';
+@import 'sass/_steps.scss';

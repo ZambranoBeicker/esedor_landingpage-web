@@ -23,7 +23,7 @@ const stepsContent = (data)=>{
         if(steps.orientate){
 
             return(
-                <div key={index} className={"flex my-56 index " + steps.containerClass}>
+                <div key={index} className={"flex my-56 " + steps.containerClass}>
                     {setTitles(steps,"text-md leading-loose", steps.stepTitle.toLowerCase() + " w-6/12")} {/* colocar más margin-bottom*/}
                     <img className={steps.imgClass} src={steps.img} alt={steps.stepTitle}/>
                 </div>
@@ -51,7 +51,7 @@ const Steps = () =>{
             stepTitle:"PRIMER",
             infoTitle:"Agregamos valor a tu negocio y estructuramos el problema",
             img:"images/man_top.png",
-            containerClass:"ml-auto w-10/12 py-10 mr-10 relative ",
+            containerClass:"ml-auto w-11/12 py-10 mr-10 relative ",
             orientate:true,
             imgClass:""
  
@@ -61,7 +61,7 @@ const Steps = () =>{
             stepTitle:"SEGUNDO",
             infoTitle:"Pensamos en la lógica y creamos un prototipo",
             img:"images/man_left.png",
-            imgClass:"",
+            imgClass:"absolute img-segundo",
             containerClass:"w-11/12 py-10 ml-10",
             orientate:false,
  
@@ -71,15 +71,13 @@ const Steps = () =>{
             stepTitle:"TERCER",
             infoTitle:"Diseñamos el producto digital y creamos la estetica",
             img:"images/man_bottom.png",
-            imgClass:"absolute right-0 bottom-0",
-            containerClass:"w-11/12 py-10 ml-auto mr-10 relative ",
+            imgClass:"absolute img-tercer",
+            containerClass:"w-11/12 ml-auto mr-10 relative ",
             orientate:true,
  
         },
     ]
 
-    /* CUARTO PASO Definimos la tecnologia y empezamos a implementar Ya sea una app, ecommerce o sistema web, te ayudamos a realizar un seguimiento de tus usuarios usando google analitycs y fullstory. */
-    /* QUINTO PASO Lanzamos al mercado tu producto digital y optimizamos el rendimiento Ya sea una app, ecommerce o sistema web, te ayudamos a realizar un seguimiento de tus usuarios usando google analitycs y fullstory. */
     const lastData = [
         {
             
