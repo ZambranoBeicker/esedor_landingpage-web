@@ -57,7 +57,7 @@ const Steps = () =>{
  
         },
         {
-            info: "Creamos versiones de escritorio, tablets y dispositivos móviles, plasmados en el prototipo de UX en Figma",
+            info: ["Creamos versiones de escritorio, tablets y dispositivos móviles, plasmados en el prototipo de UX en ",<strong>Figma</strong>],
             stepTitle:"SEGUNDO",
             infoTitle:"Pensamos en la lógica y creamos un prototipo",
             img:"images/man_left.png",
@@ -67,7 +67,7 @@ const Steps = () =>{
  
         },
         {
-            info: "En esta etapa le damos personalidad a tu producto creando una guía de estilos visuales y si deseas escalar un sistema de diseño",
+            info: ["En esta etapa le damos personalidad a tu producto creando una guía de estilos visuales y si deseas escalar un ",<strong>sistema de diseño</strong>],
             stepTitle:"TERCER",
             infoTitle:"Diseñamos el producto digital y creamos la estetica",
             img:"images/man_bottom.png",
@@ -91,7 +91,7 @@ const Steps = () =>{
         },
         {
             
-            info: "Ya sea una app, ecommerce o sistema web, te ayudamos a realizar un seguimiento de tus usuarios usando google analitycs y fullstory",
+            info: ["Ya sea una app, ecommerce o sistema web, te ayudamos a realizar un seguimiento de tus usuarios usando ",<strong>google analitycs</strong>," y ",<strong>fullstory</strong>],
             stepTitle:"QUINTO",
             infoTitle:"Lanzamos al mercado tu producto digital y optimizamos el rendimiento",
             img:"images/fifth_step.png",
