@@ -1,6 +1,7 @@
+
 body {
   margin: 0;
-
+  
   p{
     font-family: 'space mono'
   }
@@ -13,7 +14,7 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
 
 .bg-blue{
@@ -22,3 +23,5 @@ code {
 .text-gray{
   color: #6e6e6e;
 }
+
+@import 'sass/_hero.scss';

@@ -52,7 +52,7 @@ const info = <p className="text-sm max-w-full leading-loose">{props.info}</p>
 
  
     return (
-        <div className="arrow-cta bg-black text-white w-3/12 mr-5 mt-8 pr-2 px-5 h-24 rounded-md">
+        <div className="arrow-cta bg-black text-white w-3/12 mr-5 mt-8 pr-2 px-5 rounded-md">
             <DynamicFlex flex={true}>
                 {titleImg}
             </DynamicFlex>
