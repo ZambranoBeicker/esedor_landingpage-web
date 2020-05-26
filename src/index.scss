@@ -1,14 +1,14 @@
 
 body {
   margin: 0;
-  
+
   p{
     font-family: 'space mono'
   }
-  
+
   h1,h2,h3,h4{
     font-family: 'Poppins'
-    
+
   }
 
   h2{
@@ -31,3 +31,4 @@ code {
 @import 'sass/_hero.scss';
 @import 'sass/_steps.scss';
 @import 'sass/_brands.scss';
+@import 'sass/_projects.scss';

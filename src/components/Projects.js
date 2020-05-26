@@ -3,9 +3,9 @@ import {InfoParagraph} from './Hero.js';
 
 
 const Projects = () =>{
-  
+
   return (
-    
+
     <React.Fragment>
       <section className="h-screen container-none flex relative">
 
@@ -13,15 +13,15 @@ const Projects = () =>{
           <div className="text-white w-1/3">
             <h4 className="text-sm">Proyectos selecionados</h4>
             <h2 className="text-5xl mt-5">NIUBIZ</h2>
-            <InfoParagraph 
-              info="Est occaecat cillum sit dolor anim esse elit adipisicing pariatur cillum ex aliquip esse aute. Velit tempor nisi qui cupidatat aliquip veniam id laborum cupidatat et. Incididunt fugiat aliquip et ut fugiat enim." 
-              textClass="text-sm leading-8 max-w-full"            
-              containerClass="pr-4 my-10 mr-auto"            
+            <InfoParagraph
+              info="Est occaecat cillum sit dolor anim esse elit adipisicing pariatur cillum ex aliquip esse aute. Velit tempor nisi qui cupidatat aliquip veniam id laborum cupidatat et. Incididunt fugiat aliquip et ut fugiat enim."
+              textClass="text-sm leading-8 max-w-full"
+              containerClass="pr-4 my-10 mr-auto"
               />
           </div>
         </div>
-          <div className="absolute w-8/12 right-0">
-            <img className="projects__image min-w-0" src="images/projects.png" alt="Proyectos"/>
+          <div className="projects__image absolute w-8/12 right-0">
+            <img className="min-w-0" src="images/projects.png" alt="Proyectos"/>
           </div>
       </section>
 
