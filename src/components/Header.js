@@ -7,21 +7,23 @@ const Logo = (props) =>{
     alt:props.alt,
   }
 
-  return (
-    <div>
-      <img src={imgInfo.src} alt={imgInfo.alt}/>
-    </div>
-  )
+    return (
+        <div className="ml-20 min-w-0">
+            <img src={imgInfo.src} alt={imgInfo.alt}/>
+        </div>
+    )
 }
 
-const Header = () => {
-  return(
-    <React.Fragment>
-      <header>
-        <Logo src="images/logo-header.png" alt="Image"/>
-      </header>
-    </React.Fragment>
-  )
-}
+const Header = ()=>{
 
-export {Logo,Header};
+
+    return(
+          <React.Fragment>
+              <header className="my-10">
+                <Logo src="images/logo-header.png" alt="Image"/>
+              </header>
+          </React.Fragment>
+      )
+  }
+  export {Logo,Header};
+
