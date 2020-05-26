@@ -59,4 +59,40 @@ code {
   font-weight: 300;
   color: #00ce00;
 }
+
+.brand-1 {
+  margin-top: -3.8rem;
+}
+
+.brand-2 {
+  margin-top: -2.5rem;
+}
+
+.brand-3 {
+  margin-top: 1.5rem;
+}
+
+.brand-4 {
+  margin-top: -1.7rem;
+  margin-left: -1.9rem;
+}
+
+.brand-5 {
+  margin-top: 1rem;
+  margin-left: 3rem;
+}
+
+.brand-6 {
+  margin-top: -.8rem;
+  margin-left: 1rem;
+}
+
+.brand-7 {
+  margin-left: -.8rem;
+}
+
+.brand-8 {
+  margin-top: 1.5rem;
+  margin-left: 1.8rem;
+}
 /*# sourceMappingURL=index.css.map */

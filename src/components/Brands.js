@@ -5,8 +5,8 @@ const BrandImages = ({src, index})=>{
 
 
     return(
-        <div className="my-10 mx-16 h-32 w-32">
-            <img src={src} alt="brand" className={"max-h-full max-w-full brand"}/>
+        <div className="w-1/3">
+            <img src={src} alt="brand" className={"brand-" + index}/>
         </div>
     )
 }
@@ -45,7 +45,7 @@ const Brands = ()=>{
         },
     ]
 
-    const brands = data.map((img,index) => <BrandImages src={img.src} key={index}/>)
+    const brands = data.map((img,index) => <BrandImages src={img.src} key={index} index={index}/>)
 
     return (
         <section className="flex flex-wrap h-screen mx-10">
@@ -53,7 +53,7 @@ const Brands = ()=>{
                 {brands}
             </div>
             <div className="w-3/12 ml-auto">
-                <h2 className="text-4xl mt-56">Nuestros aliados</h2>
+                <h2 className="text-6xl mt-56">Nuestros aliados</h2>
             </div>
         </section>
     )
