@@ -1,5 +1,5 @@
 import React from 'react';
-import {InfoParagraph} from './Hero.js';
+import {InfoParagraph,ArrowCta} from './Hero.js';
 
 
 const Projects = () =>{
@@ -7,9 +7,9 @@ const Projects = () =>{
   return (
 
     <React.Fragment>
-      <section className="h-screen container-none flex relative">
+      <section className="min-h-0 container-none flex relative">
 
-        <div className="bg-black w-9/12 p-16">
+        <div className="bg-black w-11/12 px-16 pt-10">
           <div className="text-white w-1/3">
             <h4 className="text-sm">Proyectos selecionados</h4>
             <h2 className="text-5xl mt-5">NIUBIZ</h2>
@@ -19,9 +19,13 @@ const Projects = () =>{
               containerClass="pr-4 my-10 mr-auto"
               />
           </div>
+          <div className="mt-40">
+            <ArrowCta title="SIGUIENTE" src="images/arrow-2.png" adapt={false} ctaClass="projects__arrow-cta text-lg"/>
+
+          </div>
         </div>
           <div className="projects__image absolute w-8/12 right-0">
-            <img className="min-w-0" src="images/projects.png" alt="Proyectos"/>
+            <img className="" src="images/projects.png" alt="Proyectos"/>
           </div>
       </section>
 

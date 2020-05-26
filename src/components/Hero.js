@@ -34,26 +34,39 @@ const HeroInfo = (props)=>{
     )
 }
 
-const ArrowCta = (props)=>{
+const ArrowCta = ({title,info,adapt,ctaClass, src})=>{
+    let titleImg;
+    const titulo = <h5 className={"mr-5 " + ctaClass}>{title}</h5>
 
-    const title = <h4 className="mr-5">{props.title}</h4>
-    const titleImg = (
+    if(info){
+
+      titleImg = (
         <React.Fragment>
-            {title}
+            {titulo}
             <div className="arrow-cta__container ml-auto mr-5">
-                <img className="arrow-cta__arrow-image" src="images/arrow_meet.png" alt="Arrow"/>
+                <img className="arrow-cta__arrow-image" src={src} alt="Arrow"/>
             </div>
         </React.Fragment>
+      )
+    }else{
+      titleImg = (
+        <React.Fragment>
+            <div className="arrow-cta__container ml-auto mr-5">
+                <img className="w-full h-6" src={src} alt="Arrow"/>
+            </div>
+            {titulo}
+        </React.Fragment>
+      )
 
-    )
-const info = <p className="text-sm max-w-full leading-loose">{props.info}</p>
+    }
+const text = <p className="text-sm max-w-full leading-loose">{info}</p>
 
     return (
         <div className="arrow-cta bg-black text-white w-3/12 mr-5 mt-8 pr-2 px-5 rounded-md">
-            <DynamicFlex flex={true}>
+            <DynamicFlex flex={adapt}>
                 {titleImg}
             </DynamicFlex>
-            {info}
+            {text}
         </div>
         )
 }
@@ -63,7 +76,7 @@ const Hero = () =>{
     return(
         <section className="h-screen flex pt-24 mb-32">
             <HeroInfo />
-            <ArrowCta  title="CONOZCÁMONOS" info="Solicite una evaluación digital gratuita y agenda una videollamada"/>
+            <ArrowCta  title="CONOZCÁMONOS" src="images/arrow_meet.png" info="Solicite una evaluación digital gratuita y agenda una videollamada" adapt={true}/>
         </section>
     )
 }
