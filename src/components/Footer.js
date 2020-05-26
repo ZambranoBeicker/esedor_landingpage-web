@@ -1,22 +1,22 @@
 import React from 'react';
 
 const FooterInfo = ({pgraph,title}) =>{
-  
+
   return(
         <div>
           <h4 className="text-gray mb-5 ml-auto">{title}</h4>
-          {pgraph.map((data)=>{
+          {pgraph.map((data,index)=>{
 
             if(!data.src){
 
                 return(
-                  <p className={data.textClass}>{data.text}</p>
+                  <p key={index} className={data.textClass}>{data.text}</p>
                   )
             }else{
-              
+
             return(
 
-              <div className="flex">
+              <div className="flex" key={index}>
                 <img src={data.src} alt={title} className="mt-2 w-2 h-4 mr-2"/>
                 <p className={data.textClass}>{data.text}</p>
               </div>
@@ -88,7 +88,7 @@ const Footer = () =>{
           <img src="images/logo-header.png" alt="Logo"/>
         </div>
         <div className="flex w-full justify-around">
-          {info.map(item => <FooterInfo title={item.title} pgraph={item.pgraph} /> )}
+          {info.map((item,index) => <FooterInfo key={index} title={item.title} pgraph={item.pgraph} /> )}
         </div>
       </div>
       <div className="pl-20 py-4 border-t border-b mb-6 mt-10">

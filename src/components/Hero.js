@@ -17,7 +17,7 @@ const DynamicFlex = (props)=>{
     )
 }
 
-const InfoParagraph = ({info,textClass = 'text-2xl ml-2', containerClass = 'w-10/12 my-5'})=>{
+const InfoParagraph = ({index,info,textClass = 'text-2xl ml-2', containerClass = 'w-10/12 my-5'})=>{
     return(
         <div className={containerClass}>
             <p className={textClass}>{info}</p>
