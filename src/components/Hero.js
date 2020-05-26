@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DynamicFlex = (props)=>{
-    
+
     let container = null;
     if(props.flex){
         container = <div className="flex my-2 max-w-full">{props.children}</div>
@@ -9,13 +9,12 @@ const DynamicFlex = (props)=>{
         container = <div className="block my-2 max-w-full">{props.children}</div>
     }
 
- 
+
     return(
         <div>
-           {container}
+          {container}
         </div>
     )
-
 }
 
 const InfoParagraph = ({info,textClass = 'text-2xl ml-2', containerClass = 'w-10/12 my-5'})=>{
@@ -37,20 +36,18 @@ const HeroInfo = (props)=>{
 
 const ArrowCta = (props)=>{
 
-    const title = <h4 className="mr-5">{props.title}</h4>     
+    const title = <h4 className="mr-5">{props.title}</h4>
     const titleImg = (
         <React.Fragment>
             {title}
             <div className="arrow-cta__container ml-auto mr-5">
                 <img className="arrow-cta__arrow-image" src="images/arrow_meet.png" alt="Arrow"/>
             </div>
-        </React.Fragment>    
+        </React.Fragment>
 
     )
 const info = <p className="text-sm max-w-full leading-loose">{props.info}</p>
 
-
- 
     return (
         <div className="arrow-cta bg-black text-white w-3/12 mr-5 mt-8 pr-2 px-5 rounded-md">
             <DynamicFlex flex={true}>
@@ -62,7 +59,7 @@ const info = <p className="text-sm max-w-full leading-loose">{props.info}</p>
 }
 
 const Hero = () =>{
- 
+
     return(
         <section className="h-screen flex pt-24 mb-32">
             <HeroInfo />

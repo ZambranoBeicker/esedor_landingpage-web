@@ -2,10 +2,10 @@ import React from 'react';
 
 
 const Logo = (props) =>{
-    const imgInfo = {
-        src:props.src,
-        alt:props.alt,
-    }
+  const imgInfo = {
+    src:props.src,
+    alt:props.alt,
+  }
 
     return (
         <div className="ml-16 min-w-0">
@@ -15,8 +15,8 @@ const Logo = (props) =>{
 }
 
 const Header = ()=>{
-     
-    
+
+
     return(
           <React.Fragment>
               <header className="my-10">
@@ -26,4 +26,4 @@ const Header = ()=>{
       )
   }
   export {Logo,Header};
-    
+
