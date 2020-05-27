@@ -20,7 +20,7 @@ const Projects = () =>{
               />
           </div>
           <div className="mt-40">
-            <ArrowCta title="SIGUIENTE" src="images/arrow-2.png" adapt={false} ctaClass="projects__arrow-cta text-lg"/>
+            <ArrowCta title="SIGUIENTE" src="images/arrow-2.png" adapt={false} containerClass="w-3/12" ctaClass="projects__arrow-cta text-lg"/>
 
           </div>
         </div>

@@ -27,7 +27,7 @@ const InfoParagraph = ({info,textClass = 'text-2xl ml-2', containerClass = 'w-10
 
 const HeroInfo = (props)=>{
     return (
-        <div className="ml-16 mr-20 w-8/12">
+        <div className="ml-16 mr-20 w-8/12 pr-4">
             <h1 className="text-6xl font-medium w-full">Estás listo para ser parte de la nueva era digital?</h1>
             <InfoParagraph info="Creamos soluciones en todas las industrias para empresas grandes, pequeñas y startups"/>
         </div>
@@ -51,7 +51,7 @@ const ArrowCta = ({title,info,adapt,ctaClass,src,containerClass})=>{
     }else{
       titleImg = (
         <React.Fragment>
-            <div className="arrow-cta__container px-6">
+            <div className="arrow-cta__container">
                 <img className="w-full h-6" src={src} alt="Arrow"/>
             </div>
             {titulo}
