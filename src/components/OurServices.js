@@ -1,9 +1,9 @@
 import React from 'react';
-import {InfoParagraph} from './Hero.js';
+import {InfoParagraph,ArrowCta} from './Hero.js';
 
 
 const showServices = (data,classes)=>{
-    
+
     const services = data.map( (value,index) =>{
         return(
             <div key={index} className="w-4/12 my-10 mr-0">
@@ -16,7 +16,7 @@ const showServices = (data,classes)=>{
 }
 
 const OurService = () =>{
-    
+
     const data = [
         {
             title: "Ecommerce y móvil app",
@@ -48,7 +48,7 @@ const OurService = () =>{
         textClass:"text-sm w-11/12",
         containerClass:"text-white my-3"
     }
-    
+
     return (
         <React.Fragment>
             <section className="block bg-black pl-16 pt-10 pb-32 w-full">
@@ -61,6 +61,10 @@ const OurService = () =>{
             </section>
             <div className="mx-auto my-40 w-9/12 text-center">
                 <h2 className="text-5xl">Aprendemos lo antes posible <br/>las lecciones que nos permitirán crear <br/>una solución para tu negocio.</h2>
+                <div className="fixed-container fixed w-4/12 px-12">
+                  <ArrowCta  title="CONOZCÁMONOS" containerClass="w-11/12 py-2" ctaClass="ml-5" src="images/arrow_meet.png" info="Solicite una evaluación digital gratuita y agenda una videollamada." adapt={true}/>
+                </div>
+
             </div>
         </React.Fragment>
     )

@@ -17,7 +17,7 @@ const DynamicFlex = (props)=>{
     )
 }
 
-const InfoParagraph = ({index,info,textClass = 'text-2xl ml-2', containerClass = 'w-10/12 my-5'})=>{
+const InfoParagraph = ({info,textClass = 'text-2xl ml-2', containerClass = 'w-10/12 my-5'})=>{
     return(
         <div className={containerClass}>
             <p className={textClass}>{info}</p>
@@ -34,9 +34,9 @@ const HeroInfo = (props)=>{
     )
 }
 
-const ArrowCta = ({title,info,adapt,ctaClass, src})=>{
+const ArrowCta = ({title,info,adapt,ctaClass,src,containerClass})=>{
     let titleImg;
-    const titulo = <h5 className={"mr-5 " + ctaClass}>{title}</h5>
+    const titulo = <h5 className={"mr-0 " + ctaClass}>{title}</h5>
 
     if(info){
 
@@ -51,7 +51,7 @@ const ArrowCta = ({title,info,adapt,ctaClass, src})=>{
     }else{
       titleImg = (
         <React.Fragment>
-            <div className="arrow-cta__container ml-auto mr-5">
+            <div className="arrow-cta__container px-6">
                 <img className="w-full h-6" src={src} alt="Arrow"/>
             </div>
             {titulo}
@@ -59,10 +59,10 @@ const ArrowCta = ({title,info,adapt,ctaClass, src})=>{
       )
 
     }
-const text = <p className="text-sm max-w-full leading-loose">{info}</p>
+const text = <p className="ml-5 text-sm max-w-full text-left leading-loose">{info}</p>
 
     return (
-        <div className="arrow-cta bg-black text-white w-3/12 mr-5 mt-8 pr-2 px-5 rounded-md">
+        <div className={"arrow-cta bg-black text-white mr-5 mt-8 rounded-md " + containerClass}>
             <DynamicFlex flex={adapt}>
                 {titleImg}
             </DynamicFlex>
@@ -76,7 +76,6 @@ const Hero = () =>{
     return(
         <section className="h-screen flex pt-24 mb-32">
             <HeroInfo />
-            <ArrowCta  title="CONOZCÁMONOS" src="images/arrow_meet.png" info="Solicite una evaluación digital gratuita y agenda una videollamada" adapt={true}/>
         </section>
     )
 }
