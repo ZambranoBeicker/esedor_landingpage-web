@@ -1,4 +1,5 @@
 import React from 'react';
+import {useState} from 'react';
 import {InfoParagraph,ArrowCta} from './Hero.js';
 
 
@@ -16,6 +17,7 @@ const showServices = (data,classes)=>{
 }
 
 const OurService = () =>{
+    const [style,setStyle] = useState('arrow-cta')
 
     const data = [
         {
@@ -49,6 +51,24 @@ const OurService = () =>{
         containerClass:"text-white my-3"
     }
 
+    const handleScroll = ()=>{
+
+      console.log('\n' + window.scrollY)
+      if(window.scrollY === 0){
+        console.log('We are in the Top')
+
+        setStyle('arrow-cta')
+      }else{
+
+        setStyle('arrow-contract')
+      }
+      console.log(style)
+    }
+
+    window.addEventListener('scroll',handleScroll)
+
+
+
     return (
         <React.Fragment>
             <section className="block bg-black pl-16 pt-10 pb-32 w-full">
@@ -62,7 +82,7 @@ const OurService = () =>{
             <div className="mx-auto my-40 w-9/12 text-center">
                 <h2 className="text-5xl">Aprendemos lo antes posible <br/>las lecciones que nos permitirán crear <br/>una solución para tu negocio.</h2>
                 <div className="fixed-container fixed w-4/12 px-12">
-                  <ArrowCta  title="CONOZCÁMONOS" containerClass="w-11/12 py-2" ctaClass="ml-5" src="images/arrow_meet.png" info="Solicite una evaluación digital gratuita y agenda una videollamada." adapt={true}/>
+                  <ArrowCta  title="CONOZCÁMONOS" containerClass={"w-11/12 py-2 " + style} ctaClass="ml-5" src="images/arrow_meet.png" info="Solicite una evaluación digital gratuita y agenda una videollamada." adapt={true}/>
                 </div>
 
             </div>

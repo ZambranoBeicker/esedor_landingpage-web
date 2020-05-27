@@ -7,6 +7,30 @@
 
 .arrow-cta{
   height: 7.5rem;
+  transition:.2s;
 
+  p{
+    display: block;
+  }
+
+}
+
+.arrow-contract{
+  height: 3.7rem;
+  transition:.2s;
+
+  p{
+    display: none;
+  }
+}
+
+@keyframes contract {
+
+  0%{
+    opacity:1;
+  }
+  100%{
+    opacity:0;
+  }
 
 }

@@ -34,7 +34,7 @@ const HeroInfo = (props)=>{
     )
 }
 
-const ArrowCta = ({title,info,adapt,ctaClass,src,containerClass})=>{
+const ArrowCta = ({title,info,adapt,ctaClass = '',src,containerClass = '',textClass = ''})=>{
     let titleImg;
     const titulo = <h5 className={"mr-0 " + ctaClass}>{title}</h5>
 
@@ -62,7 +62,7 @@ const ArrowCta = ({title,info,adapt,ctaClass,src,containerClass})=>{
 const text = <p className="ml-5 text-sm max-w-full text-left leading-loose">{info}</p>
 
     return (
-        <div className={"arrow-cta bg-black text-white mr-5 mt-8 rounded-md " + containerClass}>
+        <div className={"bg-black text-white mr-5 mt-8 rounded-md " + containerClass}>
             <DynamicFlex flex={adapt}>
                 {titleImg}
             </DynamicFlex>
