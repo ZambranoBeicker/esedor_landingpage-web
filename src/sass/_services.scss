@@ -1,8 +1,8 @@
 .fixed-container{
-
   bottom: 33.5%;
   right: 0;
   z-index:100;
+  transition: ease-in .2s;
 }
 
 .arrow-cta{
@@ -15,6 +15,19 @@
 
 }
 
+.moved-container{
+  bottom: 10%;
+  right: 0;
+  z-index:100;
+  transition: ease-in .2s;
+
+}
+
+.fixed{
+
+  transition: .5s;
+}
+
 .arrow-contract{
   height: 3.7rem;
   transition:.2s;
@@ -23,14 +36,55 @@
     display: none;
   }
 }
+.contract-hover{
 
-@keyframes contract {
+  &:hover{
+    height: 7.5rem;
+
+    p{
+      display: block;
+    }
+  }
+}
+
+.insert-out{
+  position: fixed;
+  animation: insert-out .2s;
+}
+
+.insert-in{
+  position: static;
+  animation: insert-in .2s;
+}
+
+
+@keyframes insert-out {
 
   0%{
+    right: 0;
+    bottom: 10%;
     opacity:1;
   }
-  100%{
+    100%{
+      right: 10%;
+      bottom: 0%;
+      opacity:0;
+
+
+  }
+
+}
+
+@keyframes insert-in {
+
+  0%{
+    transform: translateY(-10px);
     opacity:0;
+  }
+    100%{
+      transform: translateY(0);
+      opacity:1;
+
   }
 
 }

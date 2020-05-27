@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import {InfoParagraph,ArrowCta} from './Hero.js';
 
 
@@ -17,7 +17,26 @@ const showServices = (data,classes)=>{
 }
 
 const OurService = () =>{
-    const [style,setStyle] = useState('arrow-cta')
+    const [styleArrow,setStyleArrow] = useState('arrow-cta')
+    const [styleContainer,setStyleContainer] = useState('fixed px-12 w-4/12 fixed-container')
+
+
+
+    useEffect(()=>{
+      window.addEventListener('scroll',handleScroll)
+    },[])
+
+    useEffect(()=>{
+      if(window.scrollY < 1350){
+        window.addEventListener('scroll',handleScroll)
+
+      }
+
+      if(window.scrollY > 1450){
+        window.removeEventListener("scroll",handleScroll)
+
+      }
+    })
 
     const data = [
         {
@@ -53,19 +72,29 @@ const OurService = () =>{
 
     const handleScroll = ()=>{
 
-      console.log('\n' + window.scrollY)
-      if(window.scrollY === 0){
-        console.log('We are in the Top')
+      if(window.scrollY < 100){
+        setStyleArrow('arrow-cta')
+        setStyleContainer('fixed px-12 w-4/12 fixed-container')
 
-        setStyle('arrow-cta')
+
+      }else if(window.scrollY > 100 && window.scrollY < 1050){
+        setStyleArrow('arrow-contract contract-hover')
+        setStyleContainer('fixed px-12 w-4/12 moved-container')
+      }else if(window.scrollY > 1050 && window.scrollY < 1350 ){
+        setStyleContainer('w-4/12 mx-auto mt-20 px-8 insert-out')
+
+
+
+      }else if(window.scrollY > 1350){
+        setStyleContainer('w-4/12 mx-auto mt-20 px-3 insert-in')
+
+        setStyleArrow('arrow-contract')
       }else{
+        setStyleContainer('fixed w-4/12 px-12')
 
-        setStyle('arrow-contract')
       }
-      console.log(style)
     }
 
-    window.addEventListener('scroll',handleScroll)
 
 
 
@@ -81,8 +110,8 @@ const OurService = () =>{
             </section>
             <div className="mx-auto my-40 w-9/12 text-center">
                 <h2 className="text-5xl">Aprendemos lo antes posible <br/>las lecciones que nos permitirán crear <br/>una solución para tu negocio.</h2>
-                <div className="fixed-container fixed w-4/12 px-12">
-                  <ArrowCta  title="CONOZCÁMONOS" containerClass={"w-11/12 py-2 " + style} ctaClass="ml-5" src="images/arrow_meet.png" info="Solicite una evaluación digital gratuita y agenda una videollamada." adapt={true}/>
+                <div className={styleContainer}>
+                  <ArrowCta  title="CONOZCÁMONOS" containerClass={"w-11/12 py-2 " + styleArrow} ctaClass="ml-5" src="images/arrow_meet.png" info="Solicite una evaluación digital gratuita y agenda una videollamada." adapt={true}/>
                 </div>
 
             </div>
