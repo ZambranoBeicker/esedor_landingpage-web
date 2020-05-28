@@ -28,6 +28,16 @@ code {
   color: #6e6e6e;
 }
 
+.text-blue{
+
+  color:#193EFF;
+}
+
+.text-shadow{
+
+  box-shadow: 0px 13px 25px rgba(0, 41, 255, 0.7);
+}	
+
 @import 'sass/_hero.scss';
 @import 'sass/_steps.scss';
 @import 'sass/_brands.scss';

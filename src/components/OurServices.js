@@ -5,15 +5,35 @@ import {InfoParagraph,ArrowCta} from './Hero.js';
 
 const showServices = (data,classes)=>{
 
-    const services = data.map( (value,index) =>{
-        return(
-            <div key={index} className="w-4/12 my-10 mr-0">
+  const services = data.map( (value,index) =>{
+
+    return(
+      <div key={index} className="w-full md:w-4/12 my-10 mr-0">
                 <h3 className="text-white text-xl font-bold">{value.title}</h3>
                 <InfoParagraph info={value.info} containerClass={classes.containerClass} textClass={classes.textClass}/>
             </div>
         )
     })
-    return services
+  const servicesResponsive = (
+
+
+            <div className="w-full md:w-4/12 my-10 mr-0">
+              <div className="bg-black text-center py-10 mx-auto rounded-t-md">
+                <h3 className="text-white text-xl font-bold">{data[0].title}</h3>
+              </div>
+              <InfoParagraph info={data[0].info} containerClass="text-shadow pt-10 pb-20 px-4 border rounded-b-md" textClass="my-3 text-center text-blue"/>
+            </div>
+    )
+
+
+
+
+    if(window.innerWidth >= 641){
+      return services
+
+    }else {
+      return servicesResponsive
+    }
 }
 
 const OurService = () =>{
@@ -100,11 +120,11 @@ const OurService = () =>{
 
     return (
         <React.Fragment>
-            <section className="block bg-black pl-16 pt-10 pb-32 w-full">
+            <section className="block sm:bg-black px-4 py-5 md:pl-16 pt-10 pb-32 w-full">
                 <div className="text-white mb-10">
-                    <h2 className="text-5xl">Nuestros Servicios</h2>
+                    <h2 className="text-2xl md:text-5xl">Nuestros Servicios</h2>
                 </div>
-                <div className="flex flex-wrap">
+                <div className="md:flex md:flex-wrap">
                     {showServices(data,classes)}
                 </div>
             </section>
