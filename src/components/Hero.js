@@ -17,7 +17,7 @@ const DynamicFlex = (props)=>{
     )
 }
 
-const InfoParagraph = ({info,textClass = 'text-sm md:text-2xl md:ml-2', containerClass = 'w-10/12 my-5'})=>{
+const InfoParagraph = ({info,textClass = 'text-xs md:text-2xl md:ml-2', containerClass = 'w-11/12 md:w-10/12 my-3 md:my-5'})=>{
     return(
         <div className={containerClass}>
             <p className={textClass}>{info}</p>
@@ -27,9 +27,9 @@ const InfoParagraph = ({info,textClass = 'text-sm md:text-2xl md:ml-2', containe
 
 const HeroInfo = (props)=>{
     return (
-        <div className="ml-4 md:ml-16 md:mr-20 md:w-8/12 pr-4">
-            <h1 className="text-2xl md:text-6xl font-medium w-full">Estás listo para ser parte de la nueva era digital?</h1>
-            <InfoParagraph info="Creamos soluciones en todas las industrias para empresas grandes, pequeñas y startups"/>
+        <div className="ml-4 md:ml-16 md:mr-20 md:w-8/12 md:pr-4">
+            <h1 className="text-2xl font-semibold md:text-6xl md:font-medium w-full">Estás listo para vender por tu tienda virtual?</h1>
+            <InfoParagraph info="Creamos soluciones ecommerce en todas las industrias para  empresas grandes, pequeñas y startups."/>
         </div>
     )
 }
