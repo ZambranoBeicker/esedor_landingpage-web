@@ -38,7 +38,7 @@ const showServices = (data,classes)=>{
 
 const OurService = () =>{
     const [styleArrow,setStyleArrow] = useState('arrow-cta')
-    const [styleContainer,setStyleContainer] = useState('fixed px-12 w-4/12 fixed-container')
+    const [styleContainer,setStyleContainer] = useState('md:fixed md:px-12 md:w-4/12 fixed-container')
 
 
 
@@ -94,23 +94,23 @@ const OurService = () =>{
 
       if(window.scrollY < 100){
         setStyleArrow('arrow-cta')
-        setStyleContainer('fixed px-12 w-4/12 fixed-container')
+        setStyleContainer('md:fixed md:px-12 md:w-4/12 fixed-container')
 
 
       }else if(window.scrollY > 100 && window.scrollY < 1050){
         setStyleArrow('arrow-contract contract-hover')
-        setStyleContainer('fixed px-12 w-4/12 moved-container')
+        setStyleContainer('md:fixed md:px-12 md:w-4/12 moved-container')
       }else if(window.scrollY > 1050 && window.scrollY < 1350 ){
-        setStyleContainer('w-4/12 mx-auto mt-20 px-8 insert-out')
+        setStyleContainer('md:w-4/12 md:mx-auto md:mt-20 md:px-8 insert-out')
 
 
 
       }else if(window.scrollY > 1350){
-        setStyleContainer('w-4/12 mx-auto mt-20 px-3 insert-in')
+        setStyleContainer('md:w-4/12 md:mx-auto md:mt-20 md:px-3 insert-in')
 
         setStyleArrow('arrow-contract')
       }else{
-        setStyleContainer('fixed w-4/12 px-12')
+        setStyleContainer('md:fixed md:w-4/12 px-12')
 
       }
     }
@@ -128,10 +128,10 @@ const OurService = () =>{
                     {showServices(data,classes)}
                 </div>
             </section>
-            <div className="mx-auto my-40 w-9/12 text-center">
-                <h2 className="text-5xl">Aprendemos lo antes posible <br/>las lecciones que nos permitirán crear <br/>una solución para tu negocio.</h2>
-                <div className={styleContainer}>
-                  <ArrowCta  title="CONOZCÁMONOS" containerClass={"w-11/12 py-2 " + styleArrow} ctaClass="ml-5" src="images/arrow_meet.png" info="Solicite una evaluación digital gratuita y agenda una videollamada." adapt={true}/>
+            <div className="md:mx-auto md:my-40 md:w-9/12 w-full px-4 md:px-0 text-center">
+                <h2 className="text-semibig sm:text-3xl md:text-5xl">Te ayudamos a entender tu ecommerce con un enfoque omnicanal y te demostramos como funciona nuestra formula.</h2>
+                <div className={styleContainer + "w-full"}>
+                  <ArrowCta  title="CONOZCÁMONOS" containerClass={"md:w-11/12 rounded-md my-20 bg-blue py-2 text-shadow " + styleArrow} ctaClass="ml-5" src="images/arrow_meet.png" info="Solicite una evaluación digital gratuita y agenda una videollamada." adapt={true}/>
                 </div>
 
             </div>

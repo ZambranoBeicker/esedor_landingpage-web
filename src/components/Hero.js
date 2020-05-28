@@ -17,10 +17,11 @@ const DynamicFlex = (props)=>{
     )
 }
 
-const InfoParagraph = ({info,textClass = 'text-xs md:text-2xl md:ml-2', containerClass = 'w-11/12 md:w-10/12 my-3 md:my-5'})=>{
+const InfoParagraph = ({info,textClass = 'text-xs md:text-2xl md:ml-2 hidden sm:block', containerClass = 'w-11/12 md:w-10/12 my-3 md:my-5 hidden sm:block'})=>{
     return(
-        <div className={containerClass}>
-            <p className={textClass}>{info}</p>
+
+        <div className={containerClass + " hidden sm:block"}>
+            <p className={textClass + " hidden sm:block"}>{info}</p>
         </div>
     )
 }
@@ -59,7 +60,7 @@ const ArrowCta = ({title,info,adapt,ctaClass = '',src,containerClass = 'bg-black
       )
 
     }
-const text = <p className={"ml-5 text-sm max-w-full text-left leading-loose" + textClass}>{info}</p>
+const text = <p className={"ml-5 text-sm max-w-full text-left leading-loose  hidden md:block" + textClass}>{info}</p>
 
     return (
         <div className={"text-white md:mr-5 md:mt-8 " + containerClass}>
