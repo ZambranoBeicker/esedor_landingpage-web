@@ -34,7 +34,7 @@ const HeroInfo = (props)=>{
     )
 }
 
-const ArrowCta = ({title,info,adapt,ctaClass = '',src,containerClass = '',textClass = ''})=>{
+const ArrowCta = ({title,info,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = ''})=>{
     let titleImg;
     const titulo = <h5 className={"mr-0 " + ctaClass}>{title}</h5>
 
@@ -59,23 +59,75 @@ const ArrowCta = ({title,info,adapt,ctaClass = '',src,containerClass = '',textCl
       )
 
     }
-const text = <p className="ml-5 text-sm max-w-full text-left leading-loose">{info}</p>
+const text = <p className={"ml-5 text-sm max-w-full text-left leading-loose" + textClass}>{info}</p>
 
     return (
-        <div className={"bg-black text-white mr-5 mt-8 rounded-md " + containerClass}>
+        <div className={"text-white md:mr-5 md:mt-8 " + containerClass}>
             <DynamicFlex flex={adapt}>
                 {titleImg}
             </DynamicFlex>
             {text}
         </div>
         )
+    }
+
+const HeroForm = ({data}) =>{
+
+  // const focus = (index)=>{
+
+  //   const label = document.getElementById('label-' + index)
+
+
+  //   console.log(label.classList)
+
+  //   label.classList.remove('label-' + index)
+  //   label.classList.add('label-move')
+
+  //   console.log(label.classList)
+  // };
+
+
+  return(
+    <React.Fragment>
+      {data.map(({label},index)=>{
+
+        return(
+          <div key={index * (10 * 2)} className="input-container relative container-none my-4">
+            <label className="absolute text-xs">{label}</label>
+            <input className="block mx-auto rounded-t-md w-11/12 h-10 text-xs pl-2 pt-4"/>
+          </div>
+        )
+      })}
+    </React.Fragment>
+  )
 }
 
 const Hero = () =>{
 
+  const data = [
+    {
+      label:'Nombre',
+    },
+    {
+      label:'Correo',
+    },
+    {
+      label:'Celular',
+    },
+    {
+      label:'Mensaje',
+    }
+  ]
+
     return(
         <section className="h-screen md:flex md:pt-24 md:mb-32">
             <HeroInfo />
+            <div className="bg-black md:hidden min-h-0 mx-4 py-1 rounded-t-md">
+              <HeroForm data={data}/>
+            </div>
+            <div className="sm:hidden w-full px-4">
+              <ArrowCta title="CONOZCÁMONOS" src="images/arrow_meet.png" containerClass="bg-blue py-1 pl-2 w-full rounded-b-md" adapt={true} info='hñlsdkvasd' cta="mx-1" textClass=' hidden'/>
+            </div>
         </section>
     )
 }

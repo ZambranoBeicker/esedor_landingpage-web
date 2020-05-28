@@ -4,3 +4,30 @@
     font-weight: 300;
   }
 }
+
+.input-container{
+
+  input{
+    font-family: 'Space Mono';
+    color: #a0a0a0;
+
+}
+    // &:active{
+
+    //   .label
+    // }
+
+
+  label{
+    color: #565656;
+    top:0px;
+    left:20px;
+    font-family: 'Poppins';
+    font-size: 10px;
+  }
+}
+
+// .label-move{
+//   top:0;
+//   font-size:10px;
+// }
