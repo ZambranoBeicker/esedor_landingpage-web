@@ -17,7 +17,7 @@ const DynamicFlex = (props)=>{
     )
 }
 
-const InfoParagraph = ({info,textClass = 'text-2xl ml-2', containerClass = 'w-10/12 my-5'})=>{
+const InfoParagraph = ({info,textClass = 'text-sm md:text-2xl md:ml-2', containerClass = 'w-10/12 my-5'})=>{
     return(
         <div className={containerClass}>
             <p className={textClass}>{info}</p>
@@ -27,8 +27,8 @@ const InfoParagraph = ({info,textClass = 'text-2xl ml-2', containerClass = 'w-10
 
 const HeroInfo = (props)=>{
     return (
-        <div className="ml-16 mr-20 w-8/12 pr-4">
-            <h1 className="text-6xl font-medium w-full">Estás listo para ser parte de la nueva era digital?</h1>
+        <div className="ml-4 md:ml-16 md:mr-20 md:w-8/12 pr-4">
+            <h1 className="text-2xl md:text-6xl font-medium w-full">Estás listo para ser parte de la nueva era digital?</h1>
             <InfoParagraph info="Creamos soluciones en todas las industrias para empresas grandes, pequeñas y startups"/>
         </div>
     )
@@ -74,7 +74,7 @@ const text = <p className="ml-5 text-sm max-w-full text-left leading-loose">{inf
 const Hero = () =>{
 
     return(
-        <section className="h-screen flex pt-24 mb-32">
+        <section className="h-screen md:flex md:pt-24 md:mb-32">
             <HeroInfo />
         </section>
     )
