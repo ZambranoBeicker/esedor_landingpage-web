@@ -1,5 +1,5 @@
 import React from "react";
-import {InfoParagraph} from "./Hero.js";
+import {InfoParagraph,ArrowCta} from "./Hero.js";
 
 const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=>{
 
@@ -39,7 +39,26 @@ const stepsContent = (data)=>{
             }
     })
 
-    return content;
+    const contentResponsive = (
+
+        <div className="relative py-20 my-56 ">
+          <div>
+              <h4 className="text-xs text-center font-bold">{data[0].stepTitle + ' PASO'}</h4>
+              <img className="w-full my-10" src={data[0].img} alt={data[0].stepTitle}/>
+              <h2 className="ml-4 text-semibig w-full">{data[0].infoTitle}</h2>
+          </div>
+          <InfoParagraph info={data[0].info} textClass="ml-4 text-xs"/>
+          <ArrowCta  title="CONOZCÁMONOS" containerClass="rounded-md my-10 bg-blue py-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" info="Solicite una evaluación digital gratuita y agenda una videollamada." adapt={true}/>
+        </div>
+        )
+
+
+    if(window.innerWidth >= 641){
+      return content
+
+    }else {
+      return contentResponsive
+    }
 }
 
 
@@ -105,7 +124,9 @@ const Steps = () =>{
     return(
         <section id="steps" className="min-h-0">
             {stepsContent(data)}
-            {stepsContent(lastData)}
+            <div className="hidden md:block">
+              {stepsContent(lastData)}
+            </div>
         </section>
     )
 }

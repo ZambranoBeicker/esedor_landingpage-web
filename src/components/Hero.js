@@ -17,11 +17,11 @@ const DynamicFlex = (props)=>{
     )
 }
 
-const InfoParagraph = ({info,textClass = 'text-xs md:text-2xl md:ml-2 hidden sm:block', containerClass = 'w-11/12 md:w-10/12 my-3 md:my-5 hidden sm:block'})=>{
+const InfoParagraph = ({info,textClass = 'text-xs md:text-2xl md:ml-2', containerClass = 'w-11/12 md:w-10/12 my-3 md:my-5'})=>{
     return(
 
-        <div className={containerClass + " hidden sm:block"}>
-            <p className={textClass + " hidden sm:block"}>{info}</p>
+        <div className={containerClass}>
+            <p className={textClass}>{info}</p>
         </div>
     )
 }
