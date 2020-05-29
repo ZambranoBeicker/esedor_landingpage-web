@@ -1,5 +1,5 @@
 import React from 'react';
-import {InfoParagraph,ArrowCta,HeroForm} from './Hero.js';
+import {InfoParagraph,HeroForm} from './Hero.js';
 
 
 const Projects = () =>{
@@ -7,23 +7,31 @@ const Projects = () =>{
       return (
 
         <React.Fragment>
-          <section className="min-h-0 container-none flex relative">
+          <section className="min-h-0 container-none lg:flex relative">
+            <div className="w-full lg:hidden">
+              <img className="rounded-t-md" src="images/projects.png" alt="Proyectos"/>
+            </div>
 
-            <div className="bg-black w-11/12 px-16 pt-10">
-              <div className="text-white w-1/3">
+
+            <div className="bg-black p-4 rounded-b-md lg:w-11/12 lg:px-16 lg:pt-10">
+              <div className="text-white lg:w-1/3">
                 <h4 className="text-sm">Proyectos selecionados</h4>
-                <h2 className="text-5xl mt-5">NIUBIZ</h2>
+                <h2 className="text-semibig mt-4 lg:text-5xl lg:mt-5">NIUBIZ</h2>
                 <InfoParagraph
                   info="Est occaecat cillum sit dolor anim esse elit adipisicing pariatur cillum ex aliquip esse aute. Velit tempor nisi qui cupidatat aliquip veniam id laborum cupidatat et. Incididunt fugiat aliquip et ut fugiat enim."
-                  textClass="text-sm leading-8 max-w-full"
-                  containerClass="pr-4 my-10 mr-auto"
+                  textClass="md:text-sm md:leading-8 max-w-full text-xs"
+                  containerClass="md:pr-4 md:my-10 mr-auto pr-4 my-5 mr-auto"
                   />
               </div>
-              <div className="mt-40">
-                <ArrowCta title="SIGUIENTE" src="images/arrow-2.png" adapt={false} containerClass="w-3/12" ctaClass="projects__arrow-cta text-lg arrow-cta"/>
+              <div className="hidden lg:block my-32 text-white">
+                <h5 className="cursor-auto projects__arrow-cta">SIGUIENTE</h5>
+                <img src="images/arrow-2.png" alt="arrow-2"/>
+              </div>
+              <div className="mt-5 ml-auto text-white w-40 text-xs text-bold text-right lg:hidden">
+                 <a href="#this" className="border-b border-black hover:border-white">VISITAR WEB</a>
               </div>
             </div>
-              <div className="projects__image absolute w-8/12 right-0">
+              <div className="projects__image hidden lg:block absolute w-8/12 right-0">
                 <img className="" src="images/projects.png" alt="Proyectos"/>
               </div>
           </section>
