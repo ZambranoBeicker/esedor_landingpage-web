@@ -1,9 +1,39 @@
 .arrow-cta{
+    &__container{
+      max-height: 20px;
 
-  h4{
-    font-weight: 300;
-  }
+      h4{
+        font-weight: 300;
+      }
+    }
+
+    &__arrow-image{
+      max-height: inherit;
+      margin-top: 2px;
+
+    }
+
+
 }
+
+.arrow-container,.form-container form{
+  max-width: 345px;
+  min-width: 280px;
+
+}
+
+.arrow-container{
+  min-height: 52px;
+  
+
+}
+.form-container form{
+  min-height: 300px;
+  
+
+}
+
+
 
 .input-container{
 
@@ -12,10 +42,6 @@
     color: #a0a0a0;
 
 }
-    // &:active{
-
-    //   .label
-    // }
 
 
   label{
@@ -27,7 +53,4 @@
   }
 }
 
-// .label-move{
-//   top:0;
-//   font-size:10px;
-// }
+// @media screen and (min-width:"")

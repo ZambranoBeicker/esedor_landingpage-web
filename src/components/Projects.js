@@ -69,9 +69,6 @@ const Projects = () =>{
           <div className="w-full pt-10 pb-6 mt-10 bg-blue-secondary">
             <h4 className="text-smibig ml-8 mt-4 mb-12">Estás listo para vender por tu tienda virtual?</h4>
               <HeroForm formClass="bg-black mt-5 md:hidden min-h-0 mx-4 py-1 rounded-t-md"/>
-              <div className="w-full px-4">
-                <ArrowCta title="CONOZCÁMONOS" src="images/arrow_meet.png" containerClass="bg-blue py-1 pl-2 w-full rounded-b-md" adapt={true} info='hñlsdkvasd' cta="ml-1" textClass=' hidden'/>
-              </div>
           </div>
 
         </React.Fragment>

@@ -8,7 +8,7 @@ const Logo = (props) =>{
   }
 
     return (
-        <div className="header__logo-container ml-1 lg:ml-16 md:min-w-0">
+        <div className="header__logo-container ml-1 sm:ml-4 md:ml-16 md:min-w-0">
             <img src={imgInfo.src} alt={imgInfo.alt}/>
         </div>
     )
@@ -19,7 +19,7 @@ const Header = ()=>{
 
     return(
           <React.Fragment>
-              <header className="header md:my-10">
+              <header className="header my-4 lg:my-10">
                 <Logo src="images/logo-header.png" alt="Image"/>
               </header>
           </React.Fragment>
