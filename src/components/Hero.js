@@ -60,10 +60,10 @@ const ArrowCta = ({title,info,adapt,ctaClass = '',src,containerClass = 'bg-black
       )
 
     }
-const text = <p className={"ml-5 text-sm max-w-full text-left leading-loose  hidden md:block" + textClass}>{info}</p>
+const text = <p className={"ml-5 text-sm max-w-full text-left leading-loose hidden md:block" + textClass}>{info}</p>
 
     return (
-        <div className={"text-white md:mr-5 md:mt-8 " + containerClass}>
+        <div className={"text-white md:mr-5 md:mt-8 text-shadow " + containerClass}>
             <DynamicFlex flex={adapt}>
                 {titleImg}
             </DynamicFlex>
@@ -72,40 +72,9 @@ const text = <p className={"ml-5 text-sm max-w-full text-left leading-loose  hid
         )
     }
 
-const HeroForm = ({data}) =>{
+const HeroForm = ({formClass}) =>{
 
-  // const focus = (index)=>{
-
-  //   const label = document.getElementById('label-' + index)
-
-
-  //   console.log(label.classList)
-
-  //   label.classList.remove('label-' + index)
-  //   label.classList.add('label-move')
-
-  //   console.log(label.classList)
-  // };
-
-
-  return(
-    <React.Fragment>
-      {data.map(({label},index)=>{
-
-        return(
-          <div key={index * (10 * 2)} className="input-container relative container-none my-4">
-            <label className="absolute text-xs">{label}</label>
-            <input className="block mx-auto rounded-t-md w-11/12 h-10 text-xs pl-2 pt-4"/>
-          </div>
-        )
-      })}
-    </React.Fragment>
-  )
-}
-
-const Hero = () =>{
-
-  const data = [
+const data = [
     {
       label:'Nombre',
     },
@@ -120,17 +89,32 @@ const Hero = () =>{
     }
   ]
 
+  return(
+    <form className={formClass}>
+      {data.map(({label},index)=>{
+
+        return(
+          <div key={index * (10 * 2)} className="input-container relative container-none my-4">
+            <label className="absolute text-xs">{label}</label>
+            <input className="block mx-auto rounded-t-md w-11/12 h-10 text-xs pl-2 pt-4"/>
+          </div>
+        )
+      })}
+    </form>
+  )
+}
+
+const Hero = () =>{
+
     return(
         <section className="h-screen md:flex md:pt-24 md:mb-32">
             <HeroInfo />
-            <div className="bg-black md:hidden min-h-0 mx-4 py-1 rounded-t-md">
-              <HeroForm data={data}/>
-            </div>
-            <div className="sm:hidden w-full px-4">
+              <HeroForm formClass="bg-black md:hidden min-h-0 mx-4 py-1 rounded-t-md"/>
+            <div className="w-full px-4">
               <ArrowCta title="CONOZCÁMONOS" src="images/arrow_meet.png" containerClass="bg-blue py-1 pl-2 w-full rounded-b-md" adapt={true} info='hñlsdkvasd' cta="mx-1" textClass=' hidden'/>
             </div>
         </section>
     )
 }
 
-export {Hero,ArrowCta,InfoParagraph}
+export {Hero,ArrowCta,InfoParagraph,HeroForm}
