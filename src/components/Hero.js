@@ -59,7 +59,7 @@ const ArrowCta = ({title,info,adapt,ctaClass = '',src,containerClass = 'bg-black
         )
     }
 
-const HeroForm = ({formClass}) =>{
+const HeroForm = ({formClass, containerForm = "form-container"}) =>{
 
 const data = [
     {
@@ -77,7 +77,7 @@ const data = [
   ]
 
   return(
-    <div className="px-4 form-container">
+    <div className={"px-4 " + containerForm}>
       <form className={formClass + " sm:w-56"}>
         {data.map(({label},index)=>{
 

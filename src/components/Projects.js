@@ -3,9 +3,6 @@ import {InfoParagraph,ArrowCta,HeroForm} from './Hero.js';
 
 
 const Projects = () =>{
-
-  if(window.innerWidth >= 768){
-
     
       return (
 
@@ -31,50 +28,16 @@ const Projects = () =>{
               </div>
           </section>
 
-          <div className="my-56 text-center">
-            <h2 className="text-6xl">¿Listo para conocernos?</h2>
-            <div className="my-20">
-              <a href="#this" className="text-white opacity-75 hover:opacity-100 duration-200 px-12 py-6 mx-auto rounded-md bg-blue">CONTÁCTANOS</a>
-            </div>
+          <div className="w-full lg:flex lg_justify-around pt-10 pb-6 mt-10 bg-blue-secondary">
+            <h4 className="text-smibig ml-8 mt-4 mb-12 md:text-4xl lg:pr-4 lg:ml-32 lg:w-5/12">Estás listo para vender por tu tienda virtual?</h4>
+              <HeroForm formClass="bg-black min-h-0 py-1 rounded-t-md" containerForm="form-container mx-auto md:ml-auto md:mr-40 lg:w-auto lg:mr-16 sm:w-56"/>
           </div>
 
         </React.Fragment>
       )
-    }else{
+    
 
-      return(
 
-        <React.Fragment>
-          <section className="min-h-0 px-4 container-none">
-              <div className="w-full">
-                <img className="rounded-t-md" src="images/projects.png" alt="Proyectos"/>
-              </div>
-
-            <div className="bg-black p-4 rounded-b-md">
-              <div className="text-white">
-                <h4 className="text-sm">Proyectos selecionados</h4>
-                <h2 className="text-semibig mt-4">NIUBIZ</h2>
-                <InfoParagraph
-                  info="Est occaecat cillum sit dolor anim esse elit adipisicing pariatur cillum ex aliquip esse aute. Velit tempor nisi qui cupidatat aliquip veniam id laborum cupidatat et. Incididunt fugiat aliquip et ut fugiat enim."
-                  textClass="text-xs max-w-full"
-                  containerClass="pr-4 my-5 mr-auto"
-                  />
-              </div>
-              <div className="mt-5 ml-auto text-white w-40 text-xs text-bold text-right">
-                <a href="#this" className="border-b border-black hover:border-white">VISITAR WEB</a>
-              </div>
-            </div>
-          </section>
-
-          <div className="w-full pt-10 pb-6 mt-10 bg-blue-secondary">
-            <h4 className="text-smibig ml-8 mt-4 mb-12">Estás listo para vender por tu tienda virtual?</h4>
-              <HeroForm formClass="bg-black mt-5 md:hidden min-h-0 mx-4 py-1 rounded-t-md"/>
-          </div>
-
-        </React.Fragment>
-      )
-
-}
 }
 
 export default Projects

@@ -48,7 +48,7 @@ const Brands = ()=>{
     const brands = data.map((img,index) => <BrandImages src={img.src} key={index} index={index}/>)
 
 
-    if(window.innerWidth >= 640){
+    if(window.innerWidth >= 768){
       return (
           <section className="md:flex md:flex-wrap h-screen mx-10">
               <div className="flex flex-wrap md:w-8/12">
