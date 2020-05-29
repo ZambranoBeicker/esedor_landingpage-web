@@ -1,38 +1,88 @@
+.brand-0{
 
+  height:22px;
+  margin-left: 14px;
+}
 .brand-1{
- 
-  margin-top: -3.8rem;
+  
+  height:100px;
+  margin-top: -22px;
+  margin-left: 22px;
 }
 .brand-2{
- 
-  margin-top: -2.5rem;
+  height:65px;
+  margin-left: -22px;
+  margin-top: -8px;
 }
 .brand-3{
- 
-  margin-top: 1.5rem;
+  height:26px;
+  margin-top: 20px;
+  margin-left: -4px;
 }
 .brand-4{
- 
-  margin-top: -1.7rem;
-  margin-left: -1.9rem;
+  height:72px;
+  margin-left: -10px;
+  // margin-top: 20px;
 }
-
 .brand-5{
- 
-  margin-top: 1rem;
-  margin-left: 3rem;
+  height:38px;
+  margin-top: 20px;
+  margin-left: 18px;
 }
 .brand-6{
- 
-  margin-top: -.8rem;
-  margin-left: 1rem;
+  display:none;
+  // height:38px;
+  // margin-top: 20px;
+  // margin-left: 18px;
 }
 .brand-7{
-  
-  margin-left: -.8rem;
+  height:56px;
+  margin-top: 6px;
+  margin-left: -22px;
 }
 .brand-8{
-  
-  margin-top: 1.5rem;
-  margin-left: 1.8rem;
+  height:32px;
+  margin-top: 22px;
+  margin-left: -3px;
+}
+
+@media screen and (min-width:"1024px"){
+
+    .brand-1{
+
+    margin-top: -3.8rem;
+  }
+  .brand-2{
+
+    margin-top: -2.5rem;
+  }
+  .brand-3{
+
+    margin-top: 1.5rem;
+  }
+  .brand-4{
+
+    margin-top: -1.7rem;
+    margin-left: -1.9rem;
+  }
+
+  .brand-5{
+
+    margin-top: 1rem;
+    margin-left: 3rem;
+  }
+  .brand-6{
+
+    margin-top: -.8rem;
+    margin-left: 1rem;
+  }
+  .brand-7{
+
+    margin-left: -.8rem;
+  }
+  .brand-8{
+
+    margin-top: 1.5rem;
+    margin-left: 1.8rem;
+  }
 }
