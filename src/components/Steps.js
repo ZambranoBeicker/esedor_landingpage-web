@@ -8,8 +8,8 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=
     return (
         <div className={containerClass} key={index * 6}>
             <div key={(index * 2)}>
-                <h4 className="font-bold">{stepTitle + ' PASO'}</h4>
-                <h2 className="text-4xl w-full">{infoTitle}</h2>
+                <h4 className="text-sm xl:text-base font-bold">{stepTitle + ' PASO'}</h4>
+                <h2 className="text-3xl xl:text-4xl w-full">{infoTitle}</h2>
             </div>
             <InfoParagraph info={info} textClass={textClass}/>
         </div>
@@ -42,18 +42,18 @@ const stepsContent = (data)=>{
     const contentResponsive = (
 
         <div className="relative py-20 my-56 ">
-          <div>
+          <div className="mx-auto">
               <h4 className="text-xs text-center font-bold">{data[0].stepTitle + ' PASO'}</h4>
-              <img className="w-full my-10" src={data[0].img} alt={data[0].stepTitle}/>
-              <h2 className="ml-4 text-semibig w-full">{data[0].infoTitle}</h2>
+              <img className="w-full my-10 sm:my-16" src={data[0].img} alt={data[0].stepTitle}/>
+              <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-2xl md:text-3xl">{data[0].infoTitle}</h2>
           </div>
-          <InfoParagraph info={data[0].info} textClass="ml-4 text-xs"/>
-          <ArrowCta  title="CONOZCÁMONOS" containerClass="rounded-md my-10 bg-blue py-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" info="Solicite una evaluación digital gratuita y agenda una videollamada." adapt={true}/>
+          <InfoParagraph info={data[0].info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto w-11/12 text-xs sm:text-base md:text-lg"/>
+          <ArrowCta  title="CONOZCÁMONOS" containerClass="rounded-md mx-auto sm:ml-6 my-10 bg-blue py-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
         </div>
         )
 
 
-    if(window.innerWidth >= 641){
+    if(window.innerWidth >= 1024){
       return content
 
     }else {
