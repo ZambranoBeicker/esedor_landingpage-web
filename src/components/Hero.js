@@ -17,7 +17,7 @@ const DynamicFlex = (props)=>{
     )
 }
 
-const InfoParagraph = ({info,textClass = 'text-xs md:text-2xl md:ml-2', containerClass = 'w-11/12 md:w-10/12 my-3 md:my-5'})=>{
+const InfoParagraph = ({info,textClass = 'text-xs sm:text-sm sm:pr-4 md:text-2xl md:ml-2', containerClass = 'w-11/12 md:w-10/12 my-3 md:my-5'})=>{
     return(
 
         <div className={containerClass}>
@@ -28,8 +28,8 @@ const InfoParagraph = ({info,textClass = 'text-xs md:text-2xl md:ml-2', containe
 
 const HeroInfo = (props)=>{
     return (
-        <div className="ml-4 md:ml-16 md:mr-20 md:w-8/12 md:pr-4">
-            <h1 className="text-2xl font-semibold md:text-6xl md:font-medium w-full">Estás listo para vender por tu tienda virtual?</h1>
+        <div className="ml-4 md:ml-16 md:mr-20 md:w-8/12 sm:pr-4">
+            <h1 className="text-2xl font-semibold sm:mb-4 sm:text-3xl lg:text-6xl md:font-medium w-full">Estás listo para vender por tu tienda virtual?</h1>
             <InfoParagraph info="Creamos soluciones ecommerce en todas las industrias para  empresas grandes, pequeñas y startups."/>
         </div>
     )
@@ -90,28 +90,32 @@ const data = [
   ]
 
   return(
-    <form className={formClass}>
-      {data.map(({label},index)=>{
+    <React.Fragment>
+      <form className={formClass + " sm:w-56"}>
+        {data.map(({label},index)=>{
 
-        return(
-          <div key={index * (10 * 2)} className="input-container relative container-none my-4">
-            <label className="absolute text-xs">{label}</label>
-            <input className="block mx-auto rounded-t-md w-11/12 h-10 text-xs pl-2 pt-4"/>
-          </div>
-        )
-      })}
-    </form>
+          return(
+            <div key={index * (10 * 2)} className="input-container relative container-none my-4">
+              <label className="absolute text-xs">{label}</label>
+              <input className="block mx-auto rounded-t-md w-11/12 h-10 text-xs pl-2 pt-4"/>
+            </div>
+          )
+        })}
+      </form>
+      <div className="w-full px-4">
+        <ArrowCta title="CONOZCÁMONOS" src="images/arrow_meet.png" containerClass="bg-blue py-1 pl-2 w-full rounded-b-md" adapt={true} info='hñlsdkvasd' cta="ml-1" textClass=' hidden'/>
+      </div>
+    </React.Fragment>
   )
 }
 
 const Hero = () =>{
 
     return(
-        <section className="h-screen md:flex md:pt-24 md:mb-32">
+        <section className="min-h-0 sm:flex sm:pt-16 sm:mb-24 md:pt-24 md:mb-32 md:h-screen">
             <HeroInfo />
+            <div>
               <HeroForm formClass="bg-black md:hidden min-h-0 mx-4 py-1 rounded-t-md"/>
-            <div className="w-full px-4">
-              <ArrowCta title="CONOZCÁMONOS" src="images/arrow_meet.png" containerClass="bg-blue py-1 pl-2 w-full rounded-b-md" adapt={true} info='hñlsdkvasd' cta="mx-1" textClass=' hidden'/>
             </div>
         </section>
     )
