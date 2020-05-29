@@ -44,7 +44,7 @@ const ArrowCta = ({title,info,adapt,ctaClass = '',src,containerClass = 'bg-black
         <React.Fragment>
             {titulo}
             <div className="arrow-cta__container ml-auto mr-5">
-                <img className="arrow-cta__arrow-image" src={src} alt="Arrow"/>
+                <img className="arrow-cta__arrow-image" src={src} alt={src && "Arrow"}/>
             </div>
         </React.Fragment>
       )
