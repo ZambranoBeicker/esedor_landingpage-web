@@ -38,7 +38,7 @@ const HeroInfo = (props)=>{
 const ArrowCta = ({title,info,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = ''})=>{
     let titleImg;
     const titulo = <h5 className={"mr-0 " + ctaClass}>{title}</h5>
-
+  
     if(info){
 
       titleImg = (

@@ -66,7 +66,7 @@ const Projects = () =>{
             </div>
           </section>
 
-          <div className="w-full pt-10 pb-6 my-10 bg-blue-secondary">
+          <div className="w-full pt-10 pb-6 mt-10 bg-blue-secondary">
             <h4 className="text-smibig ml-8 mt-4 mb-12">Estás listo para vender por tu tienda virtual?</h4>
               <HeroForm formClass="bg-black mt-5 md:hidden min-h-0 mx-4 py-1 rounded-t-md"/>
               <div className="w-full px-4">
