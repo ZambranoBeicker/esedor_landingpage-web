@@ -1,9 +1,9 @@
 import React from 'react';
-import {InfoParagraph,HeroForm} from './Hero.js';
+import {InfoParagraph,HeroForm} from './Hero.js'; /*Acomodar el padding-left de los elementos en tamaño 'md'*/
 
 
 const Projects = () =>{
-    
+
       return (
 
         <React.Fragment>
@@ -36,14 +36,14 @@ const Projects = () =>{
               </div>
           </section>
 
-          <div className="w-full lg:flex lg_justify-around pt-10 pb-6 mt-10 bg-blue-secondary">
-            <h4 className="text-smibig ml-8 mt-4 mb-12 md:text-4xl lg:pr-4 lg:ml-32 lg:w-5/12">Estás listo para vender por tu tienda virtual?</h4>
-              <HeroForm formClass="bg-black min-h-0 py-1 rounded-t-md" containerForm="form-container mx-auto md:ml-auto md:mr-40 lg:w-auto lg:mr-16 sm:w-56"/>
+          <div className="w-full md:flex lg:justify-around pt-10 pb-6 lg:py-20 bg-blue-secondary">
+            <h4 className="w-9/12 mx-auto md:w-6/12 text-smibig mt-4 mb-12 sm:text-2xl md:text-3xl lg:text-5xl lg:mx-auto lg:w-6/12 xl:ml-auto xl:mr-0 xl:text-left xl:pl-24 xl:pr-24 xl:w-5/12 sm:w-8/12">Estás listo para vender por tu tienda virtual?</h4>
+              <HeroForm formClass="bg-black min-h-0 py-1 px-2 rounded-t-md " containerForm="form-container md:px-0 mx-auto lg:w-auto lg:ml-0 lg:mr-16 sm:w-56"/>
           </div>
 
         </React.Fragment>
       )
-    
+
 
 
 }

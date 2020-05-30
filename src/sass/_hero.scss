@@ -16,7 +16,12 @@
 
 }
 
-.arrow-container,.form-container form{
+.form-container{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.arrow-container,.form-container,.form-container form{
   max-width: 345px;
   min-width: 280px;
 
@@ -24,12 +29,12 @@
 
 .arrow-container{
   min-height: 52px;
-  
+
 
 }
 .form-container form{
   min-height: 300px;
-  
+
 
 }
 
