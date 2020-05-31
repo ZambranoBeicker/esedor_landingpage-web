@@ -70,7 +70,7 @@ const Footer = () =>{
 
       return (
         <footer className="md:py-4 border-t py-5 px-6">
-          <div className="xl:ml-20 lg:flex w-full">
+          <div className="xl:ml-4 lg:flex w-full">
             <div className="md:mb-5 lg:mb-0">
               <img src="images/logo-header.png" alt="Logo"/>
             </div>

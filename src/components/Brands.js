@@ -5,7 +5,7 @@ const BrandImages = ({src, index})=>{
 
 
     return(
-        <div className="brand-item min-w-0 mx-2 my-4 relative lg:w-3/12">
+        <div className="brand-item min-w-0 my-4 relative lg:w-3/12">
             <img src={src} alt="brand" className={"brand brand-" + index}/>
         </div>
     )
@@ -50,12 +50,12 @@ const Brands = ()=>{
 
     if(window.innerWidth >= 1024){
       return (
-          <section className="flex flex-wrap h-screen w-full px-16">
+          <section className="flex flex-wrap h-screen w-full lg:px-8 xl:px-16">
               <div className="flex flex-wrap w-8/12">
                   {brands}
               </div>
               <div className="w-full md:w-3/12 ml-auto">
-                  <h2 className="lg:text-6xl sm:text-4xl text-semibig my-10 md:mt-32 md:mb-0">Nuestros aliados</h2>
+                  <h2 className="xl:text-6xl lg:text-5xl sm:text-4xl text-semibig my-10 md:mt-32 md:mb-0">Nuestros aliados</h2>
               </div>
           </section>
       )
