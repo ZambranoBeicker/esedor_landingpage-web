@@ -99,8 +99,8 @@ const Hero = () =>{
     return(
         <section className="min-h-0 sm:flex sm:pt-16 sm:pb-24 xl:pt-24 xl:mb-32 lg:h-screen">
             <HeroInfo />
-            <div className="">
-              <HeroForm formClass="bg-black min-h-0 sm:mx-4 py-1 rounded-t-md"/>
+            <div>
+              <HeroForm formClass="bg-black min-h-0 sm:mx-4 py-1 px-2 rounded-t-md"/>
             </div>
         </section>
     )
