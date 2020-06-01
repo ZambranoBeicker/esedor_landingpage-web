@@ -12,6 +12,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=
                 <h2 className="text-3xl xl:text-4xl w-full">{infoTitle}</h2>
             </div>
             <InfoParagraph info={info} textClass={textClass}/>
+            <ArrowCta  title="CONOZCÁMONOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
         </div>
     )
 }
