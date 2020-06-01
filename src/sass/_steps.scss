@@ -1,8 +1,13 @@
 @media screen and (min-width:"1024px"){
 
+  .img-primer{
+    max-width:60%;
+    height:60%;
+  }
+
   .img-segundo{
       top:35%;
-      left:10%;
+      left:0;
       max-width: 60%;
   }
 
@@ -12,7 +17,7 @@
 
   .img-tercer{
     max-width: 60%;
-    bottom:-235px;
+    bottom:-90px;
     right:0;
 
   }

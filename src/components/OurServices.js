@@ -71,7 +71,7 @@ const OurService = () =>{
 
     return (
         <React.Fragment>
-            <section className="block md:bg-black px-4 py-5 md:pl-16 pt-10 pb-32 w-full">
+            <section className="block md:bg-black px-4 py-5 md:pl-16 lg:pt-4 lg:pb-32 w-full">
                 <div className="text-white mb-10">
                     <h2 className="text-2xl md:text-4xl lg:text-5xl">Servicios<br></br>ecommerce</h2>
                 </div>
@@ -80,7 +80,8 @@ const OurService = () =>{
                 </div>
             </section>
             <div className="md:mx-auto md:my-40 md:w-9/12 w-full px-4 md:px-0 text-center">
-                <h2 className="text-semibig sm:text-3xl md:text-4xl xl:text-5xl">Te ayudamos a entender tu ecommerce con un enfoque omnicanal y te demostramos como funciona nuestra formula.</h2>
+                <h4 className="text-xl text-bolder mb-24">Nuestra Fórmula</h4>
+                <h2 className="text-semibig sm:text-3xl md:text-4xl xl:text-5xl">Te ayudamos a entender tu ecommerce con un enfoque omnicanal</h2>
                 <div className="arrows min-w-0 flex">
                   <div className="w-4/12 xl:w-4/12 ml-auto hidden lg:block mr-8">
                     <ArrowCta  title="OMITIR LOS PASOS" src="images/omitir.png" containerClass="md:w-11/12 rounded-md px-2 my-20 py-3 pt-3 text-shadow-second" ctaClass="ml-5 text-blue" adapt={true}/>

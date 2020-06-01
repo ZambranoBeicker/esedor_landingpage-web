@@ -56,7 +56,11 @@ const stepsContent = (data, last)=>{
 
         <div className="relative py-20 my-56 ">
           <div className="mx-auto">
-              <h4 className="text-xs md:text-sm text-center font-bold">{data[0].stepTitle + ' PASO'}</h4>
+            <div className="flex h-6">
+                <img className="w-10 h-10 rota-180 mx-auto" src="images/steps_arrows.png" alt="steps"/>
+                <h4 className="text-xs w-2/3 pt-3 mx-auto md:text-sm text-center font-bold">{data[0].stepTitle + ' PASO'}</h4>
+                <img className="w-10 h-10 mx-auto" src="images/steps_arrows.png" alt="steps"/>
+            </div>
               <img className="w-full my-10 sm:my-16" src={data[0].img} alt={data[0].stepTitle}/>
               <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-2xl md:text-3xl md:mx-0">{data[0].infoTitle}</h2>
           </div>
@@ -85,7 +89,7 @@ const Steps = () =>{
             img:"images/man_top.png",
             containerClass:"ml-auto w-11/12 py-10 mr-10 relative ",
             orientate:true,
-            imgClass:""
+            imgClass:"img-primer"
 
         },
         {
@@ -138,7 +142,7 @@ const Steps = () =>{
         <section id="steps" className="min-h-0 md:px-16 lg:px-0">
             {stepsContent(data)}
             <div className="hidden lg:block">
-              {stepsContent(lastData,true)}
+              {stepsContent(lastData,true)}s
             </div>
         </section>
     )
