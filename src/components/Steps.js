@@ -43,12 +43,12 @@ const stepsContent = (data)=>{
 
         <div className="relative py-20 my-56 ">
           <div className="mx-auto">
-              <h4 className="text-xs text-center font-bold">{data[0].stepTitle + ' PASO'}</h4>
+              <h4 className="text-xs md:text-sm text-center font-bold">{data[0].stepTitle + ' PASO'}</h4>
               <img className="w-full my-10 sm:my-16" src={data[0].img} alt={data[0].stepTitle}/>
-              <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-2xl md:text-3xl">{data[0].infoTitle}</h2>
+              <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-2xl md:text-3xl md:mx-0">{data[0].infoTitle}</h2>
           </div>
-          <InfoParagraph info={data[0].info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto w-11/12 text-xs sm:text-base md:text-lg"/>
-          <ArrowCta  title="CONOZCÁMONOS" containerClass="rounded-md mx-auto sm:ml-6 my-10 bg-blue py-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
+          <InfoParagraph info={data[0].info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>
+          <ArrowCta  title="CONOZCÁMONOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
         </div>
         )
 
@@ -122,9 +122,9 @@ const Steps = () =>{
 
 
     return(
-        <section id="steps" className="min-h-0">
+        <section id="steps" className="min-h-0 md:px-16">
             {stepsContent(data)}
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               {stepsContent(lastData)}
             </div>
         </section>

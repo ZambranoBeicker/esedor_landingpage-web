@@ -80,7 +80,7 @@ const Footer = () =>{
                 {info.map((item,index) => <FooterInfo key={index} title={item.title} pgraph={item.pgraph} /> )}
 
               </div>
-              <div className="pb-5 pt-4 px-4 md:w-3/12 lg:w-3/12 lg:px-8 md:p-0 border-b md:border-none">
+              <div className="pb-5 pt-4 px-4 md:w-3/12 lg:w-3/12 lg:pl-20 md:p-0 border-b md:border-none">
                 <h4 className="text-gray mb-5 ml-auto">Sociales</h4>
                 <div className="flex md:block">
                   <p className="mr-4">Linkedin</p>

@@ -1,5 +1,4 @@
 import React from 'react';
-// import {useState,useEffect} from 'react';
 import {InfoParagraph,ArrowCta} from './Hero.js';
 
 
@@ -37,26 +36,6 @@ const showServices = (data,classes)=>{
 }
 
 const OurService = () =>{
-    // const [styleArrow,setStyleArrow] = useState('arrow-cta')
-    // const [styleContainer,setStyleContainer] = useState('md:fixed md:px-12 md:w-4/12 fixed-container')
-
-
-
-    // useEffect(()=>{
-    //   window.addEventListener('scroll',handleScroll)
-    // },[])
-
-    // useEffect(()=>{
-    //   if(window.scrollY < 1350){
-    //     window.addEventListener('scroll',handleScroll)
-
-    //   }
-
-    //   if(window.scrollY > 1450){
-    //     window.removeEventListener("scroll",handleScroll)
-
-    //   }
-    // })
 
     const data = [
         {
@@ -90,39 +69,11 @@ const OurService = () =>{
         containerClass:"text-white my-3"
     }
 
-    // const handleScroll = ()=>{
-
-    //   if(window.scrollY < 100){
-    //     setStyleArrow('arrow-cta')
-    //     setStyleContainer('md:fixed md:px-12 md:w-4/12 fixed-container')
-
-
-    //   }else if(window.scrollY > 100 && window.scrollY < 1050){
-    //     setStyleArrow('arrow-contract contract-hover')
-    //     setStyleContainer('md:fixed md:px-12 md:w-4/12 moved-container')
-    //   }else if(window.scrollY > 1050 && window.scrollY < 1350 ){
-    //     setStyleContainer('md:w-4/12 md:mx-auto md:mt-20 md:px-8 insert-out')
-
-
-
-    //   }else if(window.scrollY > 1350){
-    //     setStyleContainer('md:w-4/12 md:mx-auto md:mt-20 md:px-3 insert-in')
-
-    //     setStyleArrow('arrow-contract')
-    //   }else{
-    //     setStyleContainer('md:fixed md:w-4/12 px-12')
-
-    //   }
-    // }
-
-
-
-
     return (
         <React.Fragment>
             <section className="block md:bg-black px-4 py-5 md:pl-16 pt-10 pb-32 w-full">
                 <div className="text-white mb-10">
-                    <h2 className="text-2xl md:text-4xl lg:text-5xl">Nuestros Servicios</h2>
+                    <h2 className="text-2xl md:text-4xl lg:text-5xl">Servicios para tu<br></br> tienda virtual</h2>
                 </div>
                 <div className="md:flex md:flex-wrap">
                     {showServices(data,classes)}
@@ -130,12 +81,12 @@ const OurService = () =>{
             </section>
             <div className="md:mx-auto md:my-40 md:w-9/12 w-full px-4 md:px-0 text-center">
                 <h2 className="text-semibig sm:text-3xl md:text-4xl xl:text-5xl">Te ayudamos a entender tu ecommerce con un enfoque omnicanal y te demostramos como funciona nuestra formula.</h2>
-                <div className="min-w-0 flex">
-                  <div className="w-5/12 xl:w-4/12 ml-auto hidden lg:block mr-8">
-                    <ArrowCta  title="OMITIR PASOS" containerClass="md:w-11/12 rounded-md my-20 bg-blue py-2 text-shadow" ctaClass="ml-5" adapt={true}/>
+                <div className="arrows min-w-0 flex">
+                  <div className="w-4/12 xl:w-4/12 ml-auto hidden lg:block mr-8">
+                    <ArrowCta  title="OMITIR LOS PASOS" src="images/omitir.png" containerClass="md:w-11/12 rounded-md px-2 my-20 py-3 pt-3 text-shadow-second" ctaClass="ml-5 text-blue" adapt={true}/>
                   </div>
-                  <div className="min-w-0 lg:w-5/12 xl:w-4/12 mx-auto lg:mr-auto lg:ml-8">
-                    <ArrowCta  title="CONOZCÁMONOS" containerClass="md:w-11/12 rounded-md my-20 bg-blue py-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
+                  <div className="min-w-0 md:w-6/12 lg:w-4/12 xl:w-4/12 mx-auto lg:mr-auto lg:ml-8">
+                    <ArrowCta  title="CONOZCÁMONOS" containerClass="md:w-11/12 rounded-md my-20 bg-blue px-2 py-3 pt-3 text-shadow " ctaClass="ml-5 md:mr-5" src="images/arrow_meet.png" adapt={true}/>
                   </div>
                 </div>
 

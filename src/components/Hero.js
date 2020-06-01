@@ -89,7 +89,7 @@ const data = [
           )
         })}
       </form>
-        <ArrowCta title="CONOZCÁMONOS" src="images/arrow_meet.png" containerClass="bg-blue py-1 pl-2 sm:w-56 rounded-b-md" adapt={true} cta="ml-1"/>
+        <ArrowCta title="CONOZCÁMONOS" src="images/arrow_meet.png" containerClass="bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md" adapt={true} cta="ml-1"/>
     </div>
   )
 }

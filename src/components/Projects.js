@@ -13,10 +13,10 @@ const Projects = () =>{
             </div>
 
 
-            <div className="bg-black p-4 rounded-b-md lg:w-11/12 lg:px-16 lg:pt-10">
+            <div className="bg-black p-4 rounded-b-md lg:w-11/12 md:px-16 lg:pt-10">
               <div className="text-white lg:w-1/3">
                 <h4 className="text-sm">Proyectos selecionados</h4>
-                <h2 className="text-semibig mt-4 lg:text-5xl lg:mt-5">NIUBIZ</h2>
+                <h2 className="text-semibig mt-4 md:text-3xl lg:text-5xl lg:mt-5">NIUBIZ</h2>
                 <InfoParagraph
                   info="Est occaecat cillum sit dolor anim esse elit adipisicing pariatur cillum ex aliquip esse aute. Velit tempor nisi qui cupidatat aliquip veniam id laborum cupidatat et. Incididunt fugiat aliquip et ut fugiat enim."
                   textClass="md:text-sm md:leading-8 max-w-full text-xs"
@@ -28,7 +28,7 @@ const Projects = () =>{
                 <img src="images/arrow-2.png" alt="arrow-2"/>
               </div>
               <div className="mt-5 ml-auto text-white w-40 text-xs text-bold text-right lg:hidden">
-                 <a href="#this" className="border-b border-black hover:border-white">VISITAR WEB</a>
+                 <a href="#this" className="border-b border-black hover:border-white md:text-sm">VISITAR WEB</a>
               </div>
             </div>
               <div className="projects__image hidden lg:block absolute w-8/12 right-0">
