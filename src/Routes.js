@@ -1,0 +1,18 @@
+import React from 'react';
+import {Route,BrowserRouter, Switch} from 'react-router-dom';
+import App from './App';
+import Gracias from './Gracias';
+
+const Routes = ()=>{
+
+  return(
+   <BrowserRouter>
+    <Switch>
+      <Route path="/" exact component={App}/>
+      <Route path="/gracias" exact component={Gracias}/>
+    </Switch>
+   </BrowserRouter>
+  )
+}
+
+export default Routes;

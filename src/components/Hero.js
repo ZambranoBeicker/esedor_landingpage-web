@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const DynamicFlex = (props)=>{
 
@@ -37,7 +38,9 @@ const HeroInfo = (props)=>{
 
 const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = ''})=>{
     let titleImg;
-    const titulo = <h5 className={"mr-0 " + ctaClass}>{title}</h5>
+    // const titulo = <h5 className={"mr-0 " + ctaClass}>{title}</h5>
+
+    const titulo = <Link className={"mr-0 " + ctaClass} to="/gracias">{title}</Link>
 
 
       titleImg = (
