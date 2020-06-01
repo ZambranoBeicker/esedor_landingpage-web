@@ -17,7 +17,7 @@ const DynamicFlex = (props)=>{
     )
 }
 
-const InfoParagraph = ({info,textClass = 'text-xs sm:text-sm sm:pr-4 md:text-lg lg:text-xl xl:text-2xl md:ml-2', containerClass = 'w-11/12 md:w-10/12 my-3 md:my-5'})=>{
+const InfoParagraph = ({info,textClass = 'text-xs sm:text-sm sm:pr-4 md:text-lg lg:text-xl xl:text-2xl md:ml-2 text-gray-secondary', containerClass = 'w-11/12 md:w-10/12 my-3 md:my-5'})=>{
     return(
 
         <div className={containerClass}>
@@ -38,7 +38,7 @@ const HeroInfo = (props)=>{
 const ArrowCta = ({title,info,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = ''})=>{
     let titleImg;
     const titulo = <h5 className={"mr-0 " + ctaClass}>{title}</h5>
-  
+
 
       titleImg = (
         <React.Fragment>
@@ -97,7 +97,7 @@ const data = [
 const Hero = () =>{
 
     return(
-        <section className="min-h-0 sm:flex sm:pt-16 sm:pb-24 xl:pt-24 xl:mb-32 lg:h-screen">
+        <section className="min-h-0 sm:flex sm:pt-16 sm:pb-24 xl:pt-24 xl:mb-32 lg:h-screen bg-blue-third">
             <HeroInfo />
             <div>
               <HeroForm formClass="bg-black min-h-0 sm:mx-4 py-1 px-2 rounded-t-md"/>

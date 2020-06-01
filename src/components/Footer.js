@@ -116,7 +116,7 @@ const Footer = () =>{
             <img src="images/logo-header.png" alt="Logo"/>
           </div>
           <div className="text-gray-secondary px-4 sm:pl-10 py-4 md:px-0 border-t border-b mb-6 mt-10">
-            <p className="text-sm">© 2018 ESEDOR, todos los derechos reservados.</p>
+            <p className="text-sm">© 2020 ESEDOR, todos los derechos reservados.</p>
           </div>
         </footer>
       )

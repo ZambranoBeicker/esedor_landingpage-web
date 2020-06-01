@@ -39,28 +39,28 @@ const OurService = () =>{
 
     const data = [
         {
-            title: "Ecommerce y móvil app",
-            info: "Omnicanalidad, recorrido de cliente, pasarela de pago, configuración y seguimiento de funnel"
+            title: "Desarrollo a medida",
+            info: "Adapta tu modelo de negocio por completo en una plataforma personalizada y escalable."
         },
         {
-            title: "Experiencia de usuario",
-            info: "Investigación, definición de experiencia, diseño de interacción y diseño visual (UI)."
+            title: "Desarrollo de aplicación móvil",
+            info: "Lleva tu modelo de negocio al siguiente nivel desarrollando una app para iOS y Android"
         },
         {
-            title: "Desarrollo y diseño web",
-            info: "Páginas visuales, código creativo, frontend, diseño multidispositivo"
+            title: "Desarrollo de código abierto",
+            info: "Integra tu tienda virtual con WooCommerce, Magento, Prestashop, Shopify, Wordpress."
         },
         {
-            title: "Nuevas realidades digitales",
-            info: "Realidad aumentada(AR), realidad virtual(VR), Goby"
+            title: "Experiencia de cliente(CX)",
+            info: "Atiende mejor a tu cliente en todo el recorrido de la compra aumentando tu funnel con un enfoque omnicanal."
         },
         {
-            title: "Fabrica de software",
-            info: "Desarrollo Andriod y iOS, Sistemas ERP y CRM, CI/CD - Despliegue e integración continua"
+            title: "Diseño visual web y app",
+            info: "Alinea la identidad de tu marca creando tu propia guía de estilos visuales en ordenador y móvil."
         },
         {
-            title: "Sistemas de diseño",
-            info: "Auditoria UI, guía de estilos, componentes y repositorio online"
+            title: "Sistema de diseño",
+            info: "Aprende cómo crecer con tu producto digital creando un repositorio virtual de UX, desarrollo y branding."
         },
     ]
 
@@ -73,7 +73,7 @@ const OurService = () =>{
         <React.Fragment>
             <section className="block md:bg-black px-4 py-5 md:pl-16 pt-10 pb-32 w-full">
                 <div className="text-white mb-10">
-                    <h2 className="text-2xl md:text-4xl lg:text-5xl">Servicios para tu<br></br> tienda virtual</h2>
+                    <h2 className="text-2xl md:text-4xl lg:text-5xl">Servicios<br></br>ecommerce</h2>
                 </div>
                 <div className="md:flex md:flex-wrap">
                     {showServices(data,classes)}
