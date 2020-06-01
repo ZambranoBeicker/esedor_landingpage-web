@@ -36,11 +36,11 @@ const HeroInfo = (props)=>{
     )
 }
 
-const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = ''})=>{
+const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = ''}, route = "/gracias")=>{
     let titleImg;
     // const titulo = <h5 className={"mr-0 " + ctaClass}>{title}</h5>
 
-    const titulo = <Link className={"mr-0 " + ctaClass} to="/gracias">{title}</Link>
+    const titulo = <Link className={"mr-0 " + ctaClass} to={route}>{title}</Link>
 
 
       titleImg = (
