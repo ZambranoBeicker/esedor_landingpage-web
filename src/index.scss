@@ -23,6 +23,10 @@ code {
 
 .bg-blue{
   background: #193EFF;
+  transition: .12s;
+  &:hover{
+    background: #193ECF;
+  }
 }
 .bg-blue-secondary{
   background: #C7D0FF;

@@ -35,7 +35,7 @@ const HeroInfo = (props)=>{
     )
 }
 
-const ArrowCta = ({title,info,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = ''})=>{
+const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = ''})=>{
     let titleImg;
     const titulo = <h5 className={"mr-0 " + ctaClass}>{title}</h5>
 
@@ -51,7 +51,7 @@ const ArrowCta = ({title,info,adapt,ctaClass = '',src,containerClass = 'bg-black
 
 
     return (
-        <div className={"arrow-container pt-1 text-white sm:mx-auto text-shadow " + containerClass}>
+        <div className={"arrow-container pt-1 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
             <DynamicFlex flex={adapt}>
                 {titleImg}
             </DynamicFlex>
@@ -97,7 +97,7 @@ const data = [
 const Hero = () =>{
 
     return(
-        <section className="min-h-0 sm:flex sm:pt-16 sm:pb-24 xl:pt-24 xl:mb-32 lg:h-screen bg-blue-third">
+        <section className="min-h-0 sm:flex sm:pt-16 sm:pb-24 xl:pt-16 lg:h-screen bg-blue-third">
             <HeroInfo />
             <div>
               <HeroForm formClass="bg-black min-h-0 sm:mx-4 py-1 px-2 rounded-t-md"/>

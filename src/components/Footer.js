@@ -90,8 +90,8 @@ const Footer = () =>{
               </div>
             </div>
           </div>
-          <div className=" lg:py-4 border-t border-b mb-6 mt-10">
-            <p>© 2018 ESEDOR, todos los derechos reservados.</p>
+          <div className=" lg:py-4 border-t border-b mb-6 mt-10 lg:ml-4">
+            <p>© 2020 ESEDOR, todos los derechos reservados.</p>
           </div>
         </footer>
       )

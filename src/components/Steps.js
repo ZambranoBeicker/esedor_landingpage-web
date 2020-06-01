@@ -22,17 +22,10 @@ const stepsContent = (data, last)=>{
   if(last){
     return (
 
-          <div className={"flex my-56 " + data[0].containerClass}>
-              {setTitles(data,"text-md leading-loose", data[0].stepTitle.toLowerCase() + " w-6/12")}
+          <div className={"flex mb-20 " + data[0].containerClass}>
+              {setTitles(data[0],"text-md leading-loose lg:mb-24", data[0].stepTitle.toLowerCase() + " w-6/12")}
               <img className={data[0].imgClass} src={data[0].img} alt={data[0].stepTitle}/>
           </div>
-
-          // return(
-          //     <div key={index * 4} className={"relative flex py-20 my-56 " + steps.containerClass}>
-          //         <img className={steps.imgClass} src={steps.img} alt={steps.stepTitle}/>
-          //         {setTitles(steps,"text-md leading-loose",steps.stepTitle.toLowerCase() + " mb-20 w-4/12 ml-auto relative z-50",index)}
-          //     </div>
-          //     )
 
           )
 }
@@ -43,14 +36,14 @@ const stepsContent = (data, last)=>{
         if(steps.orientate){
 
             return(
-                <div key={index * 3} className={"flex my-56 " + steps.containerClass}>
+                <div key={index * 3} className={"flex mt-40 mb-20 " + steps.containerClass}>
                     {setTitles(steps,"text-md leading-loose", steps.stepTitle.toLowerCase() + " w-6/12",index)}
                     <img className={steps.imgClass} src={steps.img} alt={steps.stepTitle}/>
                 </div>
                 )
             }else{
             return(
-                <div key={index * 4} className={"relative flex py-20 my-56 " + steps.containerClass}>
+                <div key={index * 4} className={"relative flex py-20 mt-40 mb-20 " + steps.containerClass}>
                     <img className={steps.imgClass} src={steps.img} alt={steps.stepTitle}/>
                     {setTitles(steps,"text-md leading-loose",steps.stepTitle.toLowerCase() + " mb-20 w-4/12 ml-auto relative z-50",index)}
                 </div>
