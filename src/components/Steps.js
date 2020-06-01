@@ -16,7 +16,26 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=
     )
 }
 
-const stepsContent = (data)=>{
+const stepsContent = (data, last)=>{
+
+  if(last){
+    return (
+
+          <div className={"flex my-56 " + data[0].containerClass}>
+              {setTitles(data,"text-md leading-loose", data[0].stepTitle.toLowerCase() + " w-6/12")}
+              <img className={data[0].imgClass} src={data[0].img} alt={data[0].stepTitle}/>
+          </div>
+
+          // return(
+          //     <div key={index * 4} className={"relative flex py-20 my-56 " + steps.containerClass}>
+          //         <img className={steps.imgClass} src={steps.img} alt={steps.stepTitle}/>
+          //         {setTitles(steps,"text-md leading-loose",steps.stepTitle.toLowerCase() + " mb-20 w-4/12 ml-auto relative z-50",index)}
+          //     </div>
+          //     )
+
+          )
+}
+
 
     const content = data.map((steps,index)=>{
 
@@ -122,10 +141,10 @@ const Steps = () =>{
 
 
     return(
-        <section id="steps" className="min-h-0 md:px-16">
+        <section id="steps" className="min-h-0 md:px-16 lg:px-0">
             {stepsContent(data)}
             <div className="hidden lg:block">
-              {stepsContent(lastData)}
+              {stepsContent(lastData,true)}
             </div>
         </section>
     )
