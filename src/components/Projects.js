@@ -7,13 +7,13 @@ const Projects = () =>{
       return (
 
         <React.Fragment>
-          <section className="min-h-0 container-none lg:flex relative">
+          <section className="min-h-0 container-none lg:flex relative xl:min-h-screen">
             <div className="w-full lg:hidden">
               <img className="rounded-t-md" src="images/projects.png" alt="Proyectos"/>
             </div>
 
 
-            <div className="bg-black p-4 rounded-b-md lg:w-11/12 md:px-16 lg:pt-10">
+            <div className="bg-black p-4 rounded-b-md lg:w-11/12 xl:w-10/12 md:px-16 xl:min-h-0 xl:pb-10 xl:pt-32 lg:pt-10">
               <div className="text-white lg:w-1/3">
                 <h4 className="text-sm">Proyectos selecionados</h4>
                 <h2 className="text-semibig mt-4 md:text-3xl lg:text-5xl lg:mt-5">NIUBIZ</h2>
@@ -23,7 +23,7 @@ const Projects = () =>{
                   containerClass="md:pr-4 md:my-10 mr-auto pr-4 my-5 mr-auto"
                   />
               </div>
-              <div className="hidden lg:block my-32 text-white">
+              <div className="hidden lg:block my-32 text-white xl:my-40">
                 <h5 className="cursor-auto projects__arrow-cta">SIGUIENTE</h5>
                 <img src="images/arrow-2.png" alt="arrow-2"/>
               </div>
@@ -32,7 +32,7 @@ const Projects = () =>{
               </div>
             </div>
               <div className="projects__image hidden lg:block absolute w-8/12 right-0">
-                <img className="" src="images/projects.png" alt="Proyectos"/>
+                <img src="images/projects.png" alt="Proyectos"/>
               </div>
           </section>
 

@@ -1,6 +1,6 @@
 .projects__image{
 
-  top:8%;
+  top:18%;
 }
 
 
@@ -8,4 +8,32 @@
 
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 10px;
+}
+
+@media screen and (min-width:"1470px"){
+
+  .projects__image{
+    top:15%;
+    max-width: 65%;
+
+  }
+
+}
+@media screen and (min-width:"1600px"){
+
+  .projects__image{
+    top:11%;
+    max-width: 65%;
+
+  }
+
+}
+@media screen and (min-width:"1770px"){
+
+  .projects__image{
+    top:12%;
+    max-width: 55%;
+
+  }
+
 }

@@ -7,7 +7,7 @@ const DynamicFlex = (props)=>{
     if(props.flex){
         container = <div className="flex my-2 max-w-full">{props.children}</div>
     }else{
-        container = <div className="block my-2 max-w-full">{props.children}</div>
+        container = <div className="flex my-2 max-w-full justify-around">{props.children}</div>
     }
 
 
@@ -32,16 +32,20 @@ const HeroInfo = (props)=>{
         <div className="ml-4 md:ml-16 md:mr-20 md:w-8/12 lg:w-7/12 sm:pr-4">
             <h1 className="text-2xl font-semibold sm:mb-4 lg:mb-8 sm:text-3xl lg:text-5xl xl:text-6xl sm:font-medium w-full">Estás listo para vender por tu tienda virtual?</h1>
             <InfoParagraph info="Creamos soluciones ecommerce en todas las industrias para  empresas grandes, pequeñas y startups."/>
+            <ArrowCta  title="Llámanos (+51)773 8905" containerClass="rounded-md hidden lg:block lg:w-32 mx-auto md:mx-0 sm:ml-6 my-10 bg-blue text-shadow " ctaClass="mr-auto text-bold" src="images/llamada.png" adapt={false}/>
+
         </div>
     )
 }
 
-const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = ''}, route = "/gracias")=>{
+const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = ''})=>{
     let titleImg;
-    // const titulo = <h5 className={"mr-0 " + ctaClass}>{title}</h5>
+    const titulo = <Link className={"mr-0 " + ctaClass} to="/gracias">{title}</Link>
 
-    const titulo = <Link className={"mr-0 " + ctaClass} to={route}>{title}</Link>
 
+
+
+    if(adapt){
 
       titleImg = (
         <React.Fragment>
@@ -51,10 +55,21 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
             </div>
         </React.Fragment>
       )
+    }else{
+      titleImg = (
+        <React.Fragment>
+            <div className="arrow-cta__container ml-auto mr-5">
+                <img className="arrow-cta__arrow-image" src={src} alt={src && "Arrow"}/>
+            </div>
+            {titulo}
+        </React.Fragment>
+      )
+
+    }
 
 
     return (
-        <div className={"arrow-container pt-1 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+        <div id="Link" className={"arrow-container pt-1 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
             <DynamicFlex flex={adapt}>
                 {titleImg}
             </DynamicFlex>
@@ -80,19 +95,22 @@ const data = [
   ]
 
   return(
-    <div className={"px-4 " + containerForm}>
+    <div className={"px-4 " + containerForm} action="?" method="POST" >
       <form className={formClass + " sm:w-56"}>
         {data.map(({label},index)=>{
 
           return(
             <div key={index * (10 * 2)} className="input-container relative container-none my-4">
               <label className="absolute text-xs">{label}</label>
-              <input className="block mx-auto rounded-t-md w-11/12 h-12 text-xs pl-2 mt-6 pt-4"/>
+              <input className="block mx-auto rounded-t-md w-11/12 h-12 text-sm pl-2 mt-6 pt-4"/>
             </div>
           )
         })}
+        
       </form>
-        <ArrowCta title="CONOZCÁMONOS" src="images/arrow_meet.png" containerClass="bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md" adapt={true} cta="ml-1"/>
+        <div className="g-recaptcha" data-sitekey="6LcTh_8UAAAAAOHlUrf8L26iAVs-8AoJR1N4UAkY">
+        </div>
+        <ArrowCta title="CONVERSEMOS" src="images/arrow_meet.png" containerClass="bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md" adapt={true} cta="ml-1"/>
     </div>
   )
 }
@@ -103,6 +121,7 @@ const Hero = () =>{
         <section className="min-h-0 sm:flex sm:pt-16 sm:pb-24 xl:pt-16 lg:h-screen bg-blue-third">
             <HeroInfo />
             <div>
+              <h4 className="text-bold semibig hidden lg:block my-4 px-16">Solicita más información</h4>
               <HeroForm formClass="bg-black min-h-0 sm:mx-4 py-1 px-2 rounded-t-md"/>
             </div>
         </section>

@@ -12,7 +12,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=
                 <h2 className="text-3xl xl:text-4xl w-full">{infoTitle}</h2>
             </div>
             <InfoParagraph info={info} textClass={textClass}/>
-            <ArrowCta  title="CONOZCÁMONOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
+            <ArrowCta  title="CONVERSEMOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
         </div>
     )
 }
@@ -65,7 +65,7 @@ const stepsContent = (data, last)=>{
               <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-2xl md:text-3xl md:mx-0">{data[0].infoTitle}</h2>
           </div>
           <InfoParagraph info={data[0].info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>
-          <ArrowCta  title="CONOZCÁMONOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
+          <ArrowCta  title="CONVERSEMOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
         </div>
         )
 
