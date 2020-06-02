@@ -18,7 +18,7 @@ const DynamicFlex = (props)=>{
     )
 }
 
-const InfoParagraph = ({info,textClass = 'text-xs sm:text-sm sm:pr-4 md:text-lg lg:text-xl xl:text-2xl md:ml-2 text-gray-secondary', containerClass = 'w-11/12 md:w-10/12 my-3 md:my-5'})=>{
+const InfoParagraph = ({info,textClass = 'text-xs sm:text-sm sm:pr-4 md:p-0  md:text-base lg:text-xl xl:text-2xl md:ml-2 text-gray-secondary', containerClass = 'w-11/12 md:w-full my-3 md:my-5'})=>{
     return(
 
         <div className={containerClass}>
@@ -29,19 +29,28 @@ const InfoParagraph = ({info,textClass = 'text-xs sm:text-sm sm:pr-4 md:text-lg 
 
 const HeroInfo = (props)=>{
     return (
-        <div className="ml-4 md:ml-16 md:mr-20 md:w-8/12 lg:w-7/12 sm:pr-4">
+        <div className="ml-4 md:ml-10 md:mr-10 lg:ml-16 md:w-9/12 lg:w-7/12 sm:pr-4">
             <h1 className="text-2xl font-semibold sm:mb-4 lg:mb-8 sm:text-3xl lg:text-5xl xl:text-6xl sm:font-medium w-full">Estás listo para vender por tu tienda virtual?</h1>
             <InfoParagraph info="Creamos soluciones ecommerce en todas las industrias para  empresas grandes, pequeñas y startups."/>
-            <ArrowCta  title="Llámanos (+51)773 8905" containerClass="rounded-md hidden lg:block lg:w-32 mx-auto md:mx-0 sm:ml-6 my-10 bg-blue text-shadow " ctaClass="mr-auto text-bold" src="images/llamada.png" adapt={false}/>
+            <ArrowCta  title="Llámanos (+51)773 8905" containerClass="rounded-md hidden lg:block lg:w-32 mx-auto md:mx-0 sm:ml-6 my-10 bg-blue text-shadow " ctaClass="mr-auto" src="images/llamada.png" adapt={false}/>
 
         </div>
     )
 }
 
-const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = ''})=>{
+const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = '', route = "base"})=>{
     let titleImg;
-    const titulo = <Link className={"mr-0 " + ctaClass} to="/gracias">{title}</Link>
+    const tituloBase = <Link className={"mr-0 font-bold " + ctaClass} to="/gracias">{title}</Link>
+    const tituloGracias = <Link className={"mr-0 font-bold " + ctaClass} to="/">{title}</Link>
 
+    let titulo;
+
+    if(route === "base"){
+      titulo = tituloBase
+    }else if(route === "gracias"){
+      titulo = tituloGracias
+
+    }
 
 
 

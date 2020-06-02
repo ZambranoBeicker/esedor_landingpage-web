@@ -4,7 +4,7 @@ const FooterInfo = ({pgraph,title}) =>{
 
   return(
         <React.Fragment>
-          <div className="pb-5 pt-4 pl-4 pr-24 sm:pl-10 md:p-0 border-b md:border-none md:mr-8 md:w-5/12 lg:w-auto md:ml-2">
+          <div className="footer__items pb-5 pt-4 pl-4 pr-24 sm:pl-10 md:p-0 border-b md:border-none md:mr-8 md:w-5/12 lg:w-auto xl:w-6/12 md:ml-2">
             <h4 className="text-gray mb-5 ml-auto md:ml-0 md:w-full lg:w-1/3">{title}</h4>
             {pgraph.map((data,index)=>{
 
@@ -69,18 +69,18 @@ const Footer = () =>{
     if(window.innerWidth >= 767){
 
       return (
-        <footer className="md:py-4 border-t py-5 px-6">
-          <div className="xl:ml-4 lg:flex w-full">
-            <div className="md:mb-5 lg:mb-0">
+        <footer className="footer md:py-4 border-t py-5 px-6">
+          <div className="footer__main-content xl:ml-4 lg:flex w-full">
+            <div className="footer__image md:mb-5 lg:mb-0">
               <img src="images/logo-header.png" alt="Logo"/>
             </div>
-            <div className="flex-wrap flex lg:flex-no-wrap lg:min-w-0">
+            <div className="footer__item-container flex-wrap flex lg:flex-no-wrap lg:min-w-0">
 
-              <div className="flex min-w-0 md:justify-around md:w-9/12 xl:w-8/12 lg:ml-8">
+              <div className=" flex min-w-0 md:justify-around md:w-9/12 xl:w-8/12 lg:ml-8">
                 {info.map((item,index) => <FooterInfo key={index} title={item.title} pgraph={item.pgraph} /> )}
 
               </div>
-              <div className="pb-5 pt-4 px-4 md:w-3/12 lg:w-3/12 lg:pl-20 md:p-0 border-b md:border-none">
+              <div className="footer__sociales pb-5 pt-4 px-4 md:w-3/12 lg:w-3/12 lg:pl-20 md:p-0 border-b md:border-none">
                 <h4 className="text-gray mb-5 ml-auto">Sociales</h4>
                 <div className="flex md:block">
                   <p className="mr-4">Linkedin</p>

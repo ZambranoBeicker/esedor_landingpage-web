@@ -83,9 +83,9 @@ const Steps = () =>{
 
     const data = [
         {
-            info: "Entendemos a tu usuario usando un set de disciplinas de investigación.",
+            info: "Identificamos cuando, donde y como compra tu cliente usando un set de disciplinas de investigación CX.",
             stepTitle:"PRIMER",
-            infoTitle:"Agregamos valor a tu negocio y estructuramos el problema",
+            infoTitle:"Agregamos valor a tu negocio y ofrecemos experiencias excepcionales",
             img:"images/man_top.png",
             containerClass:"ml-auto w-11/12 py-10 mr-10 relative ",
             orientate:true,
@@ -93,7 +93,7 @@ const Steps = () =>{
 
         },
         {
-            info: ["Creamos versiones de escritorio, tablets y dispositivos móviles, plasmados en el prototipo de UX en ",<strong key={'strong1'}>Figma</strong>],
+            info:["Creamos versiones interactivas de escritorio, tablet y dispositivo móvil de tu tienda virtual, plasmados en el prototipo de UX en ",<strong className="strong1">Figma</strong>],
             stepTitle:"SEGUNDO",
             infoTitle:"Pensamos en la lógica y creamos un prototipo",
             img:"images/man_left.png",
@@ -103,9 +103,9 @@ const Steps = () =>{
 
         },
         {
-            info: ["En esta etapa le damos personalidad a tu producto creando una guía de estilos visuales y si deseas escalar un ",<strong key={'strong2'}>sistema de diseño</strong>],
+            info: ["Le damos la identidad visual de tu marca creando una guía de estilos visuales y si deseas escalar implementamos un ",<strong key={'strong2'}>sistema de diseño</strong>],
             stepTitle:"TERCER",
-            infoTitle:"Diseñamos el producto digital y creamos la estetica",
+            infoTitle:"Diseñamos tu nueva tienda virtual y alineamos la estética",
             img:"images/man_bottom.png",
             imgClass:"absolute img-tercer",
             containerClass:"w-11/12 ml-auto mr-10 relative ",

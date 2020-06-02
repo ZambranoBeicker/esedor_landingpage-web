@@ -1,0 +1,24 @@
+@media screen and (min-width:"1500px"){
+.footer{
+
+  padding-left: 5em;
+  padding-right: 5em;
+
+    &__item-container{
+      width: 90%;
+      margin-left:7em;
+      margin-right:auto;
+    }
+
+    &__items{
+      margin-left:10%;
+    }
+
+    &__sociales{
+
+      padding-left: 8%;
+    }
+
+  }
+
+}

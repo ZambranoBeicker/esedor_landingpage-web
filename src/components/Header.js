@@ -8,7 +8,7 @@ const Logo = (props) =>{
   }
 
     return (
-        <div className="header__logo-container ml-1 sm:ml-4 md:ml-16 md:min-w-0">
+        <div className="header__logo-container ml-1 sm:ml-4 md:ml-10 lg:ml-16 md:min-w-0">
             <img src={imgInfo.src} alt={imgInfo.alt}/>
         </div>
     )
