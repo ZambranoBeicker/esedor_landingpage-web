@@ -1,23 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const DynamicFlex = (props)=>{
-
-    let container = null;
-    if(props.flex){
-        container = <div className="flex my-2 max-w-full">{props.children}</div>
-    }else{
-        container = <div className="flex my-2 max-w-full justify-around">{props.children}</div>
-    }
-
-
-    return(
-        <div>
-          {container}
-        </div>
-    )
-}
-
 const InfoParagraph = ({info,textClass = 'text-xs sm:text-sm sm:pr-4 md:p-0  md:text-base lg:text-xl xl:text-2xl md:ml-2 text-gray-secondary', containerClass = 'w-11/12 md:w-full my-3 md:my-5'})=>{
     return(
 
@@ -40,18 +23,7 @@ const HeroInfo = (props)=>{
 
 const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = '', route = "base"})=>{
     let titleImg;
-    const tituloBase = <Link className={"mr-0 font-bold " + ctaClass} to="/gracias">{title}</Link>
-    const tituloGracias = <Link className={"mr-0 font-bold " + ctaClass} to="/">{title}</Link>
-
-    let titulo;
-
-    if(route === "base"){
-      titulo = tituloBase
-    }else if(route === "gracias"){
-      titulo = tituloGracias
-
-    }
-
+    const titulo = <h4 className={"mr-0 font-bold " + ctaClass}> {title}</h4>
 
 
     if(adapt){
@@ -76,15 +48,22 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
 
     }
 
+    if(route === "base"){
 
     return (
-        <div id="Link" className={"arrow-container pt-1 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
-            <DynamicFlex flex={adapt}>
+            <Link id="link1" to="/gracias" className={"flex my-2 max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
                 {titleImg}
-            </DynamicFlex>
-        </div>
+            </Link>
         )
+    }else if(route === "gracias"){
+      return (
+            <Link id="link2" to="/" className={"flex my-2 max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+                {titleImg}
+            </Link>
+        )
+
     }
+}
 
 const HeroForm = ({formClass, containerForm = "form-container"}) =>{
 
@@ -115,10 +94,10 @@ const data = [
             </div>
           )
         })}
+        <div id="recaptcha_image" className="g-recaptcha" data-sitekey="6LcTh_8UAAAAAOHlUrf8L26iAVs-8AoJR1N4UAkY">
+        </div>
         
       </form>
-        <div className="g-recaptcha" data-sitekey="6LcTh_8UAAAAAOHlUrf8L26iAVs-8AoJR1N4UAkY">
-        </div>
         <ArrowCta title="CONVERSEMOS" src="images/arrow_meet.png" containerClass="bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md" adapt={true} cta="ml-1"/>
     </div>
   )
@@ -137,4 +116,4 @@ const Hero = () =>{
     )
 }
 
-export {Hero,ArrowCta,InfoParagraph,HeroForm}
+export {Hero,ArrowCta,InfoParagraph,HeroForm};
