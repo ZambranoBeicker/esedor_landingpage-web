@@ -39,7 +39,7 @@ const Projects = () =>{
           <div className="projects__form-container w-full md:flex lg:justify-around pt-10 pb-6 lg:py-0 lg:py-16 bg-blue-secondary">
             <div className="w-9/12 pl-5 mt-4 mb-12 mx-auto md:w-6/12 md:mt-20 lg:my-20 lg:mx-auto lg:w-6/12 xl:ml-auto xl:mr-0 xl:pl-24 xl:pr-24 xl:w-5/12 xl:my-0 sm:w-8/12">
             <h4 className= "mx-auto sm:text-center md:text-left text-smibig sm:text-2xl md:text-4xl lg:text-5xl md:mb-20">Estás listo para vender por tu tienda virtual?</h4>
-            <ArrowCta  title="Llámanos (+51)773 8905" containerClass="rounded-md hidden md:block lg:w-32 mx-auto md:mx-0 sm:ml-6 bg-blue text-shadow " ctaClass="mr-auto" src="images/llamada.png" adapt={false}/>  
+            <ArrowCta  title="Llámanos (+51)773 8905" containerClass="rounded-md hidden md:flex lg:w-32 mx-auto md:mx-0 sm:ml-6 bg-blue text-shadow " ctaClass="mr-auto" src="images/llamada.png" adapt={false} route="gracias"/>  
             </div>
             <HeroForm formClass="bg-black min-h-0 py-1 px-2 rounded-t-md mx-auto" containerForm="form-container md:px-4 mx-auto lg:w-auto lg:ml-0 lg:mr-16 sm:w-56"/>
           </div>
