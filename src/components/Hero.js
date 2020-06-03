@@ -146,13 +146,13 @@ export {Hero,ArrowCta,InfoParagraph,HeroForm};
 //   fetch(endpoint, requestOptions)
 //       .then(async response => {
 //           const data = await response.json();
-//           this.setState({ isLoading: false })
-//           this.setState({ firstname: '' })
-//           this.setState({ email: '' })
+//           setState({ isLoading: false })
+//           setState({ firstname: '' })
+//           setState({ email: '' })
 //           // Redireccionar a gracias
 //       })
 //       .catch(error => {
-//           this.setState({ isLoading: false })
+//           setState({ isLoading: false })
 //           // Mostrar mensaje de error
 //       });
 // }
