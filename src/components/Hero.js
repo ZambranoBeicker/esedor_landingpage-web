@@ -96,14 +96,14 @@ const data = [
         })}
         <div id="recaptcha_image" className="g-recaptcha" data-sitekey="6LcTh_8UAAAAAOHlUrf8L26iAVs-8AoJR1N4UAkY">
         </div>
-        
+
       </form>
         <ArrowCta title="CONVERSEMOS" src="images/arrow_meet.png" containerClass="bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md" adapt={true} cta="ml-1"/>
     </div>
   )
 }
 
-const Hero = () =>{
+const Hero = () => {
 
     return(
         <section className="min-h-0 sm:flex sm:pt-16 sm:pb-24 xl:pt-16 lg:h-screen bg-blue-third">
@@ -117,3 +117,36 @@ const Hero = () =>{
 }
 
 export {Hero,ArrowCta,InfoParagraph,HeroForm};
+
+// Conceptos: data binding
+// https://reactjs.org/docs/two-way-binding-helpers.html
+// const sendForm = () => {
+//   const endpoint = 'https://esedor-1.nocrm.io/api/v2/leads'
+
+//   const data = {
+//       'api_key': '5f3e4af53e0dd0c536a1b4555cea5f3d284dfb0bbb785df9',
+//       'title': form.nombre,
+//       'description': `Email: ${form.email}, Teléfono: ${form.phone}, Mensaje: ${form.message}`
+//   }
+
+//   const requestOptions = {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify(data)
+//   };
+
+//   this.setState({ isLoading: true })
+
+//   fetch(endpoint, requestOptions)
+//       .then(async response => {
+//           const data = await response.json();
+//           this.setState({ isLoading: false })
+//           this.setState({ firstname: '' })
+//           this.setState({ email: '' })
+//           // Redireccionar a gracias
+//       })
+//       .catch(error => {
+//           this.setState({ isLoading: false })
+//           // Mostrar mensaje de error
+//       });
+// }

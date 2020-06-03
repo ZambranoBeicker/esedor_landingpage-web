@@ -4,6 +4,14 @@ import './tailwind.generated.css';
 import './index.scss';
 import Routes from './Routes';
 
+import TagManager from 'react-gtm-module';
+
+const tagManagerArgs = {
+    gtmId: 'GTM-NJ3HCQ2'
+}
+
+TagManager.initialize(tagManagerArgs);
+
 ReactDOM.render(
   <React.StrictMode>
     <Routes />
