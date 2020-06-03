@@ -70,35 +70,41 @@ const HeroForm = ({formClass, containerForm = "form-container"}) =>{
 const data = [
     {
       label:'Nombre',
+      value: ''
     },
     {
       label:'Correo',
+      value: ''
     },
     {
       label:'Celular',
+      value: ''
     },
     {
       label:'Mensaje',
+      value: ''
     }
   ]
 
   return(
     <div className={"px-4 " + containerForm} action="?" method="POST" >
-      <form className={formClass + " sm:w-56"}>
-        {data.map(({label},index)=>{
+      <form className={formClass + " sm:w-56"} onSubmit={(e) => e.preventDefault( )}>
+        {data.map(({label}, index)=>{
 
           return(
             <div key={index * (10 * 2)} className="input-container relative container-none my-4">
               <label className="absolute text-xs">{label}</label>
-              <input className="block mx-auto rounded-t-md w-11/12 h-12 text-sm pl-2 mt-6 pt-4"/>
+              <input
+                value={data[index].value}
+                onChange={(e) => data[index].value = e.target.value }
+                className="block mx-auto rounded-t-md w-11/12 h-12 text-sm pl-2 mt-6 pt-4"/>
             </div>
           )
         })}
         <div id="recaptcha_image" className="g-recaptcha" data-sitekey="6LcTh_8UAAAAAOHlUrf8L26iAVs-8AoJR1N4UAkY">
         </div>
-
       </form>
-        <ArrowCta title="CONVERSEMOS" src="images/arrow_meet.png" containerClass="bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md" adapt={true} cta="ml-1"/>
+      <ArrowCta onClick={this.submitForm(data)} title="CONVERSEMOS" src="images/arrow_meet.png" containerClass="bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md" adapt={true} cta="ml-1"/>
     </div>
   )
 }
@@ -120,13 +126,13 @@ export {Hero,ArrowCta,InfoParagraph,HeroForm};
 
 // Conceptos: data binding
 // https://reactjs.org/docs/two-way-binding-helpers.html
-// const sendForm = () => {
+// const sendForm = (formData) => {
 //   const endpoint = 'https://esedor-1.nocrm.io/api/v2/leads'
 
 //   const data = {
 //       'api_key': '5f3e4af53e0dd0c536a1b4555cea5f3d284dfb0bbb785df9',
-//       'title': form.nombre,
-//       'description': `Email: ${form.email}, Teléfono: ${form.phone}, Mensaje: ${form.message}`
+//       'title': formData[0].value,
+//       'description': `Email: ${formData[2].value}, Teléfono: ${form.phone}, Mensaje: ${form.message}`
 //   }
 
 //   const requestOptions = {
@@ -150,3 +156,43 @@ export {Hero,ArrowCta,InfoParagraph,HeroForm};
 //           // Mostrar mensaje de error
 //       });
 // }
+
+
+// created() {
+//   if(process.client) {
+//     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+//       this.isMobile = true
+//     }
+
+//     if(!this.isMobile) window.addEventListener('scroll', this.handleScroll)
+//   }
+// }
+
+// destroyed() {
+//   if(process.client) {
+//     if(!this.isMobile) window.removeEventListener('scroll', this.handleScroll)
+//   }
+// }
+
+// methods: {
+//   handleScroll() {
+//     const whySection = document.getElementById('why-us')
+//     const currentScrollTop = document.documentElement.scrollTop
+//     const whySectionInit = whySection.offsetTop
+//     const whySectionEnd = whySectionInit + whySection.clientHeight
+//     const currentWindowHeight = document.documentElement.clientHeight
+//     this.getBgColor(whySectionInit, whySectionEnd, currentWindowHeight, currentScrollTop)
+//   },
+//   getBgColor (init, end, windowHeight, scrollPosition) {
+//     const windowPosStart = windowHeight / 2
+//     const changeInitStart = init - windowPosStart
+//     const changeInitEnd = init
+//     const changeEndStart = end
+//     const changeEndEnd = end - windowPosStart
+
+//     if(scrollPosition >= changeInitStart && scrollPosition <= changeEndEnd) {
+//       document.body.classList.add('primary')
+//     } else {
+//       document.body.classList.remove('primary')
+//     }
+//   }
