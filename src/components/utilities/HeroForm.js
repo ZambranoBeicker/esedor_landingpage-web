@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 
 import { Redirect } from 'react-router-dom';
 
 import ArrowCta from './ArrowCta'
+// import { ClickHandler } from './ModalForm';
 
 const HeroForm = ({formClass, containerForm = "form-container"}) =>{
 
   const [ruta, setRuta] = useState('base')
   const [failed, setFailed] = useState(false)
-
 
 
 const data = [
@@ -69,7 +69,7 @@ const data = [
                 setRuta('gracias')
                 setFailed(true)
                 console.log('Listo')
-                
+
 
             });
 

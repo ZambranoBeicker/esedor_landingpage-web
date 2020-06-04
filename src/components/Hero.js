@@ -4,11 +4,11 @@ import HeroForm from "./utilities/HeroForm";
 const Hero = () => {
 
     return(
-        <section className="min-h-0 sm:flex sm:pt-16 sm:pb-24 lg:py-0 lg:h-screen bg-blue-third">
+        <section className="min-h-0 sm:flex sm:pt-16 sm:pb-24 lg:py-0 lg:min-h-screen bg-blue-third">
             <HeroInfo />
-            <div className="mb-40">
+            <div className="mt-10">
               <h4 className="text-bold semibig hidden lg:block mb-8 px-16">Solicita más información</h4>
-              <HeroForm formClass="bg-black min-h-0 sm:mx-4 py-1 px-2 rounded-t-md"/>
+              <HeroForm formClass="bg-black min-h-0 py-1 px-2 rounded-t-md"/>
             </div>
         </section>
     )

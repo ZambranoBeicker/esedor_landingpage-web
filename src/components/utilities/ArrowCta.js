@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { ShowModal } from "../../App";
 import { Link } from 'react-router-dom';
 
 
-const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = '', route = "base",onClick})=>{
-    let titleImg;
+const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = '', route = "form",onClick})=>{
+
+  const handleClick = useContext(ShowModal)
+
+  let titleImg;
     const titulo = <h4 className={"mr-0 font-bold " + ctaClass}> {title}</h4>
 
      let cel = title.match('..[0-9]+.([0-9]+) ([0-9]+)')
@@ -37,7 +41,7 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
             {titleImg}
         </a>
         )
-      
+
     }else if(route === "base"){
 
     return (
@@ -50,6 +54,15 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
             <Link onClick={onClick} to={ route} id="link2" className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
                 {titleImg}
             </Link>
+        )
+
+
+    }else if(route === "form"){
+
+      return (
+            <button onClick={() => handleClick('fixed')} id="link2" className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+                {titleImg}
+            </button>
         )
 
 

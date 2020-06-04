@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route,BrowserRouter, Switch} from 'react-router-dom';
-import App from './App';
+import {App} from './App';
 import Gracias from './Gracias';
 
 const Routes = ()=>{
