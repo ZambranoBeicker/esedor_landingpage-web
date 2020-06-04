@@ -58,7 +58,7 @@ code {
 
   box-shadow: 0px 13px 25px rgba(0, 41, 255, 0.7);
   transition: .2s ease;
-  
+
   &:hover{
   box-shadow: 0px 13px 25px rgba(0, 41, 255, 0.6);
 
@@ -81,6 +81,7 @@ code {
   }
 }
 
+@import 'sass/_modal.scss';
 @import 'sass/_hero.scss';
 @import 'sass/_steps.scss';
 @import 'sass/_brands.scss';
