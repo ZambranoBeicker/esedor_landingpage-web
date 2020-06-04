@@ -14,7 +14,7 @@ const ShowModal = React.createContext()
 
   function App() {
 
-  const [active, setActive] = useState('hidden')
+  const [active, setActive] = useState('hide')
 
   return (
     <React.Fragment>

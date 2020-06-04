@@ -60,7 +60,7 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
     }else if(route === "form"){
 
       return (
-            <button onClick={() => handleClick('fixed')} id="link2" className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+            <button onClick={() => handleClick('appear')} id="link2" className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
                 {titleImg}
             </button>
         )
