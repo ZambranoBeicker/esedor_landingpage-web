@@ -16,3 +16,16 @@
     }
   }
 }
+  .header{
+
+    &__logo-container{
+      max-height: 50px;
+
+      img{
+
+        max-height: inherit;
+      }
+
+    }
+  }
+

@@ -3,15 +3,14 @@ import {InfoParagraph,ArrowCta} from "./Hero.js";
 
 const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=>{
 
-
-
     return (
-        <div className={containerClass} key={index * 6}>
-            <div key={(index * 2)}>
+        <div className={containerClass} key={index * 7 +2}>
+            <div key={(index * 2 - 3)}>
                 <h4 className="text-sm xl:text-base font-bold">{stepTitle + ' PASO'}</h4>
                 <h2 className="text-3xl xl:text-4xl w-full">{infoTitle}</h2>
             </div>
-            <InfoParagraph info={info} textClass={textClass}/>
+            <InfoParagraph indexKey={index * (10 - 1 * 3)} info={info} textClass={textClass}/>
+
             <ArrowCta  title="CONVERSEMOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
         </div>
     )
@@ -23,8 +22,10 @@ const stepsContent = (data, last)=>{
     return (
 
           <div className={"flex mb-20 " + data[0].containerClass}>
-              {setTitles(data[0],"text-md leading-loose lg:mb-24", data[0].stepTitle.toLowerCase() + " w-6/12")}
-              <img className={data[0].imgClass} src={data[0].img} alt={data[0].stepTitle}/>
+              {setTitles(data[0],"text-md leading-loose lg:mb-24", data[0].stepTitle.toLowerCase() + " w-6/12",13)}
+              <div className={data[0].imgClass}>
+                <img src={data[0].img} alt={data[0].stepTitle}/>
+              </div>
           </div>
 
           )
@@ -38,13 +39,17 @@ const stepsContent = (data, last)=>{
             return(
                 <div key={index * 3} className={"flex mt-40 mb-20 " + steps.containerClass}>
                     {setTitles(steps,"text-md leading-loose", steps.stepTitle.toLowerCase() + " w-6/12",index)}
-                    <img className={steps.imgClass} src={steps.img} alt={steps.stepTitle}/>
+                   <div className={steps.imgClass}>
+                        <img src={steps.img} alt={steps.stepTitle}/>
+                    </div>
                 </div>
                 )
             }else{
             return(
                 <div key={index * 4} className={"relative flex py-20 mt-40 mb-20 " + steps.containerClass}>
-                    <img className={steps.imgClass} src={steps.img} alt={steps.stepTitle}/>
+                    <div className={steps.imgClass}>
+                        <img src={steps.img} alt={steps.stepTitle}/>
+                    </div>
                     {setTitles(steps,"text-md leading-loose",steps.stepTitle.toLowerCase() + " mb-20 w-4/12 ml-auto relative z-50",index)}
                 </div>
                 )
@@ -87,13 +92,13 @@ const Steps = () =>{
             stepTitle:"PRIMER",
             infoTitle:"Agregamos valor a tu negocio y ofrecemos experiencias excepcionales",
             img:"images/man_top.png",
-            containerClass:"ml-auto w-11/12 py-10 mr-10 relative ",
+            containerClass:"ml-auto w-11/12 py-10 mr-10 lg:mx-auto relative ",
             orientate:true,
             imgClass:"img-primer"
 
         },
         {
-            info:["Creamos versiones interactivas de escritorio, tablet y dispositivo móvil de tu tienda virtual, plasmados en el prototipo de UX en ",<strong className="strong1">Figma</strong>],
+            info:["Creamos versiones interactivas de escritorio, tablet y dispositivo móvil de tu tienda virtual, plasmados en el prototipo de UX en ",<strong key={Math.floor(Math.random() * 10 + 97)}>Figma</strong>],
             stepTitle:"SEGUNDO",
             infoTitle:"Pensamos en la lógica y creamos un prototipo",
             img:"images/man_left.png",
@@ -103,7 +108,7 @@ const Steps = () =>{
 
         },
         {
-            info: ["Le damos la identidad visual de tu marca creando una guía de estilos visuales y si deseas escalar implementamos un ",<strong key={'strong2'}>sistema de diseño</strong>],
+            info: ["Le damos la identidad visual de tu marca creando una guía de estilos visuales y si deseas escalar implementamos un ",<strong key={Math.floor(Math.random() * 9 + 97)}>sistema de diseño</strong>],
             stepTitle:"TERCER",
             infoTitle:"Diseñamos tu nueva tienda virtual y alineamos la estética",
             img:"images/man_bottom.png",
@@ -142,7 +147,7 @@ const Steps = () =>{
         <section id="steps" className="min-h-0 md:px-16 lg:px-0">
             {stepsContent(data)}
             <div className="hidden lg:block">
-              {stepsContent(lastData,true)}s
+              {stepsContent(lastData,true)}
             </div>
         </section>
     )
