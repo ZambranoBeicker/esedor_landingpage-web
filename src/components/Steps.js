@@ -1,35 +1,44 @@
 import React from "react";
+import Slider from "infinite-react-carousel";
 import {InfoParagraph,ArrowCta} from "./Hero.js";
 
 const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=>{
 
     return (
-        <div className={containerClass} key={index * 7 +2}>
-            <div key={(index * 2 - 3)}>
-                <h4 className="text-sm xl:text-base font-bold">{stepTitle + ' PASO'}</h4>
-                <h2 className="text-3xl xl:text-4xl w-full">{infoTitle}</h2>
-            </div>
-            <InfoParagraph indexKey={index * (10 - 1 * 3)} info={info} textClass={textClass}/>
+        <div className="block">
+            <div className={containerClass} key={index * 7 +2}>
+                <div key={(index * 2 - 3)}>
+                    <h4 className="text-sm xl:text-base font-bold">{stepTitle + ' PASO'}</h4>
+                    <h2 className="text-3xl xl:text-4xl w-full">{infoTitle}</h2>
+                </div>
+                <InfoParagraph indexKey={index * (10 - 1 * 3)} info={info} textClass={textClass}/>
 
-            <ArrowCta  title="CONVERSEMOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
+                <ArrowCta  title="CONVERSEMOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
+            </div>
         </div>
     )
 }
 
-const stepsContent = (data, last)=>{
+const stepsContent = (data,last)=>{
 
-  if(last){
-    return (
+//   if(last){
+//            const lastRt = data.map((value,index)=>{
+//             return(
 
-          <div className={"flex mb-20 " + data[0].containerClass}>
-              {setTitles(data[0],"text-md leading-loose lg:mb-24", data[0].stepTitle.toLowerCase() + " w-6/12",13)}
-              <div className={data[0].imgClass}>
-                <img src={data[0].img} alt={data[0].stepTitle}/>
-              </div>
-          </div>
+//                 <div className={"flex mb-20 " + value.containerClass}>
+//                     <div className="flex">
+//                         {setTitles(value,"text-md leading-loose lg:mb-24", value.stepTitle.toLowerCase() + " w-6/12",(13+index))}
+//                         <div className={value.imgClass}>
+//                             <img src={value.img} alt={value.stepTitle}/>
+//                         </div>
+//                     </div>
+//                 </div>
 
-          )
-}
+//             )
+//         })
+
+//     return lastRt;
+// }
 
 
     const content = data.map((steps,index)=>{
@@ -126,8 +135,8 @@ const Steps = () =>{
             stepTitle:"CUARTO",
             infoTitle:"Definimos la tecnologia y empezamos a implementar",
             img:"images/four_step.png",
-            containerClass:"w-full p-32 bg-black text-white",
-            imgClass:"",
+            containerClass:"w-full py-20 pl-20 bg-black text-white",
+            imgClass:"block h-screen w-5/12 ml-auto",
             orientate:true,
         },
         {
@@ -136,8 +145,8 @@ const Steps = () =>{
             stepTitle:"QUINTO",
             infoTitle:"Lanzamos al mercado tu producto digital y optimizamos el rendimiento",
             img:"images/fifth_step.png",
-            imgClass:"",
-            containerClass:"w-full p-32 bg-black text-white",
+            imgClass:"block h-screen w-6/12 ml-auto",
+            containerClass:"w-full py-20 pl-20 bg-black text-white",
             orientate:true,
         }
     ]
@@ -146,9 +155,29 @@ const Steps = () =>{
     return(
         <section id="steps" className="min-h-0 md:px-16 lg:px-0">
             {stepsContent(data)}
-            <div className="hidden lg:block">
-              {stepsContent(lastData,true)}
+            <Slider
+            duration={800}
+            autoplay={true}
+            dotsScroll={2}
+            arrows={false}
+            >
+            <div className={"flex mb-20 " + lastData[0].containerClass}>
+                <div className="flex">
+                    {setTitles(lastData[0],"text-md leading-loose lg:mb-24", lastData[0].stepTitle.toLowerCase() + " w-6/12",(15))}
+                    <div className={lastData[0].imgClass}>
+                        <img src={lastData[0].img} alt={lastData[0].stepTitle}/>
+                    </div>
+                </div>
             </div>
+            <div className={"flex mb-20 " + lastData[1].containerClass}>
+                <div className="flex">
+                    {setTitles(lastData[1],"text-md leading-loose lg:mb-24", lastData[1].stepTitle.toLowerCase() + " w-6/12",(14))}
+                    <div className={lastData[1].imgClass}>
+                        <img src={lastData[1].img} alt={lastData[1].stepTitle}/>
+                    </div>
+                </div>
+            </div>
+            </Slider>
         </section>
     )
 }
