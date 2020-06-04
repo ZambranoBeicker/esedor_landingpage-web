@@ -1,5 +1,6 @@
 import React from "react";
-import {ArrowCta} from "./components/Hero";
+import ArrowCta from "./components/utilities/ArrowCta";
+
 
 const Gracias = ()=>{
 

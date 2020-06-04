@@ -1,5 +1,6 @@
 import React from 'react';
-import {InfoParagraph,ArrowCta} from './Hero.js';
+import InfoParagraph from './utilities/InfoParagraph';
+import ArrowCta from './utilities/ArrowCta';
 
 
 const showServices = (data,classes)=>{

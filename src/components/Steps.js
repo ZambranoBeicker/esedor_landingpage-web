@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "infinite-react-carousel";
-import {InfoParagraph,ArrowCta} from "./Hero.js";
+import ArrowCta from "./utilities/ArrowCta.js";
+import InfoParagraph from "./utilities/InfoParagraph.js";
 
 const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=>{
 
