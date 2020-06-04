@@ -5,7 +5,6 @@ import {InfoParagraph,ArrowCta} from "./Hero.js";
 const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=>{
 
     return (
-        <div className="block">
             <div className={containerClass} key={index * 7 +2}>
                 <div key={(index * 2 - 3)}>
                     <h4 className="text-sm xl:text-base font-bold">{stepTitle + ' PASO'}</h4>
@@ -15,30 +14,10 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=
 
                 <ArrowCta  title="CONVERSEMOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
             </div>
-        </div>
     )
 }
 
-const stepsContent = (data,last)=>{
-
-//   if(last){
-//            const lastRt = data.map((value,index)=>{
-//             return(
-
-//                 <div className={"flex mb-20 " + value.containerClass}>
-//                     <div className="flex">
-//                         {setTitles(value,"text-md leading-loose lg:mb-24", value.stepTitle.toLowerCase() + " w-6/12",(13+index))}
-//                         <div className={value.imgClass}>
-//                             <img src={value.img} alt={value.stepTitle}/>
-//                         </div>
-//                     </div>
-//                 </div>
-
-//             )
-//         })
-
-//     return lastRt;
-// }
+const stepsContent = (data)=>{
 
 
     const content = data.map((steps,index)=>{
@@ -156,12 +135,14 @@ const Steps = () =>{
         <section id="steps" className="min-h-0 md:px-16 lg:px-0">
             {stepsContent(data)}
             <Slider
-            duration={800}
+            className="bg-black pt-2"
+            duration={200}
             autoplay={true}
             dotsScroll={2}
             arrows={false}
+            autoplaySpeed={4000}
             >
-            <div className={"flex mb-20 " + lastData[0].containerClass}>
+            <div className={"flex " + lastData[0].containerClass}>
                 <div className="flex">
                     {setTitles(lastData[0],"text-md leading-loose lg:mb-24", lastData[0].stepTitle.toLowerCase() + " w-6/12",(15))}
                     <div className={lastData[0].imgClass}>
@@ -169,7 +150,7 @@ const Steps = () =>{
                     </div>
                 </div>
             </div>
-            <div className={"flex mb-20 " + lastData[1].containerClass}>
+            <div className={"flex " + lastData[1].containerClass}>
                 <div className="flex">
                     {setTitles(lastData[1],"text-md leading-loose lg:mb-24", lastData[1].stepTitle.toLowerCase() + " w-6/12",(14))}
                     <div className={lastData[1].imgClass}>
