@@ -76,8 +76,8 @@ const data = [
       }
 
       return(
-        <div className={"px-4 " + containerForm} action="?" method="POST" >
-      <form className={formClass + " sm:w-56 relative"} onSubmit={(e) => e.preventDefault( )}>
+        <div className={ containerForm} action="?" method="POST" >
+      <form className={formClass + " -ml-1 sm:ml-0 sm:w-56 relative"} onSubmit={(e) => e.preventDefault( )}>
         {data.map(({label}, index)=>{
 
           return(
@@ -93,7 +93,7 @@ const data = [
         <div id="recaptcha_image" className="g-recaptcha" data-sitekey="6LcTh_8UAAAAAOHlUrf8L26iAVs-8AoJR1N4UAkY">
         </div>
       </form>
-      <ArrowCta onClick={()=> handleSubmit(data)} title="CONVERSEMOS" src="images/arrow_meet.png" containerClass="bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md" adapt={true} cta="ml-1" route={ruta}/>
+      <ArrowCta onClick={()=> handleSubmit(data)} title="CONVERSEMOS" src="images/arrow_meet.png" containerClass="-ml-1 sm:ml-0 bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md" adapt={true} cta="ml-1" route={ruta}/>
     </div>
   )
   }

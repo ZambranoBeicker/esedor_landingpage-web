@@ -81,14 +81,14 @@ const OurService = () =>{
                 </div>
             </section>
             <div className="md:mx-auto md:my-40 md:w-9/12 w-full px-4 md:px-0 text-center">
-                <h4 className="text-xl text-bolder mb-24">Nuestra Fórmula</h4>
+                <h4 className="text-xl text-bolder mb-10 lg:mb-24">Nuestra Fórmula</h4>
                 <h2 className="text-semibig sm:text-3xl md:text-4xl xl:text-5xl">Te ayudamos a entender tu ecommerce con un enfoque omnicanal</h2>
                 <div className="arrows min-w-0 flex">
                   <div className="w-4/12 xl:w-4/12 ml-auto hidden lg:block mr-8">
                     <ArrowCta  title="OMITIR LOS PASOS" src="images/omitir.png" containerClass="md:w-11/12 rounded-md px-2 my-20 py-3 pt-3 text-shadow-second" ctaClass="ml-5 text-blue" adapt={true}/>
                   </div>
                   <div className="min-w-0 md:w-6/12 lg:w-4/12 xl:w-4/12 mx-auto lg:mr-auto lg:ml-8">
-                    <ArrowCta  title="CONOZCÁMONOS" containerClass="md:w-11/12 rounded-md my-20 bg-blue px-2 py-3 pt-3 text-shadow " ctaClass="ml-5 md:mr-5" src="images/arrow_meet.png" adapt={true}/>
+                  <ArrowCta  title="CONVERSEMOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 mt-16 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
                   </div>
                 </div>
 

@@ -1,7 +1,35 @@
 import React from 'react';
+import { useState, useEffect } from 'react'
 import HeroInfo from "./utilities/HeroInfo";
 import HeroForm from "./utilities/HeroForm";
+
 const Hero = () => {
+    const [isMobile, setIsMobile] = useState(false)
+    
+    useEffect(()=>{
+
+        //  if(process.client) {
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                setIsMobile(true)
+                console('It is: ' + isMobile)
+            }
+
+            if(!isMobile) window.addEventListener('scroll', handleScroll)
+        // }
+
+        console.log('Hook is ready: \n' + isMobile)
+
+        return ()=>{
+
+            if(!isMobile) window.removeEventListener('scroll', handleScroll)
+
+        }
+    },[isMobile])
+
+    const handleScroll = ()=>{
+        console.log('Scrolling');
+        
+    }
 
     return(
         <section className="min-h-0 sm:flex sm:pt-16 sm:pb-24 lg:py-0 lg:min-h-screen bg-blue-third">

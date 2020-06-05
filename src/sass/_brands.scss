@@ -26,13 +26,13 @@
 }
 .brand-4{
   height:72px;
-  margin-left: 10px;
+  margin-left: -5%;
   margin-top: 20px;
 }
 .brand-5{
   height:38px;
-  margin-top: 20px;
-  margin-left: 60px;
+  margin-top: 40px;
+  margin-left: 30px;
 }
 .brand-6{
   display:none;
@@ -40,33 +40,13 @@
 .brand-7{
   height:56px;
   margin-top: 6px;
-  margin-left: -1%;
+  margin-left: -10%;
 }
 .brand-8{
   height:32px;
   margin-top: 22px;
 }
-
-@media screen and (min-width:"420px"){
-
-    .brands-container{
-
-    max-width: 520px;
-  }
-.brand-4{
-  margin-left: 10px;
-}
-.brand-5{
-  margin-left: 80px;
-}
-.brand-7{
-  margin-left: -10px;
-}
-.brand-8{
-  margin-left: 8px;
-}
-}
-@media screen and (min-width:"460px"){
+@media screen and (min-width:"400px"){
 
   .brands-title{
     font-size: 32px;
