@@ -9,25 +9,25 @@ const Hero = () => {
     useEffect(()=>{
 
       const handleScroll = ()=> {
-      const serviceSection = document.getElementById('services')
-      const currentScrollTop = document.documentElement.scrollTop
-      const serivceSectionInit = serviceSection.offsetTop
-      const serviceSectionEnd = serivceSectionInit + serviceSection.clientHeight
-      const currentWindowHeight = document.documentElement.clientHeight
-      console.log(currentScrollTop)
-      getBgColor(serivceSectionInit, serviceSectionEnd, currentWindowHeight, currentScrollTop)
+        const serviceSection = document.getElementById('services')
+        const steps = document.getElementById('stepsSection')
+        const currentScrollTop = document.documentElement.scrollTop
+        const serivceSectionInit = serviceSection.offsetTop
+        const serviceSectionEnd = serivceSectionInit + serviceSection.clientHeight
+        const currentWindowHeight = document.documentElement.clientHeight
+        const stepsSectionInit = steps.offsetTop
+        const stepsSectionEnd = stepsSectionInit + steps.clientHeight
+        // console.log(steps.offsetTop,currentScrollTop)
+      getBgColorHero(serivceSectionInit, serviceSectionEnd, currentWindowHeight, currentScrollTop)
+      getBgColorSteps(stepsSectionInit, stepsSectionEnd, currentWindowHeight, currentScrollTop)
 
-      // console.log(serviceSection.clientHeight);
 
     }
-      //  if(process.client) {
             if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
                 setIsMobile(true)
-                // console('It is: ' + isMobile)
             }
 
             if(!isMobile) window.addEventListener('scroll', handleScroll)
-        // }
 
         console.log('Hook is ready: \n' + isMobile)
 
@@ -41,21 +41,44 @@ const Hero = () => {
 
 
 
-  const getBgColor= (init, end, windowHeight, scrollPosition) => {
+  const getBgColorHero= (init, end, windowHeight, scrollPosition) => {
 
-    const windowPosStart = windowHeight / .8
+    const windowPosStart = windowHeight / .78
     const changeInitStart = init - windowPosStart
     // const changeInitEnd = init
     // const changeEndStart = end
-    // const changeEndEnd = end - windowPosStart
+    const changeEndEnd = end - windowPosStart
     const hero = document.getElementById('hero')
+    const steps = document.getElementById('stepsSection')
     // const header = document.querySelector('header')
 
-    if(scrollPosition >= changeInitStart) {
+    if(scrollPosition >= changeInitStart && scrollPosition <= changeEndEnd + 200) {
       hero.classList.add('my-black','hero-gradient')
+      // steps.classList.add('my-black','hero-gradient')
       // header.classList.add('my-black')
     } else {
       hero.classList.remove('my-black','hero-gradient')
+      // steps.classList.remove('my-black','hero-gradient')
+      // header.classList.remove('my-black')
+    }
+  }
+  const getBgColorSteps= (init, end, windowHeight, scrollPosition) => {
+
+    // const windowPosStart = windowHeight / 2.7
+    const changeInitStart = init * 1.7
+    // const changeInitEnd = init
+    // const changeEndStart = end
+    // const changeEndEnd = end - windowPosStart
+    const steps = document.getElementById('stepsSection')
+    // const header = document.querySelector('header')
+    console.log(changeInitStart,scrollPosition)
+    // console.log(init,windowPosStart,scrollPosition)
+    if(scrollPosition >= changeInitStart) {
+      steps.classList.add('my-black','hero-gradient')
+      // header.classList.add('my-black')
+    } else {
+      steps.classList.remove('my-black')
+      // steps.classList.remove('my-black','hero-gradient')
       // header.classList.remove('my-black')
     }
   }

@@ -199,7 +199,7 @@ const stepsContent = (data)=>{
 
 
     return(
-        <section id="stepsSection" className="min-h-0 md:px-16 lg:px-0">
+        <section id="stepsSection" className="duration-200 min-h-screen md:px-16 lg:px-0">
             {stepsContent(data)}
 
             <div className="hidden lg:block">

@@ -60,11 +60,19 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
     }else if(route === "form"){
 
       return (
-            <button onClick={() => handleClick('appear')} id="link2" className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+            <button onClick={() => {handleClick.active('appear');handleClick.app('blur')}} id="link2" className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
                 {titleImg}
             </button>
         )
 
+
+    }else if(route === "skip"){
+          return(
+
+            <a href="#brands" id="link2" className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+                {titleImg}
+            </a>
+            )
 
     }
 }

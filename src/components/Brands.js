@@ -5,7 +5,7 @@ const BrandImages = ({src, index})=>{
 
 
     return(
-        <div className="h-24 brand-item min-w-0 my-4 relative lg:w-3/12">
+        <div className="h-56 brand-item min-w-0 my-4 relative lg:w-3/12">
             <img src={src} alt="brand" className={"brand brand-" + index}/>
         </div>
     )
@@ -49,7 +49,7 @@ const Brands = ()=>{
 
 
       return (
-          <section className="almost-screen flex flex-wrap w-full lg:pt-10 lg:px-8 xl:px-16 max-h-screen">
+          <section id="brands" className="almost-screen flex flex-wrap w-full lg:pt-10 lg:px-8 xl:px-16">
               <div className="hidden lg:flex flex-wrap w-8/12">
               {brands}
               </div>

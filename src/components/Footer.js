@@ -105,9 +105,9 @@ const Footer = () =>{
               <div className="text-sm pb-5 pt-4 px-4 sm:pl-10 md:p-0 border-b md:w-3/12">
                 <h4 className="text-gray mb-5 ml-auto">Sociales</h4>
                 <div className="flex md:block">
-                  <p className="mr-4">Linkedin</p>
-                  <p className="mr-4">Instagram</p>
-                  <p className="">Facebook</p>
+                  <a href="https://www.linkedin.com/company/esedor" className="mr-4">Linkedin</a>
+                  <a href="https://www.instagram.com/esedor.latam" className="mr-4">Instagram</a>
+                  <a href="https://www.facebook.com/esedorla" className="">Facebook</a>
                 </div>
               </div>
             </div>
