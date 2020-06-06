@@ -23,7 +23,7 @@ const Hero = () => {
       //  if(process.client) {
             if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
                 setIsMobile(true)
-                console('It is: ' + isMobile)
+                // console('It is: ' + isMobile)
             }
 
             if(!isMobile) window.addEventListener('scroll', handleScroll)
@@ -61,7 +61,7 @@ const Hero = () => {
   }
 
     return(
-        <section className="pt-20 sm:flex sm:pt-16 sm:pb-24 lg:py-0 bg-blue-third duration-200 lg:pt-10" id="hero">
+        <section className="pt-24 sm:flex sm:pt-16 sm:pb-24 lg:py-0 bg-blue-third duration-200 lg:pt-10" id="hero">
             <HeroInfo />
             <div className="mt-10">
               <h4 className="text-bold semibig hidden lg:block mb-8 px-16">Solicita más información</h4>
