@@ -19,9 +19,11 @@ const Header = ()=>{
 
     return(
           <React.Fragment>
-              <header className="header pt-4 lg:pt-5 bg-blue-third">
-                <Logo src="images/logo-header.png" alt="Image"/>
-              </header>
+              <div className="absolute top-0">
+                <header className="header pt-4 lg:pt-5">
+                  <Logo src="images/logo-header.png" alt="Image"/>
+                </header>
+              </div>
           </React.Fragment>
       )
   }

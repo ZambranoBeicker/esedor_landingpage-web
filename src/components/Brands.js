@@ -5,7 +5,7 @@ const BrandImages = ({src, index})=>{
 
 
     return(
-        <div className="brand-item min-w-0 my-4 relative lg:w-3/12">
+        <div className="h-24 brand-item min-w-0 my-4 relative lg:w-3/12">
             <img src={src} alt="brand" className={"brand brand-" + index}/>
         </div>
     )
@@ -48,32 +48,23 @@ const Brands = ()=>{
     const brands = data.map((img,index) => <BrandImages src={img.src} key={index} index={index}/>)
 
 
-    if(window.innerWidth >= 1024){
       return (
-          <section className="flex flex-wrap h-screen w-full lg:px-8 xl:px-16">
-              <div className="flex flex-wrap w-8/12">
-                  {brands}
+          <section className="almost-screen flex flex-wrap w-full lg:pt-10 lg:px-8 xl:px-16 max-h-screen">
+              <div className="hidden lg:flex flex-wrap w-8/12">
+              {brands}
               </div>
-              <div className="w-full md:w-3/12 ml-auto">
-                  <h2 className="xl:text-6xl lg:text-5xl sm:text-4xl text-semibig my-10 md:mt-32 md:mb-0">Nuestros aliados</h2>
+              <div className="hidden lg:block w-full md:w-3/12 ml-auto">
+              <h2 className="xl:text-6xl lg:text-5xl sm:text-4xl text-semibig my-10 md:mt-40 md:mb-0">Nuestros aliados</h2>
+              </div>
+              <div className="lg:hidden w-full my-10">
+              <h2 className="brands-title md:text-6xl text-center text-semibig my-10 ">Nuestros aliados</h2>
+              </div>
+              <div className="lg:hidden brands-container flex flex-wrap mx-auto justify-around">
+              {brands}
               </div>
           </section>
+
       )
-
-    }else{
-
-        return(
-
-          <section className="h-screen mx-4">
-            <div className="w-full my-10">
-                <h2 className="brands-title md:text-6xl text-center text-semibig my-10 ">Nuestros aliados</h2>
-            </div>
-            <div className="brands-container flex flex-wrap mx-auto justify-around">
-                {brands}
-            </div>
-        </section>
-      )
-    }
   }
 
 export default Brands;

@@ -1,3 +1,7 @@
+.almost-screen{
+  min-height:80vh;
+}
+
 .brands-container{
 
   max-width: 400px;
@@ -9,7 +13,7 @@
   margin-left: 14px;
 }
 .brand-1{
-  
+
   height:100px;
   margin-top: -22px;
   margin-left: 22px;
@@ -56,7 +60,7 @@
 
     margin-left:5%;
     margin-right:5%;
-  
+
 
     &:nth-of-type(6){
       margin-left:.8em;
@@ -76,7 +80,7 @@
 
   .brand-item{
 
-  
+
 
     &:nth-of-type(6){
       margin-left:.8em;
@@ -109,7 +113,7 @@
       margin-left:35px;
     }
     .brand-1{
-      
+
       height:100px + 30px;
     }
     .brand-2{
@@ -123,7 +127,7 @@
       height:72px + 28px;
       margin-top: -5px;
     }
-    
+
   .brand-item{
 
     &:nth-of-type(5){
@@ -148,34 +152,34 @@
     }
 }
 @media screen and (min-width:"838px"){
-    
+
   .brand-item{
 
     &:nth-of-type(6){
 
       margin-right: -12%;
     }
-  }    
+  }
 }
 @media screen and (min-width:"910px"){
-    
+
   .brand-item{
 
     &:nth-of-type(6){
 
       margin-right: -15%;
     }
-  }    
+  }
 }
 @media screen and (min-width:"980px"){
-    
+
   .brand-item{
 
     &:nth-of-type(6){
 
       margin-right: -17%;
     }
-  }    
+  }
 }
 
 
@@ -239,7 +243,7 @@
   .brand-6{
     display:block ;
     margin-top: -5px;
-    margin-left: 0; 
+    margin-left: 0;
   }
   .brand-7{
     margin-top:10px;
@@ -251,7 +255,7 @@
     margin-left: 0rem;
   }
 
-  
+
 }
 @media screen and (min-width:"1280px"){
 
@@ -305,7 +309,7 @@
   .brand-6{
     display:block ;
     margin-top: -.8rem;
-    margin-left: .3rem; 
+    margin-left: .3rem;
   }
   .brand-7{
     margin-top:10px;
@@ -321,6 +325,6 @@
     max-width:120%;
 
   }
-  
+
 }
 

@@ -81,6 +81,33 @@ code {
   }
 }
 
+.hero-gradient{
+  overflow: hidden;
+
+  position:relative;
+
+  &:before{
+    content:'';
+    transition:.3s;
+    position:absolute;
+    left:-10px;
+    transform: translateY(10px);
+    width: 110%;
+    height: 20px;
+    background: black;
+    bottom:0;
+    filter:blur(4px)
+    // border-bottom: 10px solid black;
+
+  }
+
+}
+
+.my-black{
+
+  background:rgb(0,0,0);
+}
+
 @import 'sass/_modal.scss';
 @import 'sass/_hero.scss';
 @import 'sass/_steps.scss';

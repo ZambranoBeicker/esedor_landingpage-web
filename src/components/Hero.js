@@ -5,10 +5,22 @@ import HeroForm from "./utilities/HeroForm";
 
 const Hero = () => {
     const [isMobile, setIsMobile] = useState(false)
-    
+
     useEffect(()=>{
 
-        //  if(process.client) {
+      const handleScroll = ()=> {
+      const serviceSection = document.getElementById('services')
+      const currentScrollTop = document.documentElement.scrollTop
+      const serivceSectionInit = serviceSection.offsetTop
+      const serviceSectionEnd = serivceSectionInit + serviceSection.clientHeight
+      const currentWindowHeight = document.documentElement.clientHeight
+      console.log(currentScrollTop)
+      getBgColor(serivceSectionInit, serviceSectionEnd, currentWindowHeight, currentScrollTop)
+
+      // console.log(serviceSection.clientHeight);
+
+    }
+      //  if(process.client) {
             if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
                 setIsMobile(true)
                 console('It is: ' + isMobile)
@@ -26,13 +38,30 @@ const Hero = () => {
         }
     },[isMobile])
 
-    const handleScroll = ()=>{
-        console.log('Scrolling');
-        
+
+
+
+  const getBgColor= (init, end, windowHeight, scrollPosition) => {
+
+    const windowPosStart = windowHeight / .8
+    const changeInitStart = init - windowPosStart
+    // const changeInitEnd = init
+    // const changeEndStart = end
+    // const changeEndEnd = end - windowPosStart
+    const hero = document.getElementById('hero')
+    // const header = document.querySelector('header')
+
+    if(scrollPosition >= changeInitStart) {
+      hero.classList.add('my-black','hero-gradient')
+      // header.classList.add('my-black')
+    } else {
+      hero.classList.remove('my-black','hero-gradient')
+      // header.classList.remove('my-black')
     }
+  }
 
     return(
-        <section className="min-h-0 sm:flex sm:pt-16 sm:pb-24 lg:py-0 lg:min-h-screen bg-blue-third">
+        <section className="pt-20 sm:flex sm:pt-16 sm:pb-24 lg:py-0 bg-blue-third duration-200 lg:pt-10" id="hero">
             <HeroInfo />
             <div className="mt-10">
               <h4 className="text-bold semibig hidden lg:block mb-8 px-16">Solicita más información</h4>

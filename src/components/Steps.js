@@ -1,4 +1,5 @@
-import React from "react";
+// import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Slider from 'infinite-react-carousel';
 import ArrowCta from "./utilities/ArrowCta.js";
 import InfoParagraph from "./utilities/InfoParagraph.js";
@@ -83,12 +84,13 @@ const stepsContent = (data)=>{
           {contentResponsive}
         </Slider>
 
-          )
+)
     }
-}
+  }
 
 
-const Steps = () =>{
+  const Steps = () =>{
+    // const [isMobile, setIsMobile] = useState(false)
 
     const data = [
         {
@@ -112,7 +114,7 @@ const Steps = () =>{
 
         },
         {
-            info: ["Le damos la identidad visual de tu marca creando una guía de estilos visuales y si deseas escalar implementamos un ",<strong key={Math.floor(Math.random() * 9 + 97)}>sistema de diseño</strong>],
+            info: ["Le damos la identidad visual de tu marca creando una guía de estilos visuales y si deseas escalar implementamos un ",<strong id="strong" key={Math.floor(Math.random() * 9 + 97)}>sistema de diseño</strong>],
             stepTitle:"TERCER",
             infoTitle:"Diseñamos tu nueva tienda virtual y alineamos la estética",
             img:"images/man_bottom.png",
@@ -120,8 +122,8 @@ const Steps = () =>{
             containerClass:"mt-40 mb-20 w-11/12 ml-auto mr-10 relative ",
             orientate:true,
 
-        },
-    ]
+          },
+        ]
 
     const lastData = [
         {
@@ -147,11 +149,60 @@ const Steps = () =>{
     ]
 
 
+  //   useEffect(()=>{
+
+  //     const handleScroll = ()=> {
+  //     const steps = document.getElementById('strong')
+  //     const currentScrollTop = document.documentElement.scrollTop
+  //     const stepsInit = steps.offsetTop
+  //     const stepsEnd = stepsInit + steps.clientHeight
+  //     const currentWindowHeight = document.documentElement.clientHeight
+  //     getBgColor(stepsInit, stepsEnd, currentWindowHeight, currentScrollTop)
+
+
+  //   }
+  //           if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  //               setIsMobile(true)
+  //               console('It is: ' + isMobile)
+  //           }
+
+  //           if(!isMobile) window.addEventListener('scroll', handleScroll)
+
+  //       console.log('Hook is ready: \n' + isMobile)
+
+  //       return ()=>{
+
+  //           if(!isMobile) window.removeEventListener('scroll', handleScroll)
+
+  //       }
+  //   },[isMobile])
+
+
+
+
+  // const getBgColor= (init, end, windowHeight, scrollPosition) => {
+
+  //   const windowPosStart = windowHeight / 1.6
+  //   const changeInitStart = init - windowPosStart
+  //   // const changeEndEnd = end - windowPosStart
+  //   const stepsSection = document.getElementById('stepsSection')
+  //   // const header = document.querySelector('header')
+
+  //   if(scrollPosition >= changeInitStart) {
+  //     stepsSection.classList.add('my-black')
+  //     // header.classList.add('my-black')
+  //   } else {
+  //     stepsSection.classList.remove('my-black')
+  //     // header.classList.remove('my-black')
+  //   }
+  // }
+
+
     return(
-        <section id="steps" className="min-h-0 md:px-16 lg:px-0">
+        <section id="stepsSection" className="min-h-0 md:px-16 lg:px-0">
             {stepsContent(data)}
 
-            <div className="hidden">
+            <div className="hidden lg:block">
 
             {stepsContent(lastData)}
             </div>

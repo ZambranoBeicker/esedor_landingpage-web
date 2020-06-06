@@ -72,7 +72,7 @@ const OurService = () =>{
 
     return (
         <React.Fragment>
-            <section className="block md:bg-black px-4 py-5 md:pl-16 lg:pt-4 lg:pb-32 w-full">
+            <section id="services" className="block md:bg-black px-4 py-5 md:pl-16 lg:pt-4 lg:pb-32 w-full">
                 <div className="text-white mb-10">
                     <h2 className="text-2xl md:text-4xl lg:text-5xl">Servicios<br></br>ecommerce</h2>
                 </div>
