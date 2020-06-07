@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import ArrowCta from './ArrowCta'
 // import { ClickHandler } from './ModalForm';
 
-const HeroForm = ({formClass, containerForm = "form-container"}) =>{
+const HeroForm = ({buttonId,formClass, containerForm = "form-container"}) =>{
 
   const [ruta, setRuta] = useState('base')
   const [failed, setFailed] = useState(false)
@@ -93,7 +93,7 @@ const data = [
         <div id="recaptcha_image" className="g-recaptcha" data-sitekey="6LcTh_8UAAAAAOHlUrf8L26iAVs-8AoJR1N4UAkY">
         </div>
       </form>
-      <ArrowCta onClick={()=> handleSubmit(data)} title="CONVERSEMOS" src="images/arrow_meet.png" containerClass="-ml-1 sm:ml-0 bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md" adapt={true} cta="ml-1" route={ruta}/>
+      <ArrowCta onClick={()=> handleSubmit(data)} id={buttonId} title="CONVERSEMOS" src="images/arrow_meet.png" containerClass="-ml-1 sm:ml-0 bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md" adapt={true} cta="ml-1" route={ruta}/>
     </div>
   )
   }

@@ -3,7 +3,7 @@ import { ShowModal } from "../../App";
 import { Link } from 'react-router-dom';
 
 
-const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = '', route = "form",onClick})=>{
+const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = '', route = "form", onClick, id})=>{
 
   const handleClick = useContext(ShowModal)
 
@@ -37,7 +37,7 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
       if(cel){
         return (
 
-        <a href={"tel:" + cel[0]} id="link2" className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+        <a href={"tel:" + cel[0]} id={id} className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
             {titleImg}
         </a>
         )
@@ -45,13 +45,13 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
     }else if(route === "base"){
 
     return (
-            <Link onClick={onClick } to="/" id="link1" className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+            <Link onClick={onClick } to="/" id={id} className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
                 {titleImg}
             </Link>
         )
     }else if(route === "gracias"){
       return (
-            <Link onClick={onClick} to={ route} id="link2" className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+            <Link onClick={onClick} to={ route} id={id} className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
                 {titleImg}
             </Link>
         )
@@ -60,7 +60,7 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
     }else if(route === "form"){
 
       return (
-            <button onClick={() => {handleClick.active('appear');handleClick.app('blur')}} id="link2" className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+            <button onClick={() => {handleClick.active('appear');handleClick.app('blur')}} id={id} className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
                 {titleImg}
             </button>
         )
@@ -69,7 +69,7 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
     }else if(route === "skip"){
           return(
 
-            <a href="#brands" id="link2" className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+            <a href="#brands" id={id} className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
                 {titleImg}
             </a>
             )

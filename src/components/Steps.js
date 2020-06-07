@@ -13,7 +13,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=
                 </div>
                 <InfoParagraph indexKey={index * (10 - 1 * 3)} info={info} textClass={textClass}/>
 
-                <ArrowCta  title="CONVERSEMOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 mt-16 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
+                <ArrowCta  title="CONVERSEMOS" id={"desktopSteps-step-" + index} containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 mt-16 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
             </div>
     )
   }
@@ -26,7 +26,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=
       console.log(clicks)
     })
 
-    const mobileSteps = data.map((obj) =>{
+    const mobileSteps = data.map((obj,index) =>{
 
         return {
 
@@ -55,7 +55,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=
                 {mobileSteps[clicks].image}
                 {mobileSteps[clicks].texts.title}
                 {mobileSteps[clicks].texts.info}
-            <ArrowCta  title="CONVERSEMOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
+            <ArrowCta  title="CONVERSEMOS" id={"responsiveSteps-step-1" + index} containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
           </div>
         </div>
         )
