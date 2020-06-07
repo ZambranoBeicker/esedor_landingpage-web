@@ -1,6 +1,5 @@
-// import React, { useState, useEffect } from 'react'
-import React from 'react'
-import Slider from 'infinite-react-carousel';
+import React, { useState, useEffect } from 'react'
+// import React from 'react'
 import ArrowCta from "./utilities/ArrowCta.js";
 import InfoParagraph from "./utilities/InfoParagraph.js";
 
@@ -17,7 +16,51 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=
                 <ArrowCta  title="CONVERSEMOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 mt-16 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
             </div>
     )
+  }
+
+  const StepsMobile = ({data})=>{
+
+    const [clicks, setClicks] = useState(0)
+
+    useEffect(()=>{
+      console.log(clicks)
+    })
+
+    const mobileSteps = data.map((obj) =>{
+
+        return {
+
+          texts: {
+            stepsTitle:<h4 className="text-xs w-2/3 pt-3 mx-auto md:text-sm text-center font-bold">{obj.stepTitle + ' PASO'}</h4>,
+            info: <InfoParagraph info={obj.info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>,
+            title: <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-2xl md:text-3xl md:mx-0">{obj.infoTitle}</h2>
+            },
+          image:<div className="w-full my-10 sm:my-16"><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>,
+        }
+      })
+
+      return (
+
+        <div className="relative py-20 my-56 text-black">
+          <div className="mx-auto">
+            <div className="flex h-6">
+                <button className="mx-auto" onClick={()=> {console.log(clicks);setClicks(clicks + 1) }}>
+                  <img className="w-10 h-10 rota-180 " src="images/steps_arrows.png" alt="steps"/>
+                </button>
+                {mobileSteps[clicks].texts.stepTitle}
+                <button className="mx-auto">
+                  <img className="w-10 h-10" src="images/steps_arrows.png" alt="steps"/>
+                </button>
+            </div>
+                {mobileSteps[clicks].image}
+                {mobileSteps[clicks].texts.title}
+                {mobileSteps[clicks].texts.info}
+            <ArrowCta  title="CONVERSEMOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
+          </div>
+        </div>
+        )
 }
+
 
 const stepsContent = (data)=>{
 
@@ -47,45 +90,9 @@ const stepsContent = (data)=>{
             }
     })
 
-    const contentResponsive = data.map((obj) =>{
-
-        return (
-
-        <div className="relative py-20 my-56 text-black">
-          <div className="mx-auto">
-            <div className="flex h-6">
-                <button className="mx-auto">
-                  <img className="w-10 h-10 rota-180 " src="images/steps_arrows.png" alt="steps"/>
-                </button>
-                <h4 className="text-xs w-2/3 pt-3 mx-auto md:text-sm text-center font-bold">{obj.stepTitle + ' PASO'}</h4>
-                <button className="mx-auto">
-                  <img className="w-10 h-10" src="images/steps_arrows.png" alt="steps"/>
-                </button>
-            </div>
-              <img className="w-full my-10 sm:my-16" src={obj.img} alt={obj.stepTitle}/>
-              <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-2xl md:text-3xl md:mx-0">{obj.infoTitle}</h2>
-          </div>
-          <InfoParagraph info={obj.info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>
-          <ArrowCta  title="CONVERSEMOS" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
-        </div>
-        )})
-
-
-    if(window.innerWidth >= 1024){
-      return content
-
-    }else {
-      return (
-        <Slider
-        arrows={false}
-        autoplay={false}
-
-        >
-          {contentResponsive}
-        </Slider>
-
-)
-    }
+    return (
+      [content]
+      )
   }
 
 
@@ -149,61 +156,13 @@ const stepsContent = (data)=>{
     ]
 
 
-  //   useEffect(()=>{
-
-  //     const handleScroll = ()=> {
-  //     const steps = document.getElementById('strong')
-  //     const currentScrollTop = document.documentElement.scrollTop
-  //     const stepsInit = steps.offsetTop
-  //     const stepsEnd = stepsInit + steps.clientHeight
-  //     const currentWindowHeight = document.documentElement.clientHeight
-  //     getBgColor(stepsInit, stepsEnd, currentWindowHeight, currentScrollTop)
-
-
-  //   }
-  //           if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  //               setIsMobile(true)
-  //               console('It is: ' + isMobile)
-  //           }
-
-  //           if(!isMobile) window.addEventListener('scroll', handleScroll)
-
-  //       console.log('Hook is ready: \n' + isMobile)
-
-  //       return ()=>{
-
-  //           if(!isMobile) window.removeEventListener('scroll', handleScroll)
-
-  //       }
-  //   },[isMobile])
-
-
-
-
-  // const getBgColor= (init, end, windowHeight, scrollPosition) => {
-
-  //   const windowPosStart = windowHeight / 1.6
-  //   const changeInitStart = init - windowPosStart
-  //   // const changeEndEnd = end - windowPosStart
-  //   const stepsSection = document.getElementById('stepsSection')
-  //   // const header = document.querySelector('header')
-
-  //   if(scrollPosition >= changeInitStart) {
-  //     stepsSection.classList.add('my-black')
-  //     // header.classList.add('my-black')
-  //   } else {
-  //     stepsSection.classList.remove('my-black')
-  //     // header.classList.remove('my-black')
-  //   }
-  // }
-
-
     return(
         <section id="stepsSection" className="duration-200 min-h-screen md:px-16 lg:px-0">
-            {stepsContent(data)}
-
+            <div className="lg:hidden">
+              {<StepsMobile data={data} />}
+            </div>
             <div className="hidden lg:block">
-
+            {stepsContent(data)}
             {stepsContent(lastData)}
             </div>
         </section>
