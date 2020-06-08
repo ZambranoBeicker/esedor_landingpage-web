@@ -7,7 +7,7 @@ import Routes from './Routes';
 import TagManager from 'react-gtm-module';
 
 const tagManagerArgs = {
-    gtmId: 'GTM-NJ3HCQ2'
+    gtmId: 'GTM-TT62JBS'
 }
 
 TagManager.initialize(tagManagerArgs);
