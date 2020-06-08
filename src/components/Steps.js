@@ -55,7 +55,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=
                 {mobileSteps[clicks].image}
                 {mobileSteps[clicks].texts.title}
                 {mobileSteps[clicks].texts.info}
-            <ArrowCta  title="CONVERSEMOS" id={"responsiveSteps-step-1" + index} containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
+            <ArrowCta  title="CONVERSEMOS" id={"responsiveSteps-step-1" + clicks} containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
           </div>
         </div>
         )
