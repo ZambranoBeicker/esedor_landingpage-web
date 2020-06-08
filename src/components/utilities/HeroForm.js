@@ -33,7 +33,7 @@ const data = [
 
   const handleSubmit = async (formData) =>{
 
-    const endpoint = 'http://esedor-1.nocrm.io/api/v2/leads'
+    const endpoint = 'https://esedor-1.nocrm.io/api/v2/leads'
 
     const dataSubmit = {
         'api_key': '5f3e4af53e0dd0c536a1b4555cea5f3d284dfb0bbb785df9',
