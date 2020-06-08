@@ -19,7 +19,7 @@ const Header = ()=>{
 
     return(
           <React.Fragment>
-              <div className="absolute top-0">
+              <div className="absolute my-index top-0">
                 <header className="header lg:pt-5">
                   <Logo src="images/logo-header.png" alt="Image"/>
                 </header>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import {Header} from './components/Header.js';
 import Hero from './components/Hero.js';
 import OurServices from './components/OurServices.js';
 import Steps from './components/Steps.js';
@@ -22,11 +21,9 @@ const ShowModal = React.createContext()
   }
   return (
     <React.Fragment>
-
       <ShowModal.Provider value={contexts}>
       <ModalForm display={active}/>
       <div className={activeApp + " duration-200"}>
-      <Header />
         <Hero />
         <OurServices />
         <Steps />

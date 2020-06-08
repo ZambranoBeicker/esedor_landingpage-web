@@ -21,6 +21,18 @@ code {
   monospace;
 }
 
+.mar-l-none{
+  margin-left:0;
+
+  @media screen and (min-width:"640px"){
+  margin-left: 1rem;
+
+    
+  }
+
+  
+}
+
 .bg-blue{
   background: #193EFF;
   transition: .2s ease;
