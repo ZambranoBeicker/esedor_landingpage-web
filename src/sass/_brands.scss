@@ -27,7 +27,7 @@
 .brand-3{
   height:26px;
   margin-top: 20px;
-  margin-left: -4px;
+  margin-left: -14px;
 }
 .brand-4{
   height:72px;
@@ -37,7 +37,8 @@
 .brand-5{
   height:38px;
   margin-top: 40px;
-  margin-left: 30px;
+  margin-left: 20px;
+  margin-right: 0;
 }
 .brand-6{
   display:none;
@@ -50,8 +51,10 @@
 .brand-8{
   height:32px;
   margin-top: 22px;
+  margin-left: -20px;
 }
-@media screen and (min-width:"400px"){
+
+@media screen and (min-width:"360px"){
 
   .brands-title{
     font-size: 32px;
@@ -66,11 +69,15 @@
     &:nth-of-type(6){
       margin-left:.8em;
       margin-right:-7%;
+
+      img{
+        margin-left: 25px;
+      }
     }
     &:nth-of-type(5){
 
       img{
-      margin-left: 0;
+      margin-left: -5%;
 
       }
     }
@@ -79,18 +86,22 @@
 
 @media screen and (min-width:"520px"){
 
+  .brand-3{
+    margin-left:-10px;
+  }
+  
   .brand-item{
 
 
 
     &:nth-of-type(6){
       margin-left:.8em;
-      margin-right:-10%;
+      margin-right:-25%;
     }
     &:nth-of-type(5){
 
       img{
-      margin-left: 0;
+      margin-left: -15px;
 
       }
     }
@@ -134,7 +145,7 @@
     &:nth-of-type(5){
 
       img{
-      margin-left: 16px;
+      margin-left: -25px;
 
       }
     }
@@ -146,7 +157,7 @@
     .brand-7{
       height:56px + 30px;
       margin-top: -2px;
-      margin-left:0;
+      margin-left:-10px;
     }
     .brand-8{
       height:32px + 20px;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import React from 'react'
+import anime from 'animejs/lib/anime.es.js';
 import ArrowCta from "./utilities/ArrowCta.js";
 import InfoParagraph from "./utilities/InfoParagraph.js";
 
@@ -21,10 +21,18 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=
   const StepsMobile = ({data})=>{
 
     const [clicks, setClicks] = useState(0)
+    anime({
+      target: document.getElementById('stepsAnimeted-' + clicks),
+      keyFrames: [
+        {opacity: 0},
+        {opacity: 1},
+      ],
+      duration: 400,
+      loop:1,
+    })
 
     useEffect(()=>{
-      console.log(clicks)
-    })
+    },[])
 
     const mobileSteps = data.map((obj,index) =>{
 
@@ -36,6 +44,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=
             title: <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-2xl md:text-3xl md:mx-0">{obj.infoTitle}</h2>
             },
           image:<div className="w-full my-10 sm:my-16"><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>,
+          index: index,
         }
       })
 
@@ -52,9 +61,11 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=
                   <img className="w-10 h-10" src="images/steps_arrows.png" alt="steps"/>
                 </button>
             </div>
+              <div id={"stepsAnimeted-" + mobileSteps[clicks].index}>
                 {mobileSteps[clicks].image}
                 {mobileSteps[clicks].texts.title}
                 {mobileSteps[clicks].texts.info}
+              </div>
             <ArrowCta  title="CONVERSEMOS" id={"responsiveSteps-step-1" + clicks} containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
           </div>
         </div>
