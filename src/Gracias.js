@@ -6,7 +6,7 @@ import Group3d from "./components/utilities/Group3d";
 const Gracias = ()=>{
 
   return(
-    <div className="relative w-full bg-blue-third px-4 lg:pl-10 h-screen">
+    <div className="overflow-hidden relative w-full bg-blue-third px-4 lg:pl-10 h-screen">
       <Group3d />
       <div className="relative my-index md:w-8/12 sm:px-4 lg:pl-10 pt-10">
         <h1 className="mb-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium">¡Muchas gracias!</h1>

@@ -1,6 +1,5 @@
 import React, { useState} from 'react'
 import ArrowCta from './ArrowCta'
-import React from 'react'
 import {useHistory} from 'react-router'
 
 
@@ -33,7 +32,6 @@ const data = [
 
   const history = useHistory()
   const redirectGracias = ()=>{
-    e.target.reset()
     history.push('/gracias')
   }
 
@@ -65,10 +63,10 @@ const data = [
 
             if(response == 200) {
               console.log('success')
-              return
+              return redirectGracias()
             } else {
               console.error('request failed.')
-              return redirectGracias()
+              console.log('akjdclac')
             }
           })
           .catch(error => {

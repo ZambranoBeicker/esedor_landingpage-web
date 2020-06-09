@@ -39,7 +39,7 @@ const Projects = () =>{
               </div>
           </section>
 
-          <div className="projects__form-container relative w-full md:flex lg:justify-around pt-10 pb-6 lg:py-0 lg:py-16 bg-blue-secondary">
+          <div className="projects__form-container overflow-hidden relative w-full md:flex lg:justify-around pt-10 pb-6 lg:py-0 lg:py-16 bg-blue-secondary">
             <Group3d />
             <div className="relative my-index w-9/12 pl-5 mt-4 mb-12 mx-auto md:w-6/12 md:mt-20 lg:my-20 lg:mx-auto lg:w-6/12 xl:ml-auto xl:mr-0 xl:pl-24 xl:pr-24 xl:w-5/12 xl:my-0 sm:w-8/12">
               <h4 className= "my-h4 mx-auto sm:text-center md:text-left text-smibig sm:text-2xl md:text-4xl lg:text-5xl md:mb-20">Estás listo para vender por tu tienda virtual?</h4>
