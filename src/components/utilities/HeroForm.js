@@ -48,7 +48,8 @@ const data = [
               'Content-Type': 'application/json',
               'Accept': 'application/json'
             },
-            body: JSON.stringify(dataSubmit)
+            body: JSON.stringify(dataSubmit),
+            redirect: 'follow'
         };
 
         // this.setState({ isLoading: true })
