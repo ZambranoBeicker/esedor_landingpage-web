@@ -37,8 +37,6 @@ const Hero = () => {
 
             if(!isMobile) window.addEventListener('scroll', handleScroll)
 
-        console.log('Hook is ready: \n' + isMobile)
-
         return ()=>{
 
             if(!isMobile) window.removeEventListener('scroll', handleScroll)
@@ -53,46 +51,29 @@ const Hero = () => {
 
     const windowPosStart = windowHeight / .78
     const changeInitStart = init - windowPosStart
-    // const changeInitEnd = init
-    // const changeEndStart = end
     const changeEndEnd = end - windowPosStart
     const hero = document.getElementById('hero')
     const steps = document.getElementById('stepsSection')
-    // const header = document.querySelector('header')
 
     if(scrollPosition >= changeInitStart && scrollPosition <= changeEndEnd + 200) {
       hero.classList.add('my-black','hero-gradient')
-      // steps.classList.add('my-black','hero-gradient')
-      // header.classList.add('my-black')
     } else {
       hero.classList.remove('my-black','hero-gradient')
-      // steps.classList.remove('my-black','hero-gradient')
-      // header.classList.remove('my-black')
     }
   }
   const getBgColorSteps= (init, end, windowHeight, scrollPosition) => {
 
-    // const windowPosStart = windowHeight / 2.7
     const changeInitStart = init * 1.7
-    // const changeInitEnd = init
-    // const changeEndStart = end
-    // const changeEndEnd = end - windowPosStart
     const steps = document.getElementById('stepsSection')
-    // const header = document.querySelector('header')
-    console.log(changeInitStart,scrollPosition)
-    // console.log(init,windowPosStart,scrollPosition)
     if(scrollPosition >= changeInitStart) {
       steps.classList.add('my-black')
-      // header.classList.add('my-black')
     } else {
       steps.classList.remove('my-black')
-      // steps.classList.remove('my-black','hero-gradient')
-      // header.classList.remove('my-black')
     }
   }
 
     return(
-        <section className="relative pt-24 sm:flex sm:pb-24 lg:py-0 bg-blue-third duration-200 lg:pt-10" id="hero">
+        <section className="overflow-hidden relative pt-24 sm:flex sm:pb-24 lg:py-0 bg-blue-third duration-200 lg:pt-10" id="hero">
             <Header />
               <Group3d />
             <HeroInfo />

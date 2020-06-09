@@ -1,14 +1,20 @@
 import React, { useState} from 'react'
-
-import { Redirect } from 'react-router-dom';
-
 import ArrowCta from './ArrowCta'
-// import { ClickHandler } from './ModalForm';
+import React from 'react'
+// import {useHistory} from 'react-router'
+
 
 const HeroForm = ({buttonId,formClass, containerForm = "form-container"}) =>{
 
   const [ruta, setRuta] = useState('base')
   const [failed, setFailed] = useState(false)
+
+  // const history = useHistory()
+  // const handleSubmit = ()=>{
+  //   e.target.reset()
+  //   history.push('/gracias')
+  // }
+  
 
 
 const data = [
@@ -51,9 +57,7 @@ const data = [
         await fetch(endpoint, requestOptions)
             .then(async response => {
 
-              console.log(response)
               const dataFetch = await response.json();
-              console.log(dataFetch)
 
               setRuta('base')
 
@@ -61,14 +65,10 @@ const data = [
                 // setState({ firstname: '' })
                 // setState({ email: '' })
                 // Redireccionar a gracias
-                return <Redirect />
             })
             .catch(error => {
-                // setState({ isLoading: false })
-                console.log(error)
                 setRuta('gracias')
                 setFailed(true)
-                console.log('Listo')
 
 
             });
@@ -84,7 +84,7 @@ const data = [
             <div key={index * (10 * 2)} className="input-container relative container-none my-4">
               <label className="absolute text-xs">{label}</label>
               <input
-                onChange={(e) => {data[index].value = e.target.value; console.log(data[index].value)} }
+                onChange={(e) => {data[index].value = e.target.value} }
                 className="block mx-auto rounded-t-md w-full h-12 text-sm pl-2 mt-6 pt-4"/>
             </div>
           )
