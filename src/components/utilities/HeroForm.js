@@ -33,37 +33,37 @@ const data = [
 
   const handleSubmit = async (formData) =>{
 
-    const endpoint = 'https://esedor-1.nocrm.io/api/v2/leads'
-    const apiKey = 'ae5cd80d2b804ad65c2c2578fb2bf47bb1e6840fcfe25be0'
+    const endpoint = 'https://esedor.com/send-landing.php'
 
     const dataSubmit = {
-        'title': formData[0].value,
-        'description': `Email: ${formData[1].value}, Teléfono: ${formData[2].value}, Mensaje: ${formData[3].value}`
+        'name': formData[0].value,
+        'email': formData[1].value,
+        'phone': formData[2].value,
+        'description': formData[3].value
     }
 
         const requestOptions = {
             method: 'POST',
             headers: {
-              'X-API-KEY': apiKey,
               'Content-Type': 'application/json',
               'Accept': 'application/json'
             },
-            body: JSON.stringify(dataSubmit),
-            redirect: 'follow'
+            body: JSON.stringify(dataSubmit)
         };
 
         // this.setState({ isLoading: true })
 
         fetch(endpoint, requestOptions)
-          .then(response => {
+          .then(async response => {
             console.log('HeroForm.handleSubmit', response)
-            setRuta('base')
 
-              // setState({ isLoading: false })
-              // setState({ firstname: '' })
-              // setState({ email: '' })
-              // Redireccionar a gracias
-              return <Redirect />
+            if(respose == 200) {
+              console.log('success')
+              return
+            } else {
+              console.error('request failed.')
+              return
+            }
           })
           .catch(error => {
               // setState({ isLoading: false })
