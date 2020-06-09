@@ -56,9 +56,6 @@ const data = [
         fetch(endpoint, requestOptions)
           .then(response => {
             console.log('HeroForm.handleSubmit', response)
-            const dataFetch = await response.json();
-            console.log(dataFetch)
-
             setRuta('base')
 
               // setState({ isLoading: false })
