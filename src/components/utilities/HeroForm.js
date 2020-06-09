@@ -31,8 +31,7 @@ const data = [
   ]
 
 
-  const handleSubmit = async (formData) =>{
-
+  const handleSubmit = async (formData) => {
     const endpoint = 'https://esedor.com/send-landing.php'
 
     const dataSubmit = {
@@ -42,14 +41,18 @@ const data = [
         'description': formData[3].value
     }
 
-        const requestOptions = {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-            body: JSON.stringify(dataSubmit)
-        };
+    console.log('dataSubmit', dataSubmit)
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(dataSubmit)
+    };
+
+    console.log('requestOptions', requestOptions)
 
         // this.setState({ isLoading: true })
 
