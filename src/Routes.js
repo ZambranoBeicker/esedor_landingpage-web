@@ -1,17 +1,17 @@
 import React from 'react';
-import {Route,BrowserRouter, Switch} from 'react-router-dom';
+import {Route,HashRouter, Switch} from 'react-router-dom';
 import {App} from './App';
 import Gracias from './Gracias';
 
 const Routes = ()=>{
 
   return(
-   <BrowserRouter>
+   <HashRouter>
     <Switch>
       <Route exact path="/" component={App}/>
       <Route path="/gracias" component={Gracias}/>
     </Switch>
-   </BrowserRouter>
+   </HashRouter>
   )
 }
 
