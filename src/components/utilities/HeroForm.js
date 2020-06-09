@@ -45,7 +45,8 @@ const data = [
             method: 'POST',
             headers: {
               'X-API-KEY': apiKey,
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
             },
             body: JSON.stringify(dataSubmit)
         };
