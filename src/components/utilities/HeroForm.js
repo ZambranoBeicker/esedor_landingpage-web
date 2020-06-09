@@ -53,31 +53,25 @@ const data = [
 
         // this.setState({ isLoading: true })
 
-        await fetch(endpoint, requestOptions)
-            .then(async response => {
+        fetch(endpoint, requestOptions)
+          .then(response => {
+            console.log('HeroForm.handleSubmit', response)
+            const dataFetch = await response.json();
+            console.log(dataFetch)
 
-              console.log(response)
-              const dataFetch = await response.json();
-              console.log(dataFetch)
+            setRuta('base')
 
-              setRuta('base')
-
-                // setState({ isLoading: false })
-                // setState({ firstname: '' })
-                // setState({ email: '' })
-                // Redireccionar a gracias
-                return <Redirect />
-            })
-            .catch(error => {
-                // setState({ isLoading: false })
-                console.log(error)
-                setRuta('gracias')
-                setFailed(true)
-                console.log('Listo')
-
-
-            });
-
+              // setState({ isLoading: false })
+              // setState({ firstname: '' })
+              // setState({ email: '' })
+              // Redireccionar a gracias
+              return <Redirect />
+          })
+          .catch(error => {
+              // setState({ isLoading: false })
+              console.error('HeroForm.handleSubmit', error)
+              setFailed(true)
+          });
       }
 
       return(
