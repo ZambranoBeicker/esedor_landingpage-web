@@ -1,7 +1,7 @@
 import React, { useState} from 'react'
 import ArrowCta from './ArrowCta'
 import React from 'react'
-// import {useHistory} from 'react-router'
+import {useHistory} from 'react-router'
 
 
 const HeroForm = ({buttonId,formClass, containerForm = "form-container"}) =>{
@@ -9,11 +9,6 @@ const HeroForm = ({buttonId,formClass, containerForm = "form-container"}) =>{
   const [ruta, setRuta] = useState('base')
   const [failed, setFailed] = useState(false)
 
-  // const history = useHistory()
-  // const handleSubmit = ()=>{
-  //   e.target.reset()
-  //   history.push('/gracias')
-  // }
   
 
 
@@ -36,43 +31,51 @@ const data = [
     }
   ]
 
+  const history = useHistory()
+  const redirectGracias = ()=>{
+    e.target.reset()
+    history.push('/gracias')
+  }
 
-  const handleSubmit = async (formData) =>{
+  const handleSubmit = async (formData) => {
 
-    const endpoint = 'http://esedor-1.nocrm.io/api/v2/leads'
+    const endpoint = 'https://esedor.com/send-landing.php'
 
     const dataSubmit = {
-        'api_key': '5f3e4af53e0dd0c536a1b4555cea5f3d284dfb0bbb785df9',
-        'title': formData[0].value,
-        'description': `Email: ${formData[1].value}, Teléfono: ${formData[2].value}, Mensaje: ${formData[3].value}`
+        'name': formData[0].value,
+        'email': formData[1].value,
+        'phone': formData[2].value,
+        'description': formData[3].value
     }
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dataSubmit)
-        };
 
-        // this.setState({ isLoading: true })
+    console.log('dataSubmit', dataSubmit)
 
-        await fetch(endpoint, requestOptions)
-            .then(async response => {
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(dataSubmit)
+    };
 
-              const dataFetch = await response.json();
+        fetch(endpoint, requestOptions)
+          .then(async response => {
+            console.log('HeroForm.handleSubmit', response)
 
-              setRuta('base')
-
-                // setState({ isLoading: false })
-                // setState({ firstname: '' })
-                // setState({ email: '' })
-                // Redireccionar a gracias
-            })
-            .catch(error => {
-                setRuta('gracias')
-                setFailed(true)
-
-
-            });
-
+            if(response == 200) {
+              console.log('success')
+              return
+            } else {
+              console.error('request failed.')
+              return redirectGracias()
+            }
+          })
+          .catch(error => {
+              // setState({ isLoading: false })
+              console.error('HeroForm.handleSubmit', error)
+              setFailed(true)
+          });
       }
 
       return(
