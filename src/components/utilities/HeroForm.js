@@ -34,15 +34,19 @@ const data = [
   const handleSubmit = async (formData) =>{
 
     const endpoint = 'https://esedor-1.nocrm.io/api/v2/leads'
+    const apiKey = 'ae5cd80d2b804ad65c2c2578fb2bf47bb1e6840fcfe25be0'
 
     const dataSubmit = {
-        'api_key': '5f3e4af53e0dd0c536a1b4555cea5f3d284dfb0bbb785df9',
         'title': formData[0].value,
         'description': `Email: ${formData[1].value}, Teléfono: ${formData[2].value}, Mensaje: ${formData[3].value}`
     }
+
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+              'X-API-KEY': apiKey,
+              'Content-Type': 'application/json'
+            },
             body: JSON.stringify(dataSubmit)
         };
 
