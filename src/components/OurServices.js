@@ -71,8 +71,8 @@ const OurService = () =>{
     }
 
     return (
-        <React.Fragment>
-            <section id="services" className="block md:bg-black px-4 py-5 md:pl-16 lg:pt-4 lg:pb-32 w-full">
+        <div className='relative overflow-hidden'>
+            <section id="services" className="relative overflow-hidden block md:bg-black px-4 py-5 md:pl-16 lg:pt-4 lg:pb-32 w-full">
                 <div className="text-white mb-10">
                     <h2 className="text-2xl md:text-4xl lg:text-5xl">Servicios<br></br>ecommerce</h2>
                 </div>
@@ -80,6 +80,9 @@ const OurService = () =>{
                     {showServices(data,classes)}
                 </div>
             </section>
+                <div className="hidden lg:block steps-first-square absolute w-4/12">
+                  <img src="images/square.png" alt="Sq-1"/>
+                </div>
             <div className="md:mx-auto md:my-40 md:w-9/12 w-full px-4 md:px-0 text-center">
                 <h4 className="text-xl text-bolder mb-10 lg:mb-24">Nuestra Fórmula</h4>
                 <h2 className="text-semibig sm:text-3xl md:text-4xl xl:text-5xl">Te ayudamos a entender tu ecommerce con un enfoque omnicanal</h2>
@@ -93,7 +96,7 @@ const OurService = () =>{
                 </div>
 
             </div>
-        </React.Fragment>
+        </div>
     )
 }
 

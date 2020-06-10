@@ -173,15 +173,12 @@ const stepsContent = (data)=>{
 
 
     return(
-        <section id="stepsSection" className="relative overflow:hidden duration-200 min-h-screen md:px-16 lg:px-0">
+        <section id="stepsSection" className="relative overflow-hidden duration-200 min-h-screen md:px-16 lg:px-0">
             <div className="lg:hidden">
               {<StepsMobile data={data} />}
             </div>
             <div className="hidden lg:block steps-octagon absolute w-4/12">
               <img src="images/poligono_steps.png" alt="octagono"/>
-            </div>
-            <div className="hidden lg:block steps-first-square absolute w-4/12">
-              <img src="images/square.png" alt="Sq-1"/>
             </div>
             <div className="hidden lg:block steps-second-square absolute w-4/12">
               <img src="images/square.png" alt="Sq-2"/>
