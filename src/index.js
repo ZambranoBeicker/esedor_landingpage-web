@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './tailwind.generated.css';
 import './index.scss';
+import './App.css';
 import Routes from './Routes';
 
 import TagManager from 'react-gtm-module';
