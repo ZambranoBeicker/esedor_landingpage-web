@@ -19,39 +19,51 @@
 
   .steps-octagon{
     top: 38%;
-    right: -10%;
+    right: -20%;
+    z-index:-1;
+  }
+  .steps-second-square{
+    top: 13%;
+    left: -20%;
     z-index:-1;
   }
 
-@media screen and (min-width:"1024px"){
 
-  .img-primer{
-    max-width:60%;
+  .steps-first-square{
+    top: -12%;
+    right: -20%;
+    z-index:-1;
   }
 
-  .img-segundo{
-      top:25%;
-      left:0;
+  @media screen and (min-width:"1024px"){
+
+    .img-primer{
+      max-width:60%;
+    }
+
+    .img-segundo{
+        top:25%;
+        left:0;
+        max-width: 60%;
+    }
+
+    .tercer{
+      padding-right:10%;
+    }
+
+    .img-tercer{
       max-width: 60%;
+      bottom:-90px;
+      right:0;
+
+    }
+
+    .cuarto,.quinto{
+      padding-right: 8rem;
+    }
+
+
   }
-
-  .tercer{
-    padding-right:10%;
-  }
-
-  .img-tercer{
-    max-width: 60%;
-    bottom:-90px;
-    right:0;
-
-  }
-
-  .cuarto,.quinto{
-    padding-right: 8rem;
-  }
-
-
-}
 
 @media screen and (min-width:"1280px"){
 

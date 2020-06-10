@@ -177,8 +177,14 @@ const stepsContent = (data)=>{
             <div className="lg:hidden">
               {<StepsMobile data={data} />}
             </div>
-            <div className="hidden lg:block steps-octagon absolute w-3/12">
+            <div className="hidden lg:block steps-octagon absolute w-4/12">
               <img src="images/poligono_steps.png" alt="octagono"/>
+            </div>
+            <div className="hidden lg:block steps-first-square absolute w-4/12">
+              <img src="images/square.png" alt="Sq-1"/>
+            </div>
+            <div className="hidden lg:block steps-second-square absolute w-4/12">
+              <img src="images/square.png" alt="Sq-2"/>
             </div>
             <div className="hidden lg:block">
             {stepsContent(data)}
