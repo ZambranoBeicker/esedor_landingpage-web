@@ -5,10 +5,12 @@ import {useHistory} from 'react-router'
 
 const HeroForm = ({buttonId,formClass, containerForm = "form-container"}) =>{
 
-  const [ruta, setRuta] = useState('base')
   const [failed, setFailed] = useState(false)
+  const [loader, setLoader] = useState(false)
 
-  
+
+
+
 
 
 const data = [
@@ -30,6 +32,9 @@ const data = [
     }
   ]
 
+  const button = <ArrowCta onClick={()=> handleSubmit(data)} id={buttonId} title="CONVERSEMOS" src="images/arrow_meet.png" containerClass={loader + " -ml-1 sm:ml-0 bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md"} adapt={true} cta="ml-1" route="base"/>
+
+
   const history = useHistory()
   const redirectGracias = ()=>{
     history.push('/gracias')
@@ -37,6 +42,7 @@ const data = [
 
   const handleSubmit = async (formData) => {
 
+    setLoader(true)
     const endpoint = 'https://esedor.com/send-landing.php'
 
     const dataSubmit = {
@@ -49,41 +55,40 @@ const data = [
     console.log('dataSubmit', dataSubmit)
 
     const requestOptions = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(dataSubmit)
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(dataSubmit)
     };
+    fetch(endpoint, requestOptions)
+    .then(async response => {
+      // console.log('HeroForm.handleSubmit', response)
 
-        fetch(endpoint, requestOptions)
-          .then(async response => {
-            console.log('HeroForm.handleSubmit', response)
-
-            if(response == 200) {
-              console.log('success')
-              return redirectGracias()
-            } else {
-              console.error('request failed.')
-              console.log('akjdclac')
-            }
-          })
-          .catch(error => {
-              // setState({ isLoading: false })
-              console.error('HeroForm.handleSubmit', error)
-              setFailed(true)
-          });
+      if(response == 200) {
+        console.log('success')
+            return redirectGracias()
+          } else {
+            setLoader(false)
+            console.error('request failed.')
+          }
+        })
+        .catch(error => {
+          setLoader(false)
+          // console.error('HeroForm.handleSubmit', error)
+          setFailed(true)
+        });
       }
 
       return(
-        <div className={ containerForm} action="?" method="POST" >
-      <form className={formClass + " -ml-1 sm:ml-0 sm:w-56 relative"} onSubmit={(e) => e.preventDefault( )}>
+        <div className={containerForm} action="?" method="POST" >
+          <form className={formClass + " -ml-1 sm:ml-0 sm:w-56 relative"} onSubmit={(e) => e.preventDefault( )}>
         {data.map(({label}, index)=>{
 
           return(
             <div key={index * (10 * 2)} className="input-container relative container-none my-4">
-              <label className="absolute text-xs">{label}</label>
+              <label className="absolute text-xs ">{label}</label>
               <input
                 onChange={(e) => {data[index].value = e.target.value} }
                 className="block mx-auto rounded-t-md w-full h-12 text-sm pl-2 mt-6 pt-4"/>
@@ -94,7 +99,7 @@ const data = [
         <div id="recaptcha_image" className="g-recaptcha" data-sitekey="6LcTh_8UAAAAAOHlUrf8L26iAVs-8AoJR1N4UAkY">
         </div>
       </form>
-      <ArrowCta onClick={()=> handleSubmit(data)} id={buttonId} title="CONVERSEMOS" src="images/arrow_meet.png" containerClass="-ml-1 sm:ml-0 bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md" adapt={true} cta="ml-1" route={ruta}/>
+      {loader ? <div className="bg-blue rounded-b-md justify-center flex arrow-container pb-3 text-white"><p className="text-lg poppins ml-auto mr-5">Cargando</p><i className="text-3xl fa fa-circle-o-notch mr-auto ml-5 spinning"></i></div> : button}
     </div>
   )
   }

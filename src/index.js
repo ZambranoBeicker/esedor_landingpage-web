@@ -10,6 +10,7 @@ const tagManagerArgs = {
     gtmId: 'GTM-TT62JBS'
 }
 
+
 TagManager.initialize(tagManagerArgs);
 
 ReactDOM.render(

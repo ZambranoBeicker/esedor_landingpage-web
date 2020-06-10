@@ -3,7 +3,7 @@ import anime from 'animejs/lib/anime.es.js';
 import ArrowCta from "./utilities/ArrowCta.js";
 import InfoParagraph from "./utilities/InfoParagraph.js";
 
-const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=>{
+const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,id)=>{
 
     return (
             <div className={containerClass} key={index * 7 +2}>
@@ -13,7 +13,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index)=
                 </div>
                 <InfoParagraph indexKey={index * (10 - 1 * 3)} info={info} textClass={textClass}/>
 
-                <ArrowCta  title="CONVERSEMOS" id={"desktopSteps-step-" + index} containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 mt-16 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
+                <ArrowCta  title="CONVERSEMOS" id={"desktopSteps-step-" + id} containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 mt-16 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
             </div>
     )
   }
@@ -82,7 +82,7 @@ const stepsContent = (data)=>{
 
             return(
                 <div key={index * 3} className={"flex " + steps.containerClass}>
-                    {setTitles(steps,"text-md leading-loose", steps.stepTitle.toLowerCase() + " w-6/12",index)}
+                    {setTitles(steps,"text-md leading-loose", steps.stepTitle.toLowerCase() + " w-6/12",index,steps.id)}
                    <div className={steps.imgClass}>
                         <img src={steps.img} alt={steps.stepTitle}/>
                     </div>
@@ -94,7 +94,7 @@ const stepsContent = (data)=>{
                     <div className={steps.imgClass}>
                         <img src={steps.img} alt={steps.stepTitle}/>
                     </div>
-                    {setTitles(steps,"text-md leading-loose",steps.stepTitle.toLowerCase() + " mb-20 w-4/12 ml-auto relative z-50",index)}
+                    {setTitles(steps,"text-md leading-loose",steps.stepTitle.toLowerCase() + " mb-20 w-4/12 ml-auto relative z-50",index,steps.id)}
                 </div>
                 )
 
@@ -116,61 +116,69 @@ const stepsContent = (data)=>{
             stepTitle:"PRIMER",
             infoTitle:"Agregamos valor a tu negocio y ofrecemos experiencias excepcionales",
             img:"images/man_top.png",
-            containerClass:"mt-40 mb-20 ml-auto w-11/12 py-10 mr-10 lg:mx-auto relative ",
+            containerClass:"mt-40 mb-56 ml-auto w-11/12 py-10 mr-10 lg:mx-auto relative ",
             orientate:true,
-            imgClass:"img-primer"
+            imgClass:"img-primer",
+            id:"primero"
 
-        },
-        {
+          },
+          {
             info:["Creamos versiones interactivas de escritorio, tablet y dispositivo móvil de tu tienda virtual, plasmados en el prototipo de UX en ",<strong key={Math.floor(Math.random() * 10 + 97)}>Figma</strong>],
             stepTitle:"SEGUNDO",
             infoTitle:"Pensamos en la lógica y creamos un prototipo",
             img:"images/man_left.png",
             imgClass:"absolute img-segundo",
-            containerClass:"w-11/12 py-10 ml-10",
+            containerClass:"w-11/12 py-20 ml-10",
             orientate:false,
-
-        },
-        {
-            info: ["Le damos la identidad visual de tu marca creando una guía de estilos visuales y si deseas escalar implementamos un ",<strong id="strong" key={Math.floor(Math.random() * 9 + 97)}>sistema de diseño</strong>],
-            stepTitle:"TERCER",
-            infoTitle:"Diseñamos tu nueva tienda virtual y alineamos la estética",
-            img:"images/man_bottom.png",
-            imgClass:"absolute img-tercer",
-            containerClass:"mt-40 mb-20 w-11/12 ml-auto mr-10 relative ",
-            orientate:true,
+            id:"segundo"
 
           },
-        ]
+        {
+          info: ["Le damos la identidad visual de tu marca creando una guía de estilos visuales y si deseas escalar implementamos un ",<strong id="strong" key={Math.floor(Math.random() * 9 + 97)}>sistema de diseño</strong>],
+          stepTitle:"TERCER",
+          infoTitle:"Diseñamos tu nueva tienda virtual y alineamos la estética",
+          img:"images/man_bottom.png",
+          imgClass:"absolute img-tercer",
+          containerClass:"mt-56 mb-20 w-11/12 ml-auto mr-10 relative ",
+          orientate:true,
+          id:"tercero"
 
-    const lastData = [
+        },
+      ]
+
+      const lastData = [
         {
 
-            info: "Ya sea una app, ecommerce o sistema web, te ayudamos a realizar un seguimiento de tus usuarios usando google analitycs y fullstory.",
-            stepTitle:"CUARTO",
-            infoTitle:"Definimos la tecnologia y empezamos a implementar",
-            img:"images/four_step.png",
-            containerClass:"w-full py-20 pl-20 bg-black text-white",
-            imgClass:"block h-screen pt-10 w-5/12 ml-auto",
-            orientate:true,
+          info: "Ya sea una app, ecommerce o sistema web, te ayudamos a realizar un seguimiento de tus usuarios usando google analitycs y fullstory.",
+          stepTitle:"CUARTO",
+          infoTitle:"Definimos la tecnologia y empezamos a implementar",
+          img:"images/four_step.png",
+          containerClass:"w-full py-20 pl-20 bg-black text-white",
+          imgClass:"block h-screen pt-10 w-5/12 ml-auto",
+          orientate:true,
+          id:"cuarto"
         },
         {
 
-            info: ["Ya sea una app, ecommerce o sistema web, te ayudamos a realizar un seguimiento de tus usuarios usando ",<strong key={'strong3'}>google analitycs</strong>," y ",<strong key={'strong4'}>fullstory</strong>],
-            stepTitle:"QUINTO",
-            infoTitle:"Lanzamos al mercado tu producto digital y optimizamos el rendimiento",
-            img:"images/fifth_step.png",
-            imgClass:"block h-screen w-6/12 ml-auto",
-            containerClass:"w-full pb-20 pl-20 bg-black text-white",
-            orientate:true,
+          info: ["Ya sea una app, ecommerce o sistema web, te ayudamos a realizar un seguimiento de tus usuarios usando ",<strong key={'strong3'}>google analitycs</strong>," y ",<strong key={'strong4'}>fullstory</strong>],
+          stepTitle:"QUINTO",
+          infoTitle:"Lanzamos al mercado tu producto digital y optimizamos el rendimiento",
+          img:"images/fifth_step.png",
+          imgClass:"block h-screen w-6/12 ml-auto",
+          containerClass:"w-full pb-20 pl-20 bg-black text-white",
+          orientate:true,
+          id:"quinto"
         }
     ]
 
 
     return(
-        <section id="stepsSection" className="duration-200 min-h-screen md:px-16 lg:px-0">
+        <section id="stepsSection" className="relative overflow:hidden duration-200 min-h-screen md:px-16 lg:px-0">
             <div className="lg:hidden">
               {<StepsMobile data={data} />}
+            </div>
+            <div className="hidden lg:block steps-octagon absolute w-3/12">
+              <img src="images/poligono_steps.png" alt="octagono"/>
             </div>
             <div className="hidden lg:block">
             {stepsContent(data)}

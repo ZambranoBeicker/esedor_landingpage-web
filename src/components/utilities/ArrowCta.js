@@ -7,29 +7,40 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
 
   const handleClick = useContext(ShowModal)
 
+
+// const heroFormButton = document.getElementById('hero-formButton')
+// const buttonChild = document.getElementById('formButton-child')
+
+// heroFormButton.addEventListener('click',()=>{
+//   console.log('Parent')
+// })
+// buttonChild.addEventListener('click',()=>{
+//   console.log('Child')
+// })
+
   let titleImg;
-    const titulo = <h4 className={"mr-0 font-bold " + ctaClass}> {title}</h4>
+    const titulo = <h4 className={"mr-0 font-bold my-auto " + ctaClass}> {title}</h4>
 
      let cel = title.match('..[0-9]+.([0-9]+) ([0-9]+)')
 
     if(adapt){
 
       titleImg = (
-        <React.Fragment>
+        // <React.Fragment>
+            <div className="flex disable">
             {titulo}
-            <div className="arrow-cta__container ml-auto mr-5">
-                <img className="arrow-cta__arrow-image" src={src} alt={src && "Arrow"}/>
+                <img className="arrow-cta__container ml-5 my-auto mr-5" src={src} alt={src && "Arrow"}/>
             </div>
-        </React.Fragment>
+        // </React.Fragment>
       )
     }else{
       titleImg = (
-        <React.Fragment>
-            <div className="arrow-cta__container ml-auto mr-5">
-                <img className="arrow-cta__arrow-image" src={src} alt={src && "Arrow"}/>
-            </div>
+        // <React.Fragment>
+            <div className="flex disable">
+                <img className="arrow-cta__container ml-5 my-auto mr-5" src={src} alt={src && "Arrow"}/>
             {titulo}
-        </React.Fragment>
+            </div>
+        // </React.Fragment>
       )
 
     }
@@ -37,7 +48,7 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
       if(cel){
         return (
 
-        <a href={"tel:" + cel[0]} id={id} className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+        <a href={"tel:" + cel[0]} id={id} className={"flex max-w-full arrow-container text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
             {titleImg}
         </a>
         )
@@ -45,13 +56,13 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
     }else if(route === "base"){
 
     return (
-            <Link onClick={onClick } to="/" id={id} className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
-                {titleImg}
-            </Link>
+          <button onClick={onClick} id={id} className={"flex max-w-full arrow-container pt-2 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+            {titleImg}
+          </button>
         )
     }else if(route === "gracias"){
       return (
-            <Link onClick={onClick} to={ route} id={id} className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+            <Link onClick={onClick} to={'/'} id={id} className={"flex max-w-full arrow-container pt-2 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
                 {titleImg}
             </Link>
         )
@@ -60,7 +71,7 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
     }else if(route === "form"){
 
       return (
-            <button onClick={() => {handleClick.active('appear');handleClick.app('blur')}} id={id} className={"flex max-w-full arrow-container pt-3 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+            <button onClick={() => {handleClick.active('appear');handleClick.app('blur')}} id={id} className={"flex max-w-full arrow-container pt-2 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
                 {titleImg}
             </button>
         )
@@ -75,6 +86,17 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
             )
 
     }
+
+    // else if(route === 1){
+    //       return(
+
+    //         <div>
+    //           <button>Arrow</button>
+    //           <img src="images/arrow_meet.png" alt="Arrow"/>
+    //         </div>
+    //         )
+
+    // }
 }
 
 export default ArrowCta;

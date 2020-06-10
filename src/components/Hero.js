@@ -92,12 +92,6 @@ export default Hero;
 // const sendForm = (formData) => {
 //   const endpoint = 'https://esedor-1.nocrm.io/api/v2/leads'
 
-{/* <div className='absolute top-0'>
-              <img src="images/cart_3d.png" alt="cart3d"/>
-            </div> 
-            
-            */}
-
 //   const data = {
 //       'api_key': '5f3e4af53e0dd0c536a1b4555cea5f3d284dfb0bbb785df9',
 //       'title': formData[0].value,

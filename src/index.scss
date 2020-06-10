@@ -6,7 +6,7 @@ body {
     font-family: 'space mono'
   }
 
-  h1,h2,h3,h4,a{
+  h1,h2,h3,h4,a,.poppins{
     font-family: 'Poppins'
 
   }
@@ -21,16 +21,36 @@ code {
   monospace;
 }
 
+.disable{
+  user-select: none;
+  pointer-events:none;
+}
+
+.spinning{
+
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+  }
+}
+
 .mar-l-none{
   margin-left:0;
 
   @media screen and (min-width:"640px"){
   margin-left: 1rem;
 
-    
+
   }
 
-  
+
 }
 
 .bg-blue{
