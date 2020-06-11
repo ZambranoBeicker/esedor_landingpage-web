@@ -32,7 +32,7 @@ const data = [
     }
   ]
 
-  const button = <ArrowCta onClick={()=> handleSubmit(data)} id={buttonId} title="CONVERSEMOS" src="images/arrow_meet.png" containerClass={loader + " -ml-1 sm:ml-0 bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md"} adapt={true} cta="ml-1" route="base"/>
+  const button = <ArrowCta onClick={()=> handleSubmit(data)} id={buttonId} title="CONVERSEMOS" src="images/arrow_meet.png" containerClass={loader + " -ml-1 sm:ml-0 bg-blue py-2 pt-2 pl-5 sm:w-56 rounded-b-md relative my-index"} adapt={true} cta="ml-1" route="base"/>
 
 
   const history = useHistory()

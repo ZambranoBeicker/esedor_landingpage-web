@@ -14,15 +14,17 @@ const ShowModal = React.createContext()
   function App() {
 
   const [active, setActive] = useState('hide')
+  const [activeDiv, setActiveDiv] = useState('hidden')
   const [activeApp, setActiveApp] = useState('')
   const contexts = {
     active:setActive,
     app: setActiveApp,
+    activeDiv: setActiveDiv,
   }
   return (
     <React.Fragment>
       <ShowModal.Provider value={contexts}>
-      <ModalForm display={active}/>
+      <ModalForm display={active} displayDiv={activeDiv}/>
       <div className={activeApp + " duration-200"}>
         <Hero />
         <OurServices />

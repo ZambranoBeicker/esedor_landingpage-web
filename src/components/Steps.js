@@ -26,18 +26,22 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
       clicks: 0,
     }
 
-    handleClicks = ()=>{
-      if(this.counter > -1 && this.counter < 2){
-        this.counter++
-      }else if(this.counter < -1){
+    prevItem = ()=>{
+      if(this.counter > 0 && this.counter < 3){
+        this.counter--
+      }else if(this.counter < 0){
 
         this.counter = 0
-        console.log('Es menor que 0: ' + this.counter)
+      }
+      this.setState({clicks: this.counter},(c)=>{return {clicks: this.counter}})
+    }
+    nextItem = ()=>{
+      if(this.counter > -1 && this.counter < 2){
+        this.counter++
       }else if(this.counter > 1){
         this.counter = 0
-        console.log('Es mayor que 2: ' + this.counter)
       }
-      this.setState({clicks: this.counter},(c)=>{console.log(this.counter);return {clicks: this.counter}})
+      this.setState({clicks: this.counter},(c)=>{return {clicks: this.counter}})
     }
 
 
@@ -63,11 +67,11 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
         <div className="relative py-20 my-56 text-black">
         <div className="mx-auto">
         <div className="flex h-6">
-                <button className="mx-auto">
+                <button className="mx-auto" onClick={this.prevItem}>
                 <img className="w-10 h-10 rota-180 " src="images/steps_arrows.png" alt="nada"/>
                 </button>
                 {this.mobileSteps[this.state.clicks].texts.stepTitle}
-                <button className="mx-auto" onClick={this.handleClicks}>
+                <button className="mx-auto" onClick={this.nextItem}>
                 <img className="w-10 h-10" src="images/steps_arrows.png" alt="steps"/>
                 </button>
                 </div>

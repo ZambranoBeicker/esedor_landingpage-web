@@ -32,11 +32,10 @@
 .brand-4{
   height:72px;
   margin-left: -5%;
-  margin-top: 20px;
 }
 .brand-5{
   height:38px;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: 20px;
   margin-right: 0;
 }
@@ -88,23 +87,6 @@
 
   .brand-3{
     margin-left:-10px;
-  }
-  
-  .brand-item{
-
-
-
-    &:nth-of-type(6){
-      margin-left:.8em;
-      margin-right:-25%;
-    }
-    &:nth-of-type(5){
-
-      img{
-      margin-left: -15px;
-
-      }
-    }
   }
 }
 @media screen and (min-width:"768px"){

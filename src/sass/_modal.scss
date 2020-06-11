@@ -2,7 +2,7 @@
 
   &-image{
     position: absolute;
-    right:13.35%;
+    right:13.2%;
     top:13.5%;
     transform: rotate(45deg);
   }
@@ -10,7 +10,7 @@
   &-image-container{
     position: relative;
     padding-top:0%;
-    margin-left: 0%;
+    margin-left: auto;
     // margin-bottom: -1%;
     height: 31px;
     width:31px;
@@ -24,6 +24,7 @@
 }
 
 .appear{
+  overflow: auto;
   display:block;
   padding-top: 5%;
   background: rgba(0,0,0,.85);
@@ -32,8 +33,10 @@
   right:0;
   left:0;
   bottom:0;
-  z-index:190;
+  z-index:90;
   animation:show 350ms ease-in 1;
+  will-change: transform;
+  will-change: opacity;
 }
 
 @keyframes show {

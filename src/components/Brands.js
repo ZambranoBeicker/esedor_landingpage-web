@@ -5,7 +5,7 @@ const BrandImages = ({src, index})=>{
 
 
     return(
-        <div className="h-56 brand-item min-w-0 my-4 relative lg:w-3/12">
+        <div className="h-24 md:h-56 brand-item min-w-0 my-4 relative lg:w-3/12">
             <img src={src} alt="brand" className={"brand brand-" + index}/>
         </div>
     )
