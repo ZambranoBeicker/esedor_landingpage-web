@@ -80,7 +80,7 @@ const OurService = () =>{
                     {showServices(data,classes)}
                 </div>
             </section>
-                <div className="hidden lg:block steps-first-square absolute w-4/12">
+                <div className="hidden lg:block geometric-spin steps-first-square absolute w-4/12">
                   <img src="images/square.png" alt="Sq-1"/>
                 </div>
             <div className="md:mx-auto md:my-40 md:w-9/12 w-full px-4 md:px-0 text-center">

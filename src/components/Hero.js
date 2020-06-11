@@ -62,7 +62,7 @@ const Hero = () => {
   }
   const getBgColorSteps= (init, end, windowHeight, scrollPosition) => {
 
-    const changeInitStart = init * 1.7
+    const changeInitStart = init * 1.9
     const steps = document.getElementById('stepsSection')
     if(scrollPosition >= changeInitStart) {
       steps.classList.add('my-black')

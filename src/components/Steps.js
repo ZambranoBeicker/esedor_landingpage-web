@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import anime from 'animejs/lib/anime.es.js';
 import ArrowCta from "./utilities/ArrowCta.js";
 import InfoParagraph from "./utilities/InfoParagraph.js";
@@ -18,70 +18,81 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
     )
   }
 
-  const StepsMobile = ({data})=>{
+  class StepsMobile extends React.Component{
 
-    const [clicks, setClicks] = useState(0)
-    anime({
-      target: document.getElementById('stepsAnimeted-' + clicks),
-      keyFrames: [
-        {opacity: 0},
-        {opacity: 1},
-      ],
-      duration: 400,
-      loop:1,
+    counter=0;
+    state = {
+
+      clicks: 0,
+    }
+
+    handleClicks = ()=>{
+      if(this.counter > -1 && this.counter < 2){
+        this.counter++
+      }else if(this.counter < -1){
+
+        this.counter = 0
+        console.log('Es menor que 0: ' + this.counter)
+      }else if(this.counter > 1){
+        this.counter = 0
+        console.log('Es mayor que 2: ' + this.counter)
+      }
+      this.setState({clicks: this.counter},(c)=>{console.log(this.counter);return {clicks: this.counter}})
+    }
+
+
+
+    mobileSteps = this.props.data.map((obj,index) =>{
+
+      return {
+
+        texts: {
+          stepsTitle:<h4 className="text-xs w-2/3 pt-3 mx-auto md:text-sm text-center font-bold">{obj.stepTitle + ' PASO'}</h4>,
+          info: <InfoParagraph info={obj.info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>,
+          title: <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-2xl md:text-3xl md:mx-0">{obj.infoTitle}</h2>
+        },
+        image:<div className="w-full my-10 sm:my-16"><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>,
+        index: index,
+      }
     })
 
-    useEffect(()=>{
-    },[])
-
-    const mobileSteps = data.map((obj,index) =>{
-
-        return {
-
-          texts: {
-            stepsTitle:<h4 className="text-xs w-2/3 pt-3 mx-auto md:text-sm text-center font-bold">{obj.stepTitle + ' PASO'}</h4>,
-            info: <InfoParagraph info={obj.info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>,
-            title: <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-2xl md:text-3xl md:mx-0">{obj.infoTitle}</h2>
-            },
-          image:<div className="w-full my-10 sm:my-16"><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>,
-          index: index,
-        }
-      })
+    render(){
 
       return (
 
         <div className="relative py-20 my-56 text-black">
-          <div className="mx-auto">
-            <div className="flex h-6">
-                <button className="mx-auto" onClick={()=> {console.log(clicks);setClicks(clicks + 1) }}>
-                  <img className="w-10 h-10 rota-180 " src="images/steps_arrows.png" alt="steps"/>
-                </button>
-                {mobileSteps[clicks].texts.stepTitle}
+        <div className="mx-auto">
+        <div className="flex h-6">
                 <button className="mx-auto">
-                  <img className="w-10 h-10" src="images/steps_arrows.png" alt="steps"/>
+                <img className="w-10 h-10 rota-180 " src="images/steps_arrows.png" alt="nada"/>
                 </button>
+                {this.mobileSteps[this.state.clicks].texts.stepTitle}
+                <button className="mx-auto" onClick={this.handleClicks}>
+                <img className="w-10 h-10" src="images/steps_arrows.png" alt="steps"/>
+                </button>
+                </div>
+                <div id={"stepsAnimeted-" + this.mobileSteps[this.state.clicks].index}>
+                {this.mobileSteps[this.state.clicks].image}
+                {this.mobileSteps[this.state.clicks].texts.title}
+                {this.mobileSteps[this.state.clicks].texts.info}
+                </div>
+            <ArrowCta  title="CONVERSEMOS" id={"responsiveSteps-step-1" + this.clicks} containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
             </div>
-              <div id={"stepsAnimeted-" + mobileSteps[clicks].index}>
-                {mobileSteps[clicks].image}
-                {mobileSteps[clicks].texts.title}
-                {mobileSteps[clicks].texts.info}
-              </div>
-            <ArrowCta  title="CONVERSEMOS" id={"responsiveSteps-step-1" + clicks} containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
-          </div>
         </div>
         )
-}
+      }
+      }
 
 
-const stepsContent = (data)=>{
+      const stepsContent = (data)=>{
 
 
-    const content = data.map((steps,index)=>{
+        const content = data.map((steps,index)=>{
 
-        if(steps.orientate){
+          if(steps.orientate){
 
             return(
-                <div key={index * 3} className={"flex " + steps.containerClass}>
+              <div key={index * 3} className={"flex " + steps.containerClass}>
                     {setTitles(steps,"text-md leading-loose", steps.stepTitle.toLowerCase() + " w-6/12",index,steps.id)}
                    <div className={steps.imgClass}>
                         <img src={steps.img} alt={steps.stepTitle}/>
@@ -116,7 +127,7 @@ const stepsContent = (data)=>{
             stepTitle:"PRIMER",
             infoTitle:"Agregamos valor a tu negocio y ofrecemos experiencias excepcionales",
             img:"images/first-step.svg",
-            containerClass:"mt-40 mb-56 ml-auto w-11/12 py-10 mr-10 lg:mx-auto relative ",
+            containerClass:"mt-40 mb-56 ml-auto w-11/12 py-24 mr-10 lg:mx-auto relative ",
             orientate:true,
             imgClass:"img-primer",
             id:"primero"
@@ -128,7 +139,7 @@ const stepsContent = (data)=>{
             infoTitle:"Pensamos en la lógica y creamos un prototipo",
             img:"images/second-step.svg",
             imgClass:"absolute img-segundo",
-            containerClass:"w-11/12 py-20 ml-10",
+            containerClass:"w-11/12 py-48 ml-10",
             orientate:false,
             id:"segundo"
 
@@ -139,7 +150,7 @@ const stepsContent = (data)=>{
           infoTitle:"Diseñamos tu nueva tienda virtual y alineamos la estética",
           img:"images/third-step.svg",
           imgClass:"absolute img-tercer",
-          containerClass:"mt-56 mb-20 w-11/12 ml-auto mr-10 relative ",
+          containerClass:"mt-56 mb-48 w-11/12 ml-auto mr-10 relative ",
           orientate:true,
           id:"tercero"
 
@@ -152,7 +163,7 @@ const stepsContent = (data)=>{
           info: "Ya sea una app, ecommerce o sistema web, te ayudamos a realizar un seguimiento de tus usuarios usando google analitycs y fullstory.",
           stepTitle:"CUARTO",
           infoTitle:"Definimos la tecnologia y empezamos a implementar",
-          img:"images/four_step.svg",
+          img:"images/four_step.png",
           containerClass:"w-full py-20 pl-20 bg-black text-white",
           imgClass:"block h-screen pt-10 w-5/12 ml-auto",
           orientate:true,
@@ -163,7 +174,7 @@ const stepsContent = (data)=>{
           info: ["Ya sea una app, ecommerce o sistema web, te ayudamos a realizar un seguimiento de tus usuarios usando ",<strong key={'strong3'}>google analitycs</strong>," y ",<strong key={'strong4'}>fullstory</strong>],
           stepTitle:"QUINTO",
           infoTitle:"Lanzamos al mercado tu producto digital y optimizamos el rendimiento",
-          img:"images/fifth_step.svg",
+          img:"images/fifth_step.png",
           imgClass:"block h-screen w-6/12 ml-auto",
           containerClass:"w-full pb-20 pl-20 bg-black text-white",
           orientate:true,
@@ -177,10 +188,10 @@ const stepsContent = (data)=>{
             <div className="lg:hidden">
               {<StepsMobile data={data} />}
             </div>
-            <div className="hidden lg:block steps-octagon absolute w-4/12">
+            <div className="hidden lg:block geometric-spin steps-octagon absolute w-4/12">
               <img src="images/poligono_steps.png" alt="octagono"/>
             </div>
-            <div className="hidden lg:block steps-second-square absolute w-4/12">
+            <div className="hidden lg:block geometric-spin steps-second-square absolute w-4/12">
               <img src="images/square.png" alt="Sq-2"/>
             </div>
             <div className="hidden lg:block">

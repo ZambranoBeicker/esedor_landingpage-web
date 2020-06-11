@@ -18,22 +18,21 @@
   }
 
   .steps-octagon{
-    top: 38%;
+    top: 41.5%;
     right: -20%;
     z-index:-1;
   }
   .steps-second-square{
-    top: 13%;
+    top: 17.5%;
     left: -20%;
     z-index:-1;
   }
 
 
   .steps-first-square{
-    top: 70%;
+    top: 65%;
     right: -20%;
     z-index:-1;
-    // transform:rotate(-10deg);
   }
 
   @media screen and (min-width:"1024px"){
@@ -54,7 +53,7 @@
 
     .img-tercer{
       max-width: 60%;
-      bottom:-90px;
+      bottom:-202px;
       right:0;
 
     }
@@ -76,12 +75,6 @@
     right:none;
     left:0;
     max-height: 100%;
-  }
-
-  .img-tercer{
-    bottom:-90px;
-
-
   }
 
 }
