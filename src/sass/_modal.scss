@@ -2,9 +2,8 @@
 
   &-image{
     position: absolute;
-    right:13.2%;
-    top:13.5%;
-    transform: rotate(45deg);
+    right:5%;
+    top:-13.5%;
   }
 
   &-image-container{
@@ -12,8 +11,8 @@
     padding-top:0%;
     margin-left: auto;
     // margin-bottom: -1%;
-    height: 31px;
-    width:31px;
+    min-height: 31px;
+    min-width:31px;
   }
 }
 
