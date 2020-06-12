@@ -9,12 +9,16 @@ const ModalForm = ({display, displayDiv})=>{
   return (
         <div className={display}>
           <div className={displayDiv} onClick={()=>{
+            const body = document.querySelector('body')
+            body.classList.remove('overflow-y-hidden')
             click.active('hide')
             click.activeDiv('hidden')
             click.app('')
           }}></div>
           <div className="max-w-sm mx-auto">
             <div className="modal-image-container cursor-pointer md:pt-5 md:pl-5" onClick={()=>{
+            const body = document.querySelector('body')
+            body.classList.remove('overflow-y-hidden')
             click.active('hide')
             click.activeDiv('hidden')
             click.app('')

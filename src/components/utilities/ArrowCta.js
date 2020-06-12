@@ -5,18 +5,18 @@ import { Link } from 'react-router-dom';
 
 const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black rounded-md',textClass = '', route = "form", onClick, id})=>{
 
-  const handleClick = useContext(ShowModal)
+  const obj = useContext(ShowModal)
+  const handleClick = () =>{
+    const body = document.querySelector('body')
+    body.classList.add('overflow-y-hidden')
+    obj.active('appear')
+    obj.app('blur')
+    obj.activeDiv('block absolute inset-0 overflow-auto')
+
+  }
 
 
-// const heroFormButton = document.getElementById('hero-formButton')
-// const buttonChild = document.getElementById('formButton-child')
 
-// heroFormButton.addEventListener('click',()=>{
-//   console.log('Parent')
-// })
-// buttonChild.addEventListener('click',()=>{
-//   console.log('Child')
-// })
 
   let titleImg;
     const titulo = <h4 className={"mr-0 font-bold my-auto " + ctaClass}> {title}</h4>
@@ -71,7 +71,7 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
     }else if(route === "form"){
 
       return (
-            <button onClick={() => {handleClick.active('appear');handleClick.app('blur');handleClick.activeDiv('block fixed inset-0 overflow-auto')}} id={id} className={"flex max-w-full arrow-container pt-2 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+            <button onClick={handleClick} id={id} className={"flex max-w-full arrow-container pt-2 text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
                 {titleImg}
             </button>
         )
