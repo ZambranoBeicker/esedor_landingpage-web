@@ -12,7 +12,7 @@ const Projects = () =>{
         <React.Fragment>
           <section className="min-h-0 container-none lg:flex relative xl:min-h-screen">
             <div className="w-full lg:hidden">
-              <img className="rounded-t-md" src="images/projects.png" alt="Proyectos"/>
+              <img className="rounded-t-md" src="images/projects.jpg" alt="Proyectos"/>
             </div>
 
 
@@ -35,7 +35,7 @@ const Projects = () =>{
               </div>
             </div>
               <div className="projects__image hidden lg:block absolute w-8/12 right-0">
-                <img src="images/projects.png" alt="Proyectos"/>
+                <img src="images/projects.jpg" alt="Proyectos"/>
               </div>
           </section>
 

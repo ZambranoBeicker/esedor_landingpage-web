@@ -1,5 +1,4 @@
 import React from 'react'
-import anime from 'animejs/lib/anime.es.js';
 import ArrowCta from "./utilities/ArrowCta.js";
 import InfoParagraph from "./utilities/InfoParagraph.js";
 
@@ -50,12 +49,14 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
 
       return {
 
-        texts: {
-          stepsTitle:<h4 className="text-xs w-2/3 pt-3 mx-auto md:text-sm text-center font-bold">{obj.stepTitle + ' PASO'}</h4>,
-          info: <InfoParagraph info={obj.info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>,
-          title: <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-2xl md:text-3xl md:mx-0">{obj.infoTitle}</h2>
-        },
-        image:<div className="w-full my-10 sm:my-16"><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>,
+        component: (
+          <div>
+            <div className="w-full my-10 sm:my-16"><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
+            <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-2xl md:text-3xl md:mx-0">{obj.infoTitle}</h2>
+            <InfoParagraph info={obj.info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>
+          </div>
+        ),
+        stepsTitle:<h4 className="text-xs w-2/3 pt-3 mx-auto md:text-sm text-center font-bold">{obj.stepTitle + ' PASO'}</h4>,
         index: index,
       }
     })
@@ -70,15 +71,13 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
                 <button className="mx-auto" onClick={this.prevItem}>
                 <img className="w-10 h-10 rota-180 " src="images/steps_arrows.png" alt="nada"/>
                 </button>
-                {this.mobileSteps[this.state.clicks].texts.stepTitle}
+                {this.mobileSteps[this.state.clicks].stepTitle}
                 <button className="mx-auto" onClick={this.nextItem}>
                 <img className="w-10 h-10" src="images/steps_arrows.png" alt="steps"/>
                 </button>
                 </div>
                 <div id={"stepsAnimeted-" + this.mobileSteps[this.state.clicks].index}>
-                {this.mobileSteps[this.state.clicks].image}
-                {this.mobileSteps[this.state.clicks].texts.title}
-                {this.mobileSteps[this.state.clicks].texts.info}
+                  {this.mobileSteps[this.state.clicks].component}
                 </div>
             <ArrowCta  title="CONVERSEMOS" id={"responsiveSteps-step-1" + this.clicks} containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 my-10 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
             </div>

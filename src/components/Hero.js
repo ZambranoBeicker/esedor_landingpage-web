@@ -4,15 +4,10 @@ import HeroInfo from "./utilities/HeroInfo";
 import HeroForm from "./utilities/HeroForm";
 import Group3d from "./utilities/Group3d";
 import {Header} from "./Header";
-import anime from 'animejs/lib/anime.es.js';
 
 
 const Hero = () => {
     const [isMobile, setIsMobile] = useState(false)
-
-    // const cart3d = new anime({
-    //   target: document.getElementById('')
-    // })
 
     useEffect(()=>{
 
