@@ -27,11 +27,11 @@ const Projects = () =>{
                   />
               </div>
               <div className="hidden lg:block my-32 text-white xl:my-40">
-                <h5 className="cursor-auto projects__arrow-cta">SIGUIENTE</h5>
+                <a href="#this" target="_blank" className="cursor-pointer projects__arrow-cta">VISITAR WEB</a>
                 <img src="images/arrow-2.png" alt="arrow-2"/>
               </div>
               <div className="mt-5 ml-auto text-white w-40 text-bold text-right lg:hidden">
-                 <a href="#this" className="border-b border-black hover:border-white md:text-sm">VISITAR WEB</a>
+                 <a href="#this" target="_blank" className="border-b border-black hover:border-white md:text-sm">VISITAR WEB</a>
               </div>
             </div>
               <div className="projects__image hidden lg:block absolute w-8/12 right-0">
