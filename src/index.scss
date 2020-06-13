@@ -104,6 +104,24 @@ code {
   filter: blur(5px);
 }
 
+.p-09-chrome{
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    padding-top: .9rem;
+  }
+
+  @-moz-document url-prefix() {
+    padding-top: .5rem;
+
+  }
+}
+.p-25-chrome{
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    padding-top: .75rem;
+  }
+}
+
 .hero-gradient{
   overflow: hidden;
 
