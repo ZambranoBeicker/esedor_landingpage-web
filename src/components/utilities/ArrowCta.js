@@ -21,35 +21,35 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
   let titleImg;
     const titulo = <h4 className={"mr-0 font-bold my-auto " + ctaClass}> {title}</h4>
 
-     let cel = title.match('..[0-9]+.([0-9]+) ([0-9]+)')
 
     if(adapt){
 
       titleImg = (
-        // <React.Fragment>
             <div className="flex disable">
             {titulo}
                 <img className="arrow-cta__container ml-5 my-auto mr-5" src={src} alt={src && "Arrow"}/>
             </div>
-        // </React.Fragment>
       )
     }else{
       titleImg = (
-        // <React.Fragment>
-            <div className="flex disable">
+        <div className="flex disable">
                 <img className="arrow-cta__container ml-5 my-auto mr-5" src={src} alt={src && "Arrow"}/>
             {titulo}
             </div>
-        // </React.Fragment>
       )
-
+      
     }
-
-      if(cel){
-        return (
-
-        <a href={"tel:" + cel[0]} id={id} className={"flex max-w-full arrow-container text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
-            {titleImg}
+    
+    if(route === "llamada"){
+      return (
+        
+        <a href="https://calendly.com/s/DOl5ecSE" id={id} className={"cursor-pointer flex max-w-full arrow-container text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
+          <div className="flex disable">
+            <img className="h-6 ml-5 my-auto mr-6" src="images/llamada.png" alt="Call icon"/>
+            {titulo}
+            <img className="h-6 ml-6 my-auto mr-3" src="images/google-hangouts.svg" alt="Hangouts icon"/>
+            <img className="h-6 my-auto" src="images/zoom.svg" alt="Zoom icon"/>
+          </div>
         </a>
         )
 

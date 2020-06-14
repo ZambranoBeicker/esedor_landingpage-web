@@ -3,6 +3,11 @@ body {
   margin: 0;
 
 }
+
+.space-mono{
+  font-family: 'space mono';
+
+}
   p{
     font-family: 'space mono';
   }
