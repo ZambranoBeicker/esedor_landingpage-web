@@ -180,7 +180,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
 
 
   const Steps = () =>{
-    // const [isMobile, setIsMobile] = useState(false)
+ 
 
     const data = [
         {

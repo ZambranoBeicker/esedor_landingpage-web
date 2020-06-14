@@ -20,7 +20,7 @@ const Hero = () => {
         const currentWindowHeight = document.documentElement.clientHeight
         const stepsSectionInit = steps.offsetTop
         const stepsSectionEnd = stepsSectionInit + steps.clientHeight
-        // console.log(steps.offsetTop,currentScrollTop)
+ 
       getBgColorHero(serivceSectionInit, serviceSectionEnd, currentWindowHeight, currentScrollTop)
       getBgColorSteps(stepsSectionInit, stepsSectionEnd, currentWindowHeight, currentScrollTop)
 
@@ -45,8 +45,8 @@ const Hero = () => {
   const getBgColorHero= (init, end, windowHeight, scrollPosition) => {
 
     const windowPosStart = windowHeight / 2.4
-    // const changeInitStart = init - windowPosStart
-    // const changeEndEnd = end - windowPosStart
+ 
+ 
     const hero = document.getElementById('hero')
 
     if(scrollPosition >= windowPosStart) {

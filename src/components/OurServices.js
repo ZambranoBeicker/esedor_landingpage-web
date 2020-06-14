@@ -26,25 +26,25 @@ const showServices = (data,classes)=>{
             </div>
         )
     })
-  // const servicesResponsive = (
+ 
 
 
-  //           <div className="w-full md:w-4/12 my-10 mr-0 ">
-  //             <div className="bg-black text-center py-10 mx-auto rounded-t-md">
-  //               <h3 className="text-white text-xl sm:text-2xl font-bold">{data[0].title}</h3>
-  //             </div>
-  //             <InfoParagraph info={data[0].info} containerClass="text-shadow pt-10 pb-20 px-4 border rounded-b-md" textClass="my-3 text-sm sm:text-base text-center text-blue"/>
-  //           </div>
-  //   )
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
 
 
-    // if(window.innerWidth >= 768){
+ 
 
-    // }else {
-    //   return servicesResponsive
-    // }
+ 
+ 
+ 
     return services
 }
 
