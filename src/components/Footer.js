@@ -69,7 +69,7 @@ const Footer = () =>{
     if(window.innerWidth >= 767){
 
       return (
-        <footer className="footer md:py-4 border-t py-5 px-6">
+        <footer className="footer md:pt-8 border-t pt-5 px-6">
           <div className="footer__main-content xl:ml-4 lg:flex w-full">
             <div className="footer__image md:mb-5 lg:mb-0">
               <img src="images/logo-header.png" alt="Logo"/>
@@ -90,7 +90,7 @@ const Footer = () =>{
               </div>
             </div>
           </div>
-          <div className=" lg:py-4 border-t border-b mb-6 mt-10 lg:ml-4">
+          <div className=" lg:py-4 border-t border-b mt-10 lg:ml-4">
             <p>© 2020 ESEDOR, todos los derechos reservados.</p>
           </div>
         </footer>
@@ -98,7 +98,7 @@ const Footer = () =>{
     }else{
 
       return (
-        <footer className="py-2 md:py-5 md:px-6">
+        <footer className="pt-2 md:pt-5 md:px-6">
           <div className="w-full">
             <div className="w-full md:flex md:flex-wrap">
               {info.map((item,index) => <FooterInfo key={index} title={item.title} pgraph={item.pgraph} /> )}
@@ -115,7 +115,7 @@ const Footer = () =>{
           <div className="mt-6 sm:pl-10 md:pl-0">
             <img src="images/logo-header.png" alt="Logo"/>
           </div>
-          <div className="text-gray-secondary px-4 sm:pl-10 py-4 md:px-0 border-t border-b mb-6 mt-10">
+          <div className="text-gray-secondary px-4 sm:pl-10 py-4 md:px-0 border-t border-b mt-10">
             <p className="text-sm">© 2020 ESEDOR, todos los derechos reservados.</p>
           </div>
         </footer>

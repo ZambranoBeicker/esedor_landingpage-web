@@ -73,7 +73,7 @@ const Hero = () => {
             <HeroInfo />
             <div className="mt-10 relative my-index sm:ml-5 md:ml-0">
               <h4 className="text-bold semibig hidden lg:block mb-8 px-16">Solicita más información</h4>
-              <HeroForm formClass="bg-black min-h-0 py-1 px-2 rounded-t-md" buttonId="hero-formButton"/>
+              <HeroForm formClass="bg-black min-h-0 py-1 px-4 rounded-t-md" buttonId="hero-formButton"/>
             </div>
         </section>
     )
