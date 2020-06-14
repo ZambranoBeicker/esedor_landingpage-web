@@ -19,7 +19,7 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
 
 
   let titleImg;
-    const titulo = <h4 className={"mr-0 font-bold my-auto " + ctaClass}> {title}</h4>
+    const titulo = <h4 className={"mr-0 font-bold text-xl my-auto " + ctaClass}> {title}</h4>
 
 
     if(adapt){
@@ -46,7 +46,7 @@ const ArrowCta = ({title,adapt,ctaClass = '',src,containerClass = 'bg-black roun
         <a href="https://calendly.com/s/DOl5ecSE" id={id} className={"cursor-pointer flex max-w-full arrow-container text-white sm:mx-auto text-shadow cursor-pointer hover-bg-blue " + containerClass}>
           <div className="flex disable">
             <img className="h-6 ml-5 my-auto mr-6" src="images/llamada.png" alt="Call icon"/>
-            {titulo}
+            <h4 className={"mr-0 text-lg font-bold my-auto " + ctaClass}> {title}</h4>
             <img className="h-6 ml-6 my-auto mr-3" src="images/google-hangouts.svg" alt="Hangouts icon"/>
             <img className="h-6 my-auto" src="images/zoom.svg" alt="Zoom icon"/>
           </div>
