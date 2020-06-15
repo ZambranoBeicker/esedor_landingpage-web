@@ -99,7 +99,7 @@ const data = [
         <div id="recaptcha_image" className="g-recaptcha" data-sitekey="6LcTh_8UAAAAAOHlUrf8L26iAVs-8AoJR1N4UAkY">
         </div>
       </form>
-      {loader ? <div className="bg-blue rounded-b-md justify-center flex arrow-container py-2 text-white"><p className="text-lg poppins ml-auto mr-5">Cargando</p><img className="mr-auto w-8 ml-5 spinning" src="images/spinner.svg" alt="Loading Spinner"/></div> : button}
+      {button}
     </div>
   )
   }
