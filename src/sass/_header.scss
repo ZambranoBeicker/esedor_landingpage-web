@@ -32,7 +32,39 @@
     }
   }
 }
+  @media screen and (min-width:"1500px"){
+    
+    .header{
+      
+      &__logo-container{
+        max-height: 60px;
+        // margin-left:3.3rem;
+        
+        img{
+          
+          max-height: inherit;
+        }
+        
+      }
+    }
+  }
   @media screen and (min-width:"1600px"){
+    
+    .header{
+      
+      &__logo-container{
+        max-height: 80px;
+        margin-left:3.3rem;
+        
+        img{
+          
+          max-height: inherit;
+        }
+        
+      }
+    }
+  }
+  @media screen and (min-width:"1800px"){
     
     .header{
       
