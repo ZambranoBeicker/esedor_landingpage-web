@@ -118,3 +118,65 @@
     min-height: 170vh;
   }
 }
+@media screen and (min-width:"1600px"){
+
+  .hero_info{
+    font-size: 24px;
+  }
+  
+  .hero_title{
+    font-size: 64px;
+    
+  }
+  
+  .arrow-container{
+    min-height: 65px;
+    min-width: 340px;
+  }
+  
+  .hero-form-container{
+    margin-left: auto;
+    margin-right: 4rem;
+    margin-top: 10.5rem;
+
+
+  }
+    .form-container{
+      min-height: 465px;
+      min-width: 340px;
+
+      form{
+        min-height: inherit;
+        min-width: inherit;
+
+        label{
+          font-size: 16px;
+        }
+
+        .input-container{
+          height: 3.5rem;
+          
+          input{
+            height: inherit;
+            font-size: 18px;
+          }
+        }
+
+      }
+    }
+
+  .arrow-text{
+    font-size: 1.5rem;
+  }
+
+  
+  .query-info{
+    font-size: 22px;
+  }
+
+
+  .hero_info-container{
+    padding-left: 1.5rem;
+    margin-top: 8.5rem;
+  }
+}

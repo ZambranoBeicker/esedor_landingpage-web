@@ -12,15 +12,18 @@
 
         max-height: inherit;
       }
-
+      
     }
   }
 }
+
+@media screen and (min-width:"641px"){
+
   .header{
 
     &__logo-container{
       max-height: 50px;
-
+      
       img{
 
         max-height: inherit;
@@ -28,4 +31,22 @@
 
     }
   }
-
+}
+  @media screen and (min-width:"1600px"){
+    
+    .header{
+      
+      &__logo-container{
+        max-height: 80px;
+        margin-left:5rem;
+        
+        img{
+          
+          max-height: inherit;
+        }
+        
+      }
+    }
+  }
+  
+  

@@ -4,7 +4,7 @@ const InfoParagraph = ({indexKey,info,textClass = 'text-xs sm:text-sm sm:pr-4 md
     return(
 
         <div key={indexKey + 1} className={containerClass}>
-            <p key={indexKey + 2} className={textClass}>{info}</p>
+            <p key={indexKey + 2} className={textClass + " hero_info"}>{info}</p>
         </div>
     )
 }
