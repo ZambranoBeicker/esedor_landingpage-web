@@ -1,8 +1,8 @@
 import React from 'react'
 import ArrowCta from "./utilities/ArrowCta.js";
 import InfoParagraph from "./utilities/InfoParagraph.js";
-import Slide from 'react-reveal/Slide';
-import makeCarousel from 'react-reveal/makeCarousel';
+import Slider from 'react-slick';
+
 
 const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,id)=>{
 
@@ -30,6 +30,18 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
       clicks: 0,
     }
 
+    constructor(props) {
+      super(props);
+      this.next = this.next.bind(this);
+      this.previous = this.previous.bind(this);
+    }
+    next() {
+      this.slider.slickNext();
+    }
+    previous() {
+      this.slider.slickPrev();
+    }
+
     prevItem = ()=>{
       if(this.counter > 0 && this.counter < 5){
         this.counter--
@@ -47,42 +59,16 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
       }
       this.setState({clicks: this.counter},(c)=>{return {clicks: this.counter}})
     }
-
-    Container = ({position,handleClick,children})=>{
-
-      const stepsNames = ["PRIMER","SEGUNDO","TERCERO","CUARTO","QUINTO"]
-
-      return (
-        <div className="mx-auto">
-        <div className="relative flex h-10">
-          <button className="mx-auto h-10" onClick={(e)=>{handleClick(e);this.prevItem()}} data-position={position - 1}>
-          <img className="w-10 h-10 rota-180 " src="images/steps_arrows.png" alt="nada"/>
-          </button>
-          <div>
-            <h4>{stepsNames[this.state.clicks] + " PASO"}</h4>
-            <p className='text-center'>{(this.state.clicks + 1) + "/5"}</p>
-          </div>
-          <button className="mx-auto h-10" onClick={(e)=>{handleClick(e);this.nextItem()}} data-position={position + 1}>
-          <img className="w-10 h-10" src="images/steps_arrows.png" alt="steps"/>
-          </button>
-        </div>
-        <div className="relative mb-slider">
-            {children}
-        </div>
-        </div>
-      )
-    }
-
-    Carousel = makeCarousel(this.Container)
-
-
-    mobileSteps = this.props.data.map((obj,index) =>{
-
-      return {
-
-        component: (
-          <div>
-            <div className="w-full my-10 sm:my-16"><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
+        
+        stepsNames = ["PRIMER","SEGUNDO","TERCER","CUARTO","QUINTO"]
+        
+        mobileSteps = this.props.data.map((obj,index) =>{
+          
+          return {
+            
+            component: (
+              <div className='min-h-screen'>
+            <div className="w-full mt-20 mb-10 sm:my-16"><h4 className='w-full font-bold absolute h-slider-steps'>{this.stepsNames[index] + " PASO"}</h4><p className='w-full absolute p-slider-steps'>{index+1 + "/5"}</p><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
             <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-3xl md:mx-0">{obj.infoTitle}</h2>
             <InfoParagraph info={obj.info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>
             <ArrowCta  title="CONVERSEMOS" id={"responsiveSteps-FirstThree-" + this.state.clicks} containerClass="rounded-md ml-3 md:mx-0 sm:ml-6 my-5 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
@@ -92,14 +78,14 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
         stepsTitle:<h4 className="text-xs w-2/3 pt-3 mx-auto md:text-sm text-center font-bold">{obj.stepTitle + ' PASO'}</h4>,
       }
     })
-
+    
     lastMobileSteps = this.props.lastData.map((obj,index) =>{
 
       return {
 
         component: (
-          <div>
-            <div className={obj.imgClass + " my-10 sm:my-16"}><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
+          <div className='min-h-screen pb-10'>
+            <div className={obj.imgClass + " mt-20 mb-10 sm:my-16"}><h4 className='w-full font-bold absolute h-slider-steps'>{this.stepsNames[index + 3] + " PASO"}</h4><p className='w-full absolute p-slider-steps'>{index + 4 + "/5"}</p><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
             <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-3xl md:mx-0">{obj.infoTitle}</h2>
             <InfoParagraph info={obj.info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>
             <ArrowCta  title="CONVERSEMOS" id={"responsiveSteps-LastTwo-" + this.state.clicks} containerClass="rounded-md ml-3 md:mx-0 sm:ml-6 my-5 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
@@ -109,16 +95,24 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
       }
     })
 
-
+    settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      adaptiveHeight:true,
+      // className:'max-h-85'
+    };
 
 
     render(){
 
       return (
 
-        <div className="relative py-20 my-56 text-black">
+        <div className="my-8 text-black">
         <div className="mx-auto">
-            <this.Carousel
+            {/* <this.Carousel
               defaultWait={300}
               maxTurns={0}
             >
@@ -137,7 +131,29 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
               <Slide right>
                 {this.lastMobileSteps[1].component}
               </Slide>
-            </this.Carousel>
+            </this.Carousel>*/}
+             <div className="absolute w-full top-0-cont z-50 flex h-10">
+                <button className="mx-auto h-10" onClick={this.previous}>
+                <img className="w-10 h-10 rota-180 " src="images/steps_arrows.png" alt="nada"/>
+                </button>
+                <div>
+                </div>
+                <button className="mx-auto h-10" onClick={this.next}>
+                <img className="w-10 h-10" src="images/steps_arrows.png" alt="steps"/>
+                </button>
+              </div>
+          <Slider
+          {...this.settings}
+          ref={c => {this.slider = c}}
+          >
+          {this.mobileSteps[0].component}
+          {this.mobileSteps[1].component}
+          {this.mobileSteps[2].component}
+          {this.lastMobileSteps[0].component}
+          {this.lastMobileSteps[1].component}
+
+          </Slider>
+
             </div>
         </div>
         )
@@ -246,7 +262,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
 
 
     return(
-        <section id="stepsSection" className="relative overflow-hidden duration-200 min-h-screen md:px-16 lg:px-0">
+        <section id="stepsSection" className="relative overflow-hidden duration-200 md:px-16 lg:px-0">
             <div className="lg:hidden">
               {<StepsMobile data={data} lastData={lastData} />}
             </div>

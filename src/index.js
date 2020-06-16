@@ -5,6 +5,7 @@ import './index.scss';
 import './App.css';
 import Routes from './Routes';
 
+
 import TagManager from 'react-gtm-module';
 
 const tagManagerArgs = {

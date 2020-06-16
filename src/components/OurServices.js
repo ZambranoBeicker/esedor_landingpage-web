@@ -1,19 +1,7 @@
 import React from 'react';
 import InfoParagraph from './utilities/InfoParagraph';
 import ArrowCta from './utilities/ArrowCta';
-import Slide from 'react-reveal/Slide'
-import makeCarousel from 'react-reveal/makeCarousel'
-
-const Container = ({children}) =>{
-
-      return (
-        <div className="relative">
-          {children}
-        </div>
-      )
-}
-
-const Carousel = makeCarousel(Container)
+import Slider from 'react-slick';
 
 const showServices = (data,classes)=>{
 
@@ -26,25 +14,6 @@ const showServices = (data,classes)=>{
             </div>
         )
     })
- 
-
-
- 
- 
- 
- 
- 
- 
- 
-
-
-
-
- 
-
- 
- 
- 
     return services
 }
 
@@ -82,6 +51,14 @@ const OurService = () =>{
         containerClass:"text-white my-3"
     }
 
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
+
     return (
         <div className='relative overflow-hidden'>
             <section id="services" className="relative overflow-hidden block md:bg-black px-4 py-5 md:pl-16 lg:pt-4 lg:pb-32 w-full">
@@ -97,64 +74,65 @@ const OurService = () =>{
                 <div className="lg:hidden text-center">
                     <h2 className="text-2xl md:text-4xl lg:text-5xl">Servicios ecommerce</h2>
                 </div>
-                    <Carousel
-                      maxTurns={0}
+                    <Slider
+                    {...settings}
                     >
-                      <Slide right>
+                       
                       <div className="w-full md:w-4/12 my-10 px-4">
                         <div className="bg-black text-center py-10 mx-auto rounded-t-md">
                           <h3 className="text-white text-xl sm:text-2xl font-bold px-4">{data[0].title}</h3>
                         </div>
                         <InfoParagraph info={data[0].info} containerClass="text-shadow pt-10 pb-32 px-4 border rounded-b-md" textClass="my-3 text-sm sm:text-base text-center text-blue"/>
                       </div>
-                      </Slide>
-                      <Slide right>
+                       
+                       
                         <div className="w-full md:w-4/12 my-10 px-6 ">
                           <div className="bg-black text-center py-10 mx-auto rounded-t-md">
                             <h3 className="text-white text-xl sm:text-2xl font-bold px-4">{data[1].title}</h3>
                           </div>
                           <InfoParagraph info={data[1].info} containerClass="text-shadow pt-10 pb-32 px-4 border rounded-b-md" textClass="my-3 text-sm sm:text-base text-center text-blue"/>
                         </div>
-                      </Slide>
-                      <Slide right>
+                       
+                       
                         <div className="w-full md:w-4/12 my-10 px-6 ">
                           <div className="bg-black text-center py-10 mx-auto rounded-t-md">
                             <h3 className="text-white text-xl sm:text-2xl font-bold px-4">{data[2].title}</h3>
                           </div>
                           <InfoParagraph info={data[2].info} containerClass="text-shadow pt-10 pb-32 px-4 border rounded-b-md" textClass="my-3 text-sm sm:text-base text-center text-blue"/>
                         </div>
-                      </Slide>
-                      <Slide right>
+                       
+                       
                         <div className="w-full md:w-4/12 my-10 px-6 ">
                           <div className="bg-black text-center py-10 mx-auto rounded-t-md">
                             <h3 className="text-white text-xl sm:text-2xl font-bold px-4">{data[3].title}</h3>
                           </div>
                           <InfoParagraph info={data[3].info} containerClass="text-shadow pt-10 pb-32 px-4 border rounded-b-md" textClass="my-3 text-sm sm:text-base text-center text-blue"/>
                         </div>
-                      </Slide>
-                      <Slide right>
+                       
+                       
                         <div className="w-full md:w-4/12 my-10 px-6 ">
                           <div className="bg-black text-center py-10 mx-auto rounded-t-md">
                             <h3 className="text-white text-xl sm:text-2xl font-bold px-4">{data[4].title}</h3>
                           </div>
                           <InfoParagraph info={data[4].info} containerClass="text-shadow pt-10 pb-32 px-4 border rounded-b-md" textClass="my-3 text-sm sm:text-base text-center text-blue"/>
                         </div>
-                      </Slide>
-                      <Slide right>
+                       
+                       
                         <div className="w-full md:w-4/12 my-10 px-6 ">
                           <div className="bg-black text-center py-10 mx-auto rounded-t-md">
                             <h3 className="text-white text-xl sm:text-2xl font-bold px-4">{data[5].title}</h3>
                           </div>
                           <InfoParagraph info={data[5].info} containerClass="text-shadow pt-10 pb-32 px-4 border rounded-b-md" textClass="my-3 text-sm sm:text-base text-center text-blue"/>
                         </div>
-                      </Slide>
-                    </Carousel>
+                       
+
+                    </Slider>
                 </div>
 
                 <div className="hidden lg:block geometric-spin steps-first-square absolute w-4/12">
                   <img src="images/square.png" alt="Sq-1"/>
                 </div>
-            <div className="md:mx-auto md:my-40 md:w-9/12 w-full px-4 md:px-0 text-center">
+            <div className="md:mx-auto pb-10 md:my-40 md:w-9/12 w-full px-4 md:px-0 text-center">
                 <h4 className="text-2xl text-bolder mb-10 lg:mb-24">Nuestra Fórmula</h4>
                 <h2 className="text-semibig sm:text-3xl md:text-4xl xl:text-5xl">Te ayudamos a entender tu ecommerce con un enfoque omnicanal</h2>
                 <div className="arrows min-w-0 flex">
