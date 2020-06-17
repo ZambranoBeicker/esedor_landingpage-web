@@ -67,8 +67,8 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
           return {
             
             component: (
-              <div className='min-h-screen'>
-            <div className="w-full mt-20 mb-10 sm:my-16"><h4 className='w-full font-bold absolute h-slider-steps'>{this.stepsNames[index] + " PASO"}</h4><p className='w-full absolute p-slider-steps'>{index+1 + "/5"}</p><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
+              <div className='min-h-screen relative'>
+            <div className="w-full mt-20 mb-10 sm:my-16"><div className='absolute top-0 left-0 right-0'><h4 className='text-center mx-auto font-bold'>{this.stepsNames[index] + " PASO"}</h4></div><p className='w-full absolute text-center p-slider-steps'>{index+1 + "/5"}</p><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
             <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-3xl md:mx-0">{obj.infoTitle}</h2>
             <InfoParagraph info={obj.info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>
             <ArrowCta  title="CONVERSEMOS" id={"responsiveSteps-FirstThree-" + this.state.clicks} containerClass="rounded-md ml-3 md:mx-0 sm:ml-6 my-5 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
@@ -84,8 +84,8 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
       return {
 
         component: (
-          <div className='min-h-screen pb-10'>
-            <div className={obj.imgClass + " mt-20 mb-10 sm:my-16"}><h4 className='w-full font-bold absolute h-slider-steps'>{this.stepsNames[index + 3] + " PASO"}</h4><p className='w-full absolute p-slider-steps'>{index + 4 + "/5"}</p><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
+          <div className='min-h-screen relative pb-10'>
+            <div className={obj.imgClass + " mt-20 mb-10 sm:my-16"}><div className='absolute top-0 left-0 right-0'><h4 className='text-center mx-auto font-bold'>{this.stepsNames[index + 3] + " PASO"}</h4></div><p className='w-full absolute text-center p-slider-steps'>{index + 4 + "/5"}</p><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
             <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-3xl md:mx-0">{obj.infoTitle}</h2>
             <InfoParagraph info={obj.info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>
             <ArrowCta  title="CONVERSEMOS" id={"responsiveSteps-LastTwo-" + this.state.clicks} containerClass="rounded-md ml-3 md:mx-0 sm:ml-6 my-5 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
@@ -102,7 +102,6 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
       slidesToShow: 1,
       slidesToScroll: 1,
       adaptiveHeight:true,
-      // className:'max-h-85'
     };
 
 
@@ -111,35 +110,14 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
       return (
 
         <div className="my-8 text-black">
-        <div className="mx-auto">
-            {/* <this.Carousel
-              defaultWait={300}
-              maxTurns={0}
-            >
-              <Slide right>
-                {this.mobileSteps[0].component}
-              </Slide>
-              <Slide right>
-                {this.mobileSteps[1].component}
-              </Slide>
-              <Slide right>
-                {this.mobileSteps[2].component}
-              </Slide>
-              <Slide right>
-                {this.lastMobileSteps[0].component}
-              </Slide>
-              <Slide right>
-                {this.lastMobileSteps[1].component}
-              </Slide>
-            </this.Carousel>*/}
-             <div className="absolute w-full top-0-cont z-50 flex h-10">
-                <button className="mx-auto h-10" onClick={this.previous}>
-                <img className="w-10 h-10 rota-180 " src="images/steps_arrows.png" alt="nada"/>
+        <div className="mx-auto max-h-60">
+
+             <div className="absolute w-full one-percent-top left-0 right-0 z-50 flex h-10">
+                <button className="mr-auto ml-4 sm:ml-20 md:ml-32 w-16" onClick={this.previous}>
+                <img className="rota-180 steps-slider-img" src="images/steps_arrows.png" alt="nada"/>
                 </button>
-                <div>
-                </div>
-                <button className="mx-auto h-10" onClick={this.next}>
-                <img className="w-10 h-10" src="images/steps_arrows.png" alt="steps"/>
+                <button className="ml-auto mr-4 sm:mr-20 md:mr-32 w-16" onClick={this.next}>
+                <img className='steps-slider-img' src="images/steps_arrows.png" alt="steps"/>
                 </button>
               </div>
           <Slider
@@ -203,7 +181,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
             info: "Identificamos cuando, donde y como compra tu cliente usando un set de disciplinas de investigación CX.",
             stepTitle:"PRIMER",
             infoTitle:"Agregamos valor a tu negocio y ofrecemos experiencias excepcionales",
-            img:"images/first-step.svg",
+            img:"images/new-first-step.svg",
             containerClass:"mt-40 mb-56 ml-auto w-11/12 py-24 mr-10 lg:mx-auto relative ",
             orientate:true,
             imgClass:"img-primer",
@@ -214,7 +192,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
             info:["Creamos versiones interactivas de escritorio, tablet y dispositivo móvil de tu tienda virtual, plasmados en el prototipo de UX en ",<strong id="strong1" key={Math.floor(Math.random() * 10 + 97)}>Figma</strong>],
             stepTitle:"SEGUNDO",
             infoTitle:"Pensamos en la lógica y creamos un prototipo",
-            img:"images/second-step.svg",
+            img:"images/new-second-step.svg",
             imgClass:"absolute img-segundo",
             containerClass:"w-11/12 py-48 ml-10",
             orientate:false,
@@ -225,7 +203,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
           info: ["Le damos la identidad visual de tu marca creando una guía de estilos visuales y si deseas escalar implementamos un ",<strong id="strong" key={Math.floor(Math.random() * 9 + 97)}>sistema de diseño</strong>],
           stepTitle:"TERCER",
           infoTitle:"Diseñamos tu nueva tienda virtual y alineamos la estética",
-          img:"images/third-step.svg",
+          img:"images/new-third-step.svg",
           imgClass:"absolute img-tercer",
           containerClass:"mt-56 mb-48 w-11/12 ml-auto mr-10 relative ",
           orientate:true,
@@ -262,7 +240,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
 
 
     return(
-        <section id="stepsSection" className="relative overflow-hidden duration-200 md:px-16 lg:px-0">
+        <section id="stepsSection" className="relative overflow-hidden mt-24 lg:mt-0 duration-200 md:px-16 lg:px-0">
             <div className="lg:hidden">
               {<StepsMobile data={data} lastData={lastData} />}
             </div>

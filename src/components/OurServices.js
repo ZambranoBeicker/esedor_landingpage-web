@@ -52,9 +52,9 @@ const OurService = () =>{
     }
 
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
-      speed: 500,
+      speed: 700,
       slidesToShow: 1,
       slidesToScroll: 1
     };
