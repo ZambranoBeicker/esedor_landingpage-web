@@ -107,3 +107,21 @@
 
   }
 }
+
+@media screen and (min-width:"1600px"){
+  .services__title{
+    font-size: 60px;
+  }
+
+  .services__info-title{
+    font-size: 30px;
+
+  }
+
+  .services__info-container{
+    margin-top:2.25rem;
+  }
+  .services__info{
+    font-size: 18px;
+  }
+}

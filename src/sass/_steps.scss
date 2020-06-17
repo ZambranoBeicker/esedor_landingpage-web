@@ -137,6 +137,23 @@
     margin-right: auto;
     padding-right: 1.5rem;
   }
+
+  .steps_name-title{
+    font-size: 18px;
+  }
+  .steps_info{
+    font-size: 16px;
+  }
+  
+  .tercer{
+    .steps_info{
+    padding-right: 1.8rem;
+    }
+  }
+  .steps_main-title{
+    font-size: 2.5rem;
+  }
+  
   // .img-segundo{
   //   top:18%;
   //   right:none;
@@ -162,29 +179,51 @@
     // padding-right: 9.25rem;
   }
 
+  .third-step-container,.first-step-container{
+    margin-left: 8.75rem;
+    
+  }
+  
   .four-step-container{
-    padding-left: 10rem;
     padding-top: 12rem;
+    padding-left: 8.75rem;
     // padding-right: 9.25rem;
   }
   .five-step-container{
-    padding-left: 10rem;
     padding-bottom: 12rem;
+    padding-left: 8.75rem;
     // padding-right: 9.25rem;
   }
-
-
-
-  .steps_name-title,.steps_info{
-    font-size: 18px;
+  
+  
+}
+@media screen and (min-width:"1860px"){
+  
+  .third-step-container,.first-step-container{
+    margin-left: 10rem;
+    
+  }
+  
+  .four-step-container,.five-step-container{
+    padding-left: 10rem;
+    // padding-right: 9.25rem;
+  }
+  
+  .steps_name-title{
+    font-size: 22px;
+  }
+  .steps_info{
+    font-size: 20px;
+  }
+  
+  .tercer{
+    .steps_info{
+    padding-right: 2.8rem;
+    }
   }
   .steps_main-title{
     font-size: 3rem;
   }
-}
-@media screen and (min-width:"1700px"){
-
-  
 
   // .img-primer{
   //   max-width:54%;

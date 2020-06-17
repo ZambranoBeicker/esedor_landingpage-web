@@ -9,7 +9,7 @@ const showServices = (data,classes)=>{
 
     return(
       <div key={index} className=" w-full md:w-4/12 my-10 mr-0">
-                <h3 className="text-white md:text-lg lg:text-xl font-bold">{value.title}</h3>
+                <h3 className="text-white md:text-lg lg:text-xl font-bold services__info-title">{value.title}</h3>
                 <InfoParagraph info={value.info} containerClass={classes.containerClass} textClass={classes.textClass}/>
             </div>
         )
@@ -18,37 +18,38 @@ const showServices = (data,classes)=>{
 }
 
 const OurService = () =>{
-
+  // 
+  // 
     const data = [
-        {
-            title: "Desarrollo a medida",
-            info: "Adapta tu modelo de negocio por completo en una plataforma personalizada y escalable."
-        },
-        {
-            title: "Desarrollo de aplicación móvil",
-            info: "Lleva tu modelo de negocio al siguiente nivel desarrollando una app para iOS y Android"
-        },
-        {
-            title: "Desarrollo de código abierto",
-            info: "Integra tu tienda virtual con WooCommerce, Magento, Prestashop, Shopify, Wordpress."
-        },
         {
             title: "Experiencia de cliente(CX)",
             info: "Atiende mejor a tu cliente en todo el recorrido de la compra aumentando tu funnel con un enfoque omnicanal."
         },
         {
-            title: "Diseño visual web y app",
-            info: "Alinea la identidad de tu marca creando tu propia guía de estilos visuales en ordenador y móvil."
+            title: "Identidad visual y fotografia",
+            info: "Crea o alinea la identidad de tu marca creando tu propia guía de estilos visuales y te ayudamos a tomar las fotos de tus productos."
         },
         {
-            title: "Sistema de diseño",
-            info: "Aprende cómo crecer con tu producto digital creando un repositorio virtual de UX, desarrollo y branding."
+            title: "Social marketing y Google ADS",
+            info: "Conecta con más personas e incrementa tu funnel de ventas llegando a más personas de forma estrategica."
+        },
+        {
+            title: "Programación a medida",
+            info: "Adapta tu modelo de negocio por completo en una plataforma personalizada y escalable."
+        },
+        {
+            title: "Programación de código abierto",
+            info: "Integra tu tienda virtual con WooCommerce, Magento, Prestashop, Shopify, Wordpress."
+        },
+        {
+            title: "Programación de aplicación móvil",
+            info: "Lleva tu modelo de negocio al siguiente nivel desarrollando tu nueva app para iOS y Android"
         },
     ]
 
     const classes = {
-        textClass:" lg:text-sm w-11/12",
-        containerClass:"text-white my-3"
+        textClass:" md:text-sm w-11/12 services__info",
+        containerClass:"text-white my-3 services__info-container"
     }
 
     const settings = {
@@ -61,9 +62,9 @@ const OurService = () =>{
 
     return (
         <div className='relative overflow-hidden'>
-            <section id="services" className="relative overflow-hidden block md:bg-black px-4 py-5 md:pl-16 lg:pt-4 lg:pb-32 w-full">
-                <div className="text-white mb-10 hidden lg:block">
-                    <h2 className="text-2xl md:text-4xl lg:text-5xl">Servicios<br></br>ecommerce</h2>
+            <section id="services" className="relative overflow-hidden block md:bg-black px-4 py-5 md:pl-6 lg:pt-4 lg:pl-16 lg:pb-32 w-full">
+                <div className="text-white mb-10 hidden md:block">
+                    <h2 className="text-2xl md:text-4xl lg:text-5xl services__title">Servicios<br></br>ecommerce</h2>
                 </div>
                 <div className="hidden md:flex md:flex-wrap">
                     {showServices(data,classes)}
@@ -136,10 +137,10 @@ const OurService = () =>{
                 <h4 className="text-2xl text-bolder mb-10 lg:mb-24">Nuestra Fórmula</h4>
                 <h2 className="text-semibig sm:text-3xl md:text-4xl xl:text-5xl">Te ayudamos a entender tu ecommerce con un enfoque omnicanal</h2>
                 <div className="arrows min-w-0 flex">
-                  <div className="w-4/12 xl:w-4/12 ml-auto hidden lg:block mr-8">
-                    <ArrowCta  title="OMITIR LOS PASOS" src="images/omitir.png" containerClass="md:w-11/12 rounded-md px-2 my-20 py-3 pt-3 text-shadow-second" ctaClass="ml-5 text-blue" adapt={true} route='skip'/>
+                  <div className="w-4/12 xl:w-4/12 ml-auto hidden lg:block mr-5">
+                    <ArrowCta  title="OMITIR LOS PASOS" src="images/omitir.png" containerClass="md:w-11/12 rounded-md sm:mr-0 px-2 my-20 py-3 pt-3 text-shadow-second" ctaClass="ml-5 text-blue" adapt={true} route='skip'/>
                   </div>
-                  <div className="min-w-0 md:w-6/12 lg:w-4/12 xl:w-4/12 mx-auto lg:mr-auto lg:ml-8">
+                  <div className="min-w-0 md:w-6/12 lg:w-4/12 xl:w-4/12 mx-auto lg:mr-auto lg:ml-5">
                   <ArrowCta  title="CONVERSEMOS" id="services-button" containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 mt-16 bg-blue mt-20 p-25-chrome pb-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
                   </div>
                 </div>
