@@ -9,10 +9,10 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
     return (
             <div className={containerClass} key={index * 7 +2}>
                 <div key={(index * 2 - 3)}>
-                    <h4 className="mb-5 text-sm xl:text-base font-bold">{stepTitle + ' PASO'}</h4>
-                    <h2 className="text-3xl xl:text-4xl w-full">{infoTitle}</h2>
+                    <h4 className="mb-5 text-sm xl:text-base font-bold steps_name-title">{stepTitle + ' PASO'}</h4>
+                    <h2 className="text-3xl xl:text-4xl w-full steps_main-title">{infoTitle}</h2>
                 </div>
-                <InfoParagraph indexKey={index * (10 - 1 * 3)} info={info} textClass={textClass}/>
+                <InfoParagraph indexKey={index * (10 - 1 * 3)} info={info} textClass={textClass + " steps_info"}/>
 
                 <ArrowCta  title="CONVERSEMOS" id={"desktopSteps-step-" + id} containerClass="rounded-md mx-auto md:mx-0 sm:ml-6 mt-16 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
             </div>
@@ -67,7 +67,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
           return {
             
             component: (
-              <div className='min-h-screen relative'>
+              <div className='min-h-screen md:px-16 relative'>
             <div className="w-full mt-20 mb-10 sm:my-16"><div className='absolute top-0 left-0 right-0'><h4 className='text-center mx-auto font-bold'>{this.stepsNames[index] + " PASO"}</h4></div><p className='w-full absolute text-center p-slider-steps'>{index+1 + "/5"}</p><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
             <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-3xl md:mx-0">{obj.infoTitle}</h2>
             <InfoParagraph info={obj.info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>
@@ -84,7 +84,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
       return {
 
         component: (
-          <div className='min-h-screen relative pb-10'>
+          <div className='min-h-screen md:px-16 relative pb-10'>
             <div className={obj.imgClass + " mt-20 mb-10 sm:my-16"}><div className='absolute top-0 left-0 right-0'><h4 className='text-center mx-auto font-bold'>{this.stepsNames[index + 3] + " PASO"}</h4></div><p className='w-full absolute text-center p-slider-steps'>{index + 4 + "/5"}</p><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
             <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-3xl md:mx-0">{obj.infoTitle}</h2>
             <InfoParagraph info={obj.info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>
@@ -148,7 +148,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
 
             return(
               <div key={index * 3} className={"flex " + steps.containerClass}>
-                    {setTitles(steps,"text-md leading-loose", steps.stepTitle.toLowerCase() + " w-6/12",index,steps.id)}
+                    {setTitles(steps,"text-md leading-loose", steps.stepTitle.toLowerCase() + " lg:pr-6 w-6/12",index,steps.id)}
                    <div className={steps.imgClass}>
                         <img src={steps.img} alt={steps.stepTitle}/>
                     </div>
@@ -156,7 +156,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
                 )
             }else{
             return(
-                <div key={index * 4} className={"relative flex py-20 " + steps.containerClass}>
+                <div key={index * 4} className={"relative flex " + steps.containerClass}>
                     <div className={steps.imgClass}>
                         <img src={steps.img} alt="imagen"/>
                     </div>
@@ -182,7 +182,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
             stepTitle:"PRIMER",
             infoTitle:"Agregamos valor a tu negocio y ofrecemos experiencias excepcionales",
             img:"images/new-first-step.svg",
-            containerClass:"mt-40 mb-56 ml-auto w-11/12 py-24 mr-10 lg:mx-auto relative ",
+            containerClass:"mt-40 mb-56 ml-auto w-11/12 py-32 mr-10 lg:mx-auto relative first-step-container ",
             orientate:true,
             imgClass:"img-primer",
             id:"primero"
@@ -194,7 +194,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
             infoTitle:"Pensamos en la lógica y creamos un prototipo",
             img:"images/new-second-step.svg",
             imgClass:"absolute img-segundo",
-            containerClass:"w-11/12 py-48 ml-10",
+            containerClass:"w-11/12 py-56 ml-10 ",
             orientate:false,
             id:"segundo"
 
@@ -205,7 +205,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
           infoTitle:"Diseñamos tu nueva tienda virtual y alineamos la estética",
           img:"images/new-third-step.svg",
           imgClass:"absolute img-tercer",
-          containerClass:"mt-56 mb-48 w-11/12 ml-auto mr-10 relative ",
+          containerClass:"lg:mb-32 xl:mb-48 w-11/12 ml-auto mr-10 relative ",
           orientate:true,
           id:"tercero"
 
@@ -219,8 +219,8 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
           stepTitle:"CUARTO",
           infoTitle:"Definimos la tecnologia y empezamos a implementar",
           img:"images/four_step.png",
-          containerClass:"w-full py-20 pl-20 bg-black text-white",
-          imgClass:"block w-full lg:h-screen bg-black lg:bg-transparent lg:pt-10 lg:w-5/12 lg:ml-auto",
+          containerClass:"w-full pb-40 pt-32 pl-20 bg-black text-white four-step-container ",
+          imgClass:"block w-full lg:max-h-screen bg-black lg:bg-transparent lg:pt-10 lg:w-5/12 lg:ml-auto",
           orientate:true,
           id:"cuarto"
         },
@@ -230,8 +230,8 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
           stepTitle:"QUINTO",
           infoTitle:"Lanzamos al mercado tu producto digital y optimizamos el rendimiento",
           img:"images/fifth_step.png",
-          imgClass:"block w-full lg:h-screen bg-black lg:bg-transparent lg:pt-10 lg:w-6/12 lg:ml-auto",
-          containerClass:"w-full lg:pb-20 lg:pl-20 bg-black lg:text-white",
+          imgClass:"block w-full lg:max-h-screen bg-black lg:bg-transparent lg:pt-10 lg:w-5/12 lg:ml-auto",
+          containerClass:"w-full lg:pb-20 lg:pl-20 bg-black lg:text-white five-step-container",
           orientate:true,
           id:"quinto"
         }
@@ -240,7 +240,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
 
 
     return(
-        <section id="stepsSection" className="relative overflow-hidden mt-24 lg:mt-0 duration-200 md:px-16 lg:px-0">
+        <section id="stepsSection" className="relative overflow-hidden mt-24 lg:mt-0 duration-200">
             <div className="lg:hidden">
               {<StepsMobile data={data} lastData={lastData} />}
             </div>

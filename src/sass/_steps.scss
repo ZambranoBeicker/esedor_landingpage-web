@@ -27,6 +27,27 @@
   }
   .max-h-60{
     max-height: 60vh;
+    
+    @media screen and (min-width:"520px"){
+      max-height: 70vh;
+      
+    }
+    @media screen and (min-width:"640px"){
+      max-height: 78vh;
+      
+    }
+    @media screen and (min-width:"740px"){
+      max-height: 80vh;
+      
+    }
+    @media screen and (min-width:"820px"){
+      max-height: 85vh;
+      
+    }
+    @media screen and (min-width:"970px"){
+      max-height: 90vh;
+      
+    }
   }
 
   .steps-slider-img{
@@ -49,7 +70,7 @@
     }
 
     .img-primer{
-      max-width:60%;
+      max-width:50%;
     }
 
     .img-segundo{
@@ -63,22 +84,26 @@
     }
 
     .img-tercer{
-      max-width: 60%;
-      bottom:-202px;
+      max-width: 55%;
+      bottom:-136px;
+      // bottom:-202px;
       right:0;
 
     }
-
+    
     .cuarto,.quinto{
       padding-right: 8rem;
     }
-
+    
 
   }
-
-@media screen and (min-width:"1280px"){
-
-  .img-primer{
+  
+  @media screen and (min-width:"1280px"){
+    
+    .img-tercer{
+      bottom:-202px;  
+    }
+    .img-primer{
     max-width:80%;
   }
   .img-segundo{
@@ -87,10 +112,22 @@
     left:0;
     max-height: 100%;
   }
-
+  .steps-second-square{
+    top:20%;
+  }
+  .steps-octagon{
+    top:48%;
+  }
+  
 }
 @media screen and (min-width:"1500px"){
-
+  
+  .steps-second-square{
+    top:17%;
+  }
+  .steps-octagon{
+    top:41%;
+  }
   .img-primer{
     max-width:54%;
   }
@@ -100,6 +137,64 @@
     margin-right: auto;
     padding-right: 1.5rem;
   }
+  // .img-segundo{
+  //   top:18%;
+  //   right:none;
+  //   left:0;
+  //   max-height: 100%;
+  // }
+
+}
+@media screen and (min-width:"1660px"){
+  
+  .steps-second-square{
+    top:19%;
+  }
+  .steps-octagon{
+    top:43%;
+  }
+  .img-primer{
+    max-width:54%;
+  }
+  
+  .first-step-container{
+    padding-bottom: 13rem;
+    // padding-right: 9.25rem;
+  }
+
+  .four-step-container{
+    padding-left: 10rem;
+    padding-top: 12rem;
+    // padding-right: 9.25rem;
+  }
+  .five-step-container{
+    padding-left: 10rem;
+    padding-bottom: 12rem;
+    // padding-right: 9.25rem;
+  }
+
+
+
+  .steps_name-title,.steps_info{
+    font-size: 18px;
+  }
+  .steps_main-title{
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width:"1700px"){
+
+  
+
+  // .img-primer{
+  //   max-width:54%;
+  // }
+
+  // .primer{
+  //   width: 40%;
+  //   margin-right: auto;
+  //   padding-right: 1.5rem;
+  // }
   // .img-segundo{
   //   top:18%;
   //   right:none;
