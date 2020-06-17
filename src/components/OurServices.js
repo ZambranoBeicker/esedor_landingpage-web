@@ -48,8 +48,8 @@ const OurService = () =>{
     ]
 
     const classes = {
-        textClass:" md:text-sm w-11/12 services__info",
-        containerClass:"text-white my-3 services__info-container"
+        textClass:" md:text-xs w-11/12 services__info",
+        containerClass:"text-white mb-3 mt-4 xl:mt-6 services__info-container"
     }
 
     const settings = {
@@ -62,7 +62,7 @@ const OurService = () =>{
 
     return (
         <div className='relative overflow-hidden'>
-            <section id="services" className="relative overflow-hidden block md:bg-black px-4 py-5 md:pl-6 lg:pt-4 lg:pl-16 lg:pb-32 w-full">
+            <section id="services" className="relative overflow-hidden block md:bg-black px-4 py-5 md:pl-6 lg:pt-4 lg:pl-16 lg:pb-32 w-full xl:pr-0">
                 <div className="text-white mb-10 hidden md:block">
                     <h2 className="text-2xl md:text-4xl lg:text-5xl services__title">Servicios<br></br>ecommerce</h2>
                 </div>
@@ -134,8 +134,8 @@ const OurService = () =>{
                   <img src="images/square.png" alt="Sq-1"/>
                 </div>
             <div className="md:mx-auto pb-10 md:my-40 md:w-9/12 w-full px-4 md:px-0 text-center">
-                <h4 className="text-2xl text-bolder mb-10 lg:mb-24">Nuestra Fórmula</h4>
-                <h2 className="text-semibig sm:text-3xl md:text-4xl xl:text-5xl">Te ayudamos a entender tu ecommerce con un enfoque omnicanal</h2>
+                <h4 className="text-2xl text-bolder mb-10 lg:mb-24 services__enfoque-title">Nuestra Fórmula</h4>
+                <h2 className="text-semibig sm:text-3xl md:text-4xl xl:text-5xl services__enfoque-info">Te ayudamos a entender tu ecommerce con un enfoque omnicanal</h2>
                 <div className="arrows min-w-0 flex">
                   <div className="w-4/12 xl:w-4/12 ml-auto hidden lg:block mr-5">
                     <ArrowCta  title="OMITIR LOS PASOS" src="images/omitir.png" containerClass="md:w-11/12 rounded-md sm:mr-0 px-2 my-20 py-3 pt-3 text-shadow-second" ctaClass="ml-5 text-blue" adapt={true} route='skip'/>
