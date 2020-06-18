@@ -1,6 +1,10 @@
 .almost-screen{
 
   @media screen and (min-width:"1024px"){
+    min-height:20vh;
+    
+  }
+  @media screen and (min-width:"1280px"){
     min-height:120vh;
     
   }
@@ -128,44 +132,50 @@
 
   .brand-item{
 
+    &:nth-of-type(6){
+      margin-right:-20%;
+
+    }
     &:nth-of-type(5){
 
       img{
-      margin-left: -25px;
+      margin-left: -10px;
+      margin-right: 60px;
 
       }
     }
   }
     .brand-5{
       height:38px + 15px;
-      margin-left:8.8em;
     }
     .brand-7{
       height:56px + 30px;
       margin-top: -2px;
-      margin-left:-10px;
+      margin-left:0;
     }
     .brand-8{
       height:32px + 20px;
-    }
-}
-@media screen and (min-width:"838px"){
-
-  .brand-item{
-
-    &:nth-of-type(6){
-
-      margin-right: -12%;
+      margin-left: 0;
     }
   }
-}
-@media screen and (min-width:"910px"){
+  @media screen and (min-width:"910px"){
+    
+    .brand-item{
+      
+      &:nth-of-type(6){
 
-  .brand-item{
+        margin-right: -13%;
+        
+      img{
+          margin-left:10.8em;
 
-    &:nth-of-type(6){
-
-      margin-right: -15%;
+      }
+    }
+      &:nth-of-type(5){        
+      img{
+        margin-left: 20px;
+        margin-right: 0;
+      }
     }
   }
 }
@@ -198,6 +208,10 @@
     &:nth-of-type(6){
       margin-right: 0;
       margin-left: 40px;
+
+      img{
+        margin-left: .5em;
+      }
     }
   }
 
@@ -218,7 +232,7 @@
   .brand-2{
 
     max-width:205px;
-    margin-left:-1.4em;
+    margin-left:-.85em;
     margin-right:0;
   }
   .brand-3{
@@ -269,6 +283,13 @@
 
       }
     }
+    &:nth-of-type(6){
+
+      img{
+      margin-left: 3rem;
+
+      }
+    }
   }
 
     .brand-0{
@@ -299,11 +320,11 @@
     margin-right:20px;
   }
 
-  .brand-5{
+  // .brand-5{
 
-    margin-top: 1rem;
-    margin-left: 3rem;
-  }
+  //   margin-top: 1rem;
+  //   margin-left: 3rem;
+  // }
   .brand-6{
     display:block ;
     margin-top: -.8rem;
