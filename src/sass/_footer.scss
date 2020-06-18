@@ -1,3 +1,20 @@
+@media screen and (min-width:"768px"){
+  .footer{
+
+    &__items{
+      
+      .footer__img-0{
+        margin-top: .25rem;
+        height: 1rem;
+      }
+      .footer__img-1{
+        margin-top: .75rem;
+        height: 1rem;
+      }
+    }
+  }
+}
+
 @media screen and (min-width:"1500px"){
 .footer{
 
@@ -21,4 +38,32 @@
 
   }
 
+}
+
+@media screen and (min-width:"1700px"){
+  .footer{
+
+    &__items{
+      .footer__img-0{
+        // margin-top: .25rem;
+        height: 1.5rem;
+      }
+      .footer__img-1{
+        margin-top: 1.5rem;
+        height: 1.5rem;
+      }
+      .footer__email{
+        margin-top: 1.25rem;
+
+      }
+    }
+    p,a{
+      font-size: 20px;
+    }
+  }
+  .footer__image img{
+      max-width: 150%;
+      width: 150%;
+    
+  }
 }

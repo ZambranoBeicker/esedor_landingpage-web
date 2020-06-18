@@ -18,7 +18,7 @@ const FooterInfo = ({pgraph,title}) =>{
               return(
 
                 <div className="flex" key={index}>
-                  <img src={data.src} alt={title} className="mt-2 h-4 mr-2"/>
+                  <img src={data.src} alt={title} className={"mr-2 footer__img-" + index}/>
                   <p className={data.textClass}>{data.text}</p>
                 </div>
                 )
@@ -40,7 +40,7 @@ const Footer = () =>{
       title: "Oficina",
       pgraph: [
         {
-          textClass: "text-sm md:text-base md:w-full lg:w-1/3",
+          textClass: "text-sm md:text-base md:w-full",
           text:"Swiss Tower",
         },
         {
@@ -58,7 +58,7 @@ const Footer = () =>{
           text:"+01 773 8905",
         },
         {
-          textClass: "text-sm md:text-base tracking-widest",
+          textClass: "text-sm mt-2 md:text-base tracking-widest footer__email",
           src:"images/email.png",
           text:"hola@esedor.com",
         }
