@@ -16,13 +16,13 @@ const Projects = () =>{
             </div>
 
 
-            <div className="bg-black p-4 rounded-b-md lg:w-11/12 xl:w-10/12 md:px-16 xl:min-h-0 xl:pb-10 xl:pt-32 lg:pt-10">
+            <div className="bg-black p-4 rounded-b-md lg:w-11/12 xl:w-10/12 md:px-16 xl:min-h-0 xl:pb-10 xl:pt-32 lg:pt-10 projects__info-container">
               <div className="text-white lg:w-1/3">
-                <h4 className="text-sm">Proyectos selecionados</h4>
-                <h2 className="text-3xl mt-4 lg:text-5xl lg:mt-5">MAP-IT</h2>
+                <h4 className="text-sm projects__info-title">Proyectos selecionados</h4>
+                <h2 className="text-3xl mt-4 lg:text-5xl lg:mt-5 projects__title">MAP-IT</h2>
                 <InfoParagraph
                   info="Fundado en el 2019 en la industria del Turismo es la primera plataforma ecommerce de experiencias inmersivas en Perú, ganadores de la Séptima generación(7G) de innóvate Perú, el reto fue reinventarnos y adaptarnos al covid-19 ofreciendo por primera vez un servicio de experiencias online."
-                  textClass="md:text-sm md:leading-8 max-w-full text-xs"
+                  textClass="md:text-sm md:leading-8 max-w-full text-xs projects__info"
                   containerClass="md:pr-4 md:my-10 mr-auto pr-4 my-5 mr-auto"
                   />
                 <InfoParagraph
@@ -31,7 +31,7 @@ const Projects = () =>{
                   containerClass="md:pr-4 md:my-10 mr-auto pr-4 my-5 mr-auto"
                   />
               </div>
-              <div className="hidden lg:block my-32 text-white xl:my-40">
+              <div className="hidden lg:block my-32 text-white xl:my-40 projects__arrow-cta-container">
                 <a href="#this" target="_blank" className="cursor-pointer projects__arrow-cta">VISITAR WEB</a>
                 <img src="images/arrow-2.png" alt="arrow-2"/>
               </div>

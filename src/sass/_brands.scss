@@ -347,3 +347,64 @@
 
 }
 
+@media screen and (min-width:"1600px"){
+  .brands__title{
+    margin-top: 19.75rem;
+  }
+  .brand-0{
+
+    height:30 + 8px;
+    // margin-top:10px;
+    // margin-left:35px;
+  }
+  .brand-1{
+
+    height:130px + 30px;
+  }
+  .brand-2{
+    height:91px + 26px;
+    // margin-top: -16px;
+  }
+  .brand-3{
+    height:36px + 10px;
+  }
+  .brand-4{
+    height:100px + 28px;
+    margin-top: -18px;
+  }
+
+.brand-item{
+
+  &:nth-of-type(6){
+
+    img{
+      margin-left:3.9rem;
+
+    }
+
+  }
+}
+//   &:nth-of-type(5){
+
+//     img{
+//     margin-left: -10px;
+//     margin-right: 60px;
+
+//     }
+//   }
+// }
+  .brand-5{
+    height:53px + 15px;
+  }
+  .brand-7{
+    height:86px + 30px;
+    margin-top: -15px;
+    margin-left:-25px;
+  }
+  .brand-8{
+    height:52px + 20px;
+    margin-top: 15px;
+    // margin-left: 0;
+  }
+}
+
