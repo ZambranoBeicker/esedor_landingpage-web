@@ -59,13 +59,13 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
       }
       this.setState({clicks: this.counter},(c)=>{return {clicks: this.counter}})
     }
-        
+
         stepsNames = ["PRIMER","SEGUNDO","TERCER","CUARTO","QUINTO"]
-        
+
         mobileSteps = this.props.data.map((obj,index) =>{
-          
+
           return {
-            
+
             component: (
               <div className='min-h-screen'>
             <div className="w-full mt-20 mb-10 sm:my-16"><h4 className='w-full font-bold absolute h-slider-steps'>{this.stepsNames[index] + " PASO"}</h4><p className='w-full absolute p-slider-steps'>{index+1 + "/5"}</p><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
@@ -78,7 +78,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
         stepsTitle:<h4 className="text-xs w-2/3 pt-3 mx-auto md:text-sm text-center font-bold">{obj.stepTitle + ' PASO'}</h4>,
       }
     })
-    
+
     lastMobileSteps = this.props.lastData.map((obj,index) =>{
 
       return {
@@ -112,26 +112,6 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
 
         <div className="my-8 text-black">
         <div className="mx-auto">
-            {/* <this.Carousel
-              defaultWait={300}
-              maxTurns={0}
-            >
-              <Slide right>
-                {this.mobileSteps[0].component}
-              </Slide>
-              <Slide right>
-                {this.mobileSteps[1].component}
-              </Slide>
-              <Slide right>
-                {this.mobileSteps[2].component}
-              </Slide>
-              <Slide right>
-                {this.lastMobileSteps[0].component}
-              </Slide>
-              <Slide right>
-                {this.lastMobileSteps[1].component}
-              </Slide>
-            </this.Carousel>*/}
              <div className="absolute w-full top-0-cont z-50 flex h-10">
                 <button className="mx-auto h-10" onClick={this.previous}>
                 <img className="w-10 h-10 rota-180 " src="images/steps_arrows.png" alt="nada"/>
@@ -196,7 +176,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
 
 
   const Steps = () =>{
- 
+
 
     const data = [
         {
@@ -204,7 +184,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
             stepTitle:"PRIMER",
             infoTitle:"Agregamos valor a tu negocio y ofrecemos experiencias excepcionales",
             img:"images/first-step.svg",
-            containerClass:"mt-40 mb-56 ml-auto w-11/12 py-24 mr-10 lg:mx-auto relative ",
+            containerClass:"mt-40 mb-56 ml-auto w-11/12 py-24 mr-10 lg:mx-auto relative container ",
             orientate:true,
             imgClass:"img-primer",
             id:"primero"
@@ -216,7 +196,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
             infoTitle:"Pensamos en la lógica y creamos un prototipo",
             img:"images/second-step.svg",
             imgClass:"absolute img-segundo",
-            containerClass:"w-11/12 py-48 ml-10",
+            containerClass:"w-11/12 py-48 mx-auto container",
             orientate:false,
             id:"segundo"
 
@@ -227,7 +207,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
           infoTitle:"Diseñamos tu nueva tienda virtual y alineamos la estética",
           img:"images/third-step.svg",
           imgClass:"absolute img-tercer",
-          containerClass:"mt-56 mb-48 w-11/12 ml-auto mr-10 relative ",
+          containerClass:"mt-56 mb-48 w-11/12 mx-auto relative container ",
           orientate:true,
           id:"tercero"
 
