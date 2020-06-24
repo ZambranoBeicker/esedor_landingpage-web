@@ -70,6 +70,8 @@ const Footer = () =>{
 
       return (
         <footer className="footer md:pt-8 border-t pt-5 px-6">
+          <div className='container mx-auto'>
+
           <div className="footer__main-content xl:ml-4 lg:flex w-full">
             <div className="footer__image md:mb-5 lg:mb-0">
               <img src="images/logo-header.png" alt="Logo"/>
@@ -89,6 +91,7 @@ const Footer = () =>{
                 </div>
               </div>
             </div>
+          </div>
           </div>
           <div className=" lg:py-4 border-t border-b mt-10 lg:ml-4">
             <p>© 2020 ESEDOR, todos los derechos reservados.</p>

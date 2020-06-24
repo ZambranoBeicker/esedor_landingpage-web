@@ -15,9 +15,9 @@ const Projects = () =>{
               <img className="rounded-t-md" src="images/projects.jpg" alt="Proyectos"/>
             </div>
 
-            <div className='container-xl mx-auto'>
+            <div className='container mx-auto'>
 
-              <div className="bg-black lg:bg-transparent p-4 rounded-b-md lg:w-11/12 xl:w-10/12 md:px-16 xl:min-h-0 xl:pb-10 xl:pt-32 lg:pt-10">
+              <div className="bg-black lg:bg-transparent p-4 rounded-b-md lg:w-11/12 xl:w-10/12 md:px-16 xl:min-h-0 lg:px-0 lg:pt-32">
                 <div className="text-white lg:w-1/3">
                   <h4 className="text-sm">Proyectos selecionados</h4>
                   <h2 className="text-3xl mt-4 lg:text-5xl lg:mt-5">NIUBIZ</h2>
