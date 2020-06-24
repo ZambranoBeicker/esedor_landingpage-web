@@ -49,7 +49,7 @@ const Brands = ()=>{
 
 
       return (
-          <section id="brands" className="almost-screen flex flex-wrap w-full lg:pt-32 lg:px-8 xl:px-16">
+          <section id="brands" className="almost-screen md:flex md:flex-wrap w-full lg:pt-32 lg:px-8 xl:px-16">
               <div className="hidden lg:flex flex-wrap w-8/12">
               {brands}
               </div>

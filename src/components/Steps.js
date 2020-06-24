@@ -21,15 +21,6 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
 
   class StepsMobile extends React.Component{
 
-
-
-
-    counter=0;
-    state = {
-
-      clicks: 0,
-    }
-
     constructor(props) {
       super(props);
       this.next = this.next.bind(this);
@@ -42,24 +33,6 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
       this.slider.slickPrev();
     }
 
-    prevItem = ()=>{
-      if(this.counter > 0 && this.counter < 5){
-        this.counter--
-      }else if(this.counter < 0){
-
-        this.counter = 0
-      }
-      this.setState({clicks: this.counter},(c)=>{return {clicks: this.counter}})
-    }
-    nextItem = ()=>{
-      if(this.counter > -1 && this.counter < 4){
-        this.counter++
-      }else if(this.counter > 1){
-        this.counter = 0
-      }
-      this.setState({clicks: this.counter},(c)=>{return {clicks: this.counter}})
-    }
-
         stepsNames = ["PRIMER","SEGUNDO","TERCER","CUARTO","QUINTO"]
 
         mobileSteps = this.props.data.map((obj,index) =>{
@@ -67,11 +40,11 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
           return {
 
             component: (
-              <div className='min-h-screen'>
-            <div className="w-full mt-20 mb-10 sm:my-16"><h4 className='w-full font-bold absolute h-slider-steps'>{this.stepsNames[index] + " PASO"}</h4><p className='w-full absolute p-slider-steps'>{index+1 + "/5"}</p><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
+              <div className='min-h-screen md:px-16 relative'>
+            <div className="w-full mt-20 mb-10 sm:my-16"><div className='absolute top-0 left-0 right-0'><h4 className='text-center mx-auto font-bold'>{this.stepsNames[index] + " PASO"}</h4></div><p className='w-full absolute text-center md:left-0 p-slider-steps'>{index+1 + "/5"}</p><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
             <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-3xl md:mx-0">{obj.infoTitle}</h2>
             <InfoParagraph info={obj.info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>
-            <ArrowCta  title="CONVERSEMOS" id={"responsiveSteps-FirstThree-" + this.state.clicks} containerClass="rounded-md ml-3 md:mx-0 sm:ml-6 my-5 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
+            <ArrowCta  title="CONVERSEMOS" id={`responsiveSteps-FirstThree-${index}`} containerClass="rounded-md ml-3 md:mx-0 sm:ml-6 my-5 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
 
           </div>
         ),
@@ -84,11 +57,11 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
       return {
 
         component: (
-          <div className='min-h-screen pb-10'>
-            <div className={obj.imgClass + " mt-20 mb-10 sm:my-16"}><h4 className='w-full font-bold absolute h-slider-steps'>{this.stepsNames[index + 3] + " PASO"}</h4><p className='w-full absolute p-slider-steps'>{index + 4 + "/5"}</p><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
+          <div className='min-h-screen md:px-16 relative pb-10'>
+            <div className={obj.imgClass + " mt-20 mb-10 sm:my-16"}><div className='absolute top-0 left-0 right-0'><h4 className='text-center mx-auto font-bold'>{this.stepsNames[index + 3] + " PASO"}</h4></div><p className='w-full absolute text-center md:left-0 p-slider-steps'>{index + 4 + "/5"}</p><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
             <h2 className=" w-11/12 mx-auto text-semibig sm:mb-4 sm:text-3xl md:mx-0">{obj.infoTitle}</h2>
             <InfoParagraph info={obj.info} containerClass="'w-11/12 sm:min-w-0 my-3 md:my-5'" textClass="mx-auto md:mx-0 w-11/12 text-xs sm:text-base md:text-lg"/>
-            <ArrowCta  title="CONVERSEMOS" id={"responsiveSteps-LastTwo-" + this.state.clicks} containerClass="rounded-md ml-3 md:mx-0 sm:ml-6 my-5 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
+            <ArrowCta  title="CONVERSEMOS" id={"responsiveSteps-LastTwo-" + index} containerClass="rounded-md ml-3 md:mx-0 sm:ml-6 my-5 bg-blue py-3 pt-3 px-2 text-shadow " ctaClass="ml-5" src="images/arrow_meet.png" adapt={true}/>
           </div>
         ),
         stepsTitle:<h4 className="text-xs w-2/3 pt-3 mx-auto md:text-sm text-center font-bold">{obj.stepTitle + ' PASO'}</h4>,
@@ -102,7 +75,6 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
       slidesToShow: 1,
       slidesToScroll: 1,
       adaptiveHeight:true,
-      // className:'max-h-85'
     };
 
 
@@ -111,15 +83,14 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
       return (
 
         <div className="my-8 text-black">
-        <div className="mx-auto">
-             <div className="absolute w-full top-0-cont z-50 flex h-10">
-                <button className="mx-auto h-10" onClick={this.previous}>
-                <img className="w-10 h-10 rota-180 " src="images/steps_arrows.png" alt="nada"/>
+        <div className="mx-auto max-h-60">
+
+             <div className="absolute w-full one-percent-top left-0 right-0 z-50 flex h-10">
+                <button className="mr-auto ml-4 sm:ml-20 md:ml-32 w-16" onClick={this.previous}>
+                <img className="rota-180 steps-slider-img" src="images/steps_arrows.png" alt="nada"/>
                 </button>
-                <div>
-                </div>
-                <button className="mx-auto h-10" onClick={this.next}>
-                <img className="w-10 h-10" src="images/steps_arrows.png" alt="steps"/>
+                <button className="ml-auto mr-4 sm:mr-20 md:mr-32 w-16" onClick={this.next}>
+                <img className='steps-slider-img' src="images/steps_arrows.png" alt="steps"/>
                 </button>
               </div>
           <Slider
