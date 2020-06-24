@@ -42,35 +42,40 @@
 }
 
 #hero{
+  max-height: 120vh;
+  padding-bottom: 2rem;
+}
+
+#hero{
 
   @media screen and (min-width:"768px"){
 
     min-height: 80vh;
   }
-  
-  
+
+
   @media screen and (min-width:"1024px"){
 
-    min-height: 120vh;
+    min-height: 100vh;
   }
 }
 
 .arrow-cta{
   &__container{
     max-height: 20px;
-    
+
     h4{
       font-weight: 300;
     }
   }
-  
+
   &__arrow-image{
     max-height: inherit;
     margin-top: 2px;
-    
+
   }
-  
-  
+
+
 }
 
 .form-container{
@@ -81,18 +86,18 @@
 .arrow-container,.form-container,.form-container form{
   max-width: 300px;
   min-width: 300px;
-  
+
 }
 
 .arrow-container{
   min-height: 52px;
-  
-  
+
+
 }
 .form-container form{
   min-height: 300px;
-  
-  
+
+
 }
 
 .g-recaptcha{
@@ -105,14 +110,14 @@
 
 
 .input-container{
-  
+
   input{
     font-family: 'Space Mono';
     color: #a0a0a0;
-    
+
   }
-  
-  
+
+
   label{
     color: #565656;
     top:0px;
@@ -122,243 +127,32 @@
   }
 }
 
-@media screen and (min-width:"768px"){
-  .hero_title{
-    font-size: 2rem;
-    
-  }
-  .hero_info-container{
-    margin-top: 3.25rem;
-  
-  
-  }
-}
-@media screen and (min-width:"1024px"){
-  .hero_info-container{
-    margin-top: 0;
-  
-  }
-  
-  .hero_title{
-    font-size: 48px;
-    
-  }
-  #hero{
-    min-height: 170vh;
-  }
-}
-@media screen and (min-width:"1500px"){
-  
-  .hero_info,.query-info{
-    font-size: 20px;
-  }
-  
-  .hero_title{
-    font-size: 58px;
-    
-  }
-  
-  // .arrow-container{
-  //   min-height: 65px;
-  //   min-width: 340px;
-  // }
-  
-  .hero-form-container{
-    margin-left: auto;
-    margin-right: 4rem;
-    margin-top: 7rem;
-
-
-  }
-  //   .form-container{
-  //     min-height: 465px;
-  //     min-width: 340px;
-
-  //     form{
-  //       min-height: inherit;
-  //       min-width: inherit;
-
-  //       label{
-  //         font-size: 14px;
-  //       }
-
-  //       .input-container{
-  //         height: 3.5rem;
-  //         // margin-top: 1.5rem;
-  //         margin-bottom: 1.75rem;
-  //         input{
-  //           height: inherit;
-  //           font-size: 18px;
-
-  //         }
-  //       }
-
-  //     }
-  //   }
-
-  // .arrow-text{
-  //   font-size: 1.5rem;
-  // }
-
-  
-  .query-info{
-    // font-size: 22px;
-    margin-bottom: 1rem;
-  }
-
-
-  .hero_info-container{
-    padding: 0 3.5rem 0 0;
-    margin-top: 4.5rem;
-    width: 50%;
-  }
-
-  // .g-recaptcha{
-  //   transform: scale(1.02);
-  //   margin-top: 1rem;
-  // }
-}
-@media screen and (min-width:"1600px"){
-
-  .hero_info{
-    font-size: 24px;
-  }
-  
-  .hero_title{
-    font-size: 72px;
-    
-  }
-  
-  .arrow-container{
-    min-height: 65px;
-    min-width: 340px;
-  }
-  
-  // .hero-form-container{
-  //   margin-left: auto;
-  //   margin-right: 4rem;
-  //   margin-top: 7rem;
-
-
-  // }
-    .form-container{
-      min-height: 465px;
-      min-width: 340px;
-
-      form{
-        min-height: inherit;
-        min-width: inherit;
-
-        label{
-          font-size: 14px;
-        }
-
-        .input-container{
-          height: 3.5rem;
-          // margin-top: 1.5rem;
-          margin-bottom: 1.75rem;
-          input{
-            height: inherit;
-            font-size: 18px;
-
-          }
-        }
-
-      }
-    }
-
-  .arrow-text{
-    font-size: 1.5rem;
-  }
-
-  
-  .query-info{
-    font-size: 22px;
-    // margin-bottom: 1rem;
-  }
-
-
-  .hero_info-container{
+.hero-info--max-370-p-0{
+  @media screen and (max-width:"370px"){
     padding: 0;
-    margin-top: 5.5rem;
-    // width: 50%;
-  }
-  
-  .g-recaptcha{
-    transform: scale(1.02);
-    margin-top: 1rem;
-  }
-}
-@media screen and (min-width:"1800px"){
-
-  .hero_info{
-    font-size: 24px;
-  
-  }
-  
-  .hero_title{
-    font-size: 72px;
-    
-  }
-  
-  // .arrow-container{
-  //   min-height: 65px;
-  //   min-width: 340px;
-  // }
-  
-  .hero-form-container{
-  //   margin-left: auto;
-  //   margin-right: 4rem;
-    margin-top: 10.5rem;
-
-
-  }
-  //   .form-container{
-  //     min-height: 465px;
-  //     min-width: 340px;
-
-  //     form{
-  //       min-height: inherit;
-  //       min-width: inherit;
-
-  //       label{
-  //         font-size: 14px;
-  //       }
-
-  //       .input-container{
-  //         height: 3.5rem;
-  //         // margin-top: 1.5rem;
-  //         margin-bottom: 1.75rem;
-  //         input{
-  //           height: inherit;
-  //           font-size: 18px;
-
-  //         }
-  //       }
-
-  //     }
-  //   }
-
-  // .arrow-text{
-  //   font-size: 1.5rem;
-  // }
-
-  
-  .query-info{
-    font-size: 24px;
-    margin-bottom: 1.75rem;
   }
 
-
-  .hero_info-container{
-    padding: 0 0 0 1.5rem;
-    // margin-top: 8.5rem;
-    width: 41.666666666%;
-  }
-
-  // .g-recaptcha{
-  //   transform: scale(1.02);
-  //   margin-top: 1rem;
-  // }
 }
 
+.hero-info--big-desktop{
+
+  @media screen and (min-width:"1560px"){
+    padding: 0;
+    width:45%;
+    margin:0;
+  }
+}
+
+.hero__main-content-big-desktop{
+  @media screen and (min-width:"1560px"){
+    margin-top: 7rem;
+  }
+
+}
+
+.hero__form-container--big-desktop{
+  @media screen and (min-width:"1560px"){
+
+  margin-left:auto;
+  }
+}

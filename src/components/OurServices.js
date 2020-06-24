@@ -18,8 +18,8 @@ const showServices = (data,classes)=>{
 }
 
 const OurService = () =>{
-  // 
-  // 
+  //
+  //
     const data = [
         {
             title: "Experiencia de cliente(CX)",
@@ -62,13 +62,16 @@ const OurService = () =>{
 
     return (
         <div className='relative overflow-hidden'>
-            <section id="services" className="relative overflow-hidden block md:bg-black px-4 py-5 md:pl-6 lg:pt-4 lg:pl-16 lg:pb-32 w-full xl:pr-0">
-                <div className="text-white mb-10 hidden md:block">
-                    <h2 className="text-2xl md:text-4xl lg:text-5xl services__title">Servicios<br></br>ecommerce</h2>
+            <section id="services" className="relative overflow-hidden block md:bg-black px-4 py-5 md:p-0 w-full">
+              <div className='container mx-auto'>
+
+                <div className="text-white mb-10 hidden lg:block">
+                    <h2 className="text-2xl md:text-4xl lg:text-5xl">Servicios<br></br>ecommerce</h2>
                 </div>
                 <div className="hidden md:flex md:flex-wrap">
                     {showServices(data,classes)}
                 </div>
+              </div>
             </section>
 
             <div className="md:hidden mb-slider my-16">
@@ -78,54 +81,54 @@ const OurService = () =>{
                     <Slider
                     {...settings}
                     >
-                       
+
                       <div className="w-full md:w-4/12 my-10 px-4">
                         <div className="bg-black text-center py-10 mx-auto rounded-t-md">
                           <h3 className="text-white text-xl sm:text-2xl font-bold px-4">{data[0].title}</h3>
                         </div>
                         <InfoParagraph info={data[0].info} containerClass="text-shadow pt-10 pb-32 px-4 border rounded-b-md" textClass="my-3 text-sm sm:text-base text-center text-blue"/>
                       </div>
-                       
-                       
+
+
                         <div className="w-full md:w-4/12 my-10 px-6 ">
                           <div className="bg-black text-center py-10 mx-auto rounded-t-md">
                             <h3 className="text-white text-xl sm:text-2xl font-bold px-4">{data[1].title}</h3>
                           </div>
                           <InfoParagraph info={data[1].info} containerClass="text-shadow pt-10 pb-32 px-4 border rounded-b-md" textClass="my-3 text-sm sm:text-base text-center text-blue"/>
                         </div>
-                       
-                       
+
+
                         <div className="w-full md:w-4/12 my-10 px-6 ">
                           <div className="bg-black text-center py-10 mx-auto rounded-t-md">
                             <h3 className="text-white text-xl sm:text-2xl font-bold px-4">{data[2].title}</h3>
                           </div>
                           <InfoParagraph info={data[2].info} containerClass="text-shadow pt-10 pb-32 px-4 border rounded-b-md" textClass="my-3 text-sm sm:text-base text-center text-blue"/>
                         </div>
-                       
-                       
+
+
                         <div className="w-full md:w-4/12 my-10 px-6 ">
                           <div className="bg-black text-center py-10 mx-auto rounded-t-md">
                             <h3 className="text-white text-xl sm:text-2xl font-bold px-4">{data[3].title}</h3>
                           </div>
                           <InfoParagraph info={data[3].info} containerClass="text-shadow pt-10 pb-32 px-4 border rounded-b-md" textClass="my-3 text-sm sm:text-base text-center text-blue"/>
                         </div>
-                       
-                       
+
+
                         <div className="w-full md:w-4/12 my-10 px-6 ">
                           <div className="bg-black text-center py-10 mx-auto rounded-t-md">
                             <h3 className="text-white text-xl sm:text-2xl font-bold px-4">{data[4].title}</h3>
                           </div>
                           <InfoParagraph info={data[4].info} containerClass="text-shadow pt-10 pb-32 px-4 border rounded-b-md" textClass="my-3 text-sm sm:text-base text-center text-blue"/>
                         </div>
-                       
-                       
+
+
                         <div className="w-full md:w-4/12 my-10 px-6 ">
                           <div className="bg-black text-center py-10 mx-auto rounded-t-md">
                             <h3 className="text-white text-xl sm:text-2xl font-bold px-4">{data[5].title}</h3>
                           </div>
                           <InfoParagraph info={data[5].info} containerClass="text-shadow pt-10 pb-32 px-4 border rounded-b-md" textClass="my-3 text-sm sm:text-base text-center text-blue"/>
                         </div>
-                       
+
 
                     </Slider>
                 </div>

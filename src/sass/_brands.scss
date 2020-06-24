@@ -2,13 +2,13 @@
 
   @media screen and (min-width:"1024px"){
     min-height:20vh;
-    
+
   }
   @media screen and (min-width:"1280px"){
     min-height:120vh;
-    
+
   }
- 
+
 }
 
 .brands-container{
@@ -159,19 +159,19 @@
     }
   }
   @media screen and (min-width:"910px"){
-    
+
     .brand-item{
-      
+
       &:nth-of-type(6){
 
         margin-right: -13%;
-        
+
       img{
           margin-left:10.8em;
 
       }
     }
-      &:nth-of-type(5){        
+      &:nth-of-type(5){
       img{
         margin-left: 20px;
         margin-right: 0;

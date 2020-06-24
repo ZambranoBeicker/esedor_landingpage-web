@@ -49,48 +49,6 @@
   }
 }
 
-.insert-out{
-  position: fixed;
-  animation: insert-out .2s;
-}
-
-.insert-in{
-  position: static;
-  animation: insert-in .2s;
-}
-
-
-@keyframes insert-out {
-
-  0%{
-    right: 0;
-    bottom: 10%;
-    opacity:1;
-  }
-    100%{
-      right: 10%;
-      bottom: 0%;
-      opacity:0;
-
-
-  }
-
-}
-
-@keyframes insert-in {
-
-  0%{
-    transform: translateY(-10px);
-    opacity:0;
-  }
-    100%{
-      transform: translateY(0);
-      opacity:1;
-
-  }
-
-}
-
 @media screen and (min-width:"641px"){
 
   .arrow-cta{

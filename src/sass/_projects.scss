@@ -1,3 +1,10 @@
+.projects{
+  @media screen and (min-width:"1024px"){
+
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 86%, rgba(0,0,0,0) 86%);
+  }
+}
 .projects__image{
 
   top:18%;
@@ -22,8 +29,6 @@
 @media screen and (min-width:"1430px"){
 
   .projects__form-container{
-
-    min-height:90vh;
     padding-top: 8rem;
 
     .my-h4{

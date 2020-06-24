@@ -32,13 +32,12 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
     previous() {
       this.slider.slickPrev();
     }
-        
         stepsNames = ["PRIMER","SEGUNDO","TERCER","CUARTO","QUINTO"]
-        
+
         mobileSteps = this.props.data.map((obj,index) =>{
-          
+
           return {
-            
+
             component: (
               <div className='min-h-screen md:px-16 relative'>
             <div className="w-full mt-20 mb-10 sm:my-16"><div className='absolute top-0 left-0 right-0'><h4 className='text-center mx-auto font-bold'>{this.stepsNames[index] + " PASO"}</h4></div><p className='w-full absolute text-center md:left-0 p-slider-steps'>{index+1 + "/5"}</p><img className="w-full" src={obj.img} alt={obj.stepTitle}/></div>
@@ -51,7 +50,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
         stepsTitle:<h4 className="text-xs w-2/3 pt-3 mx-auto md:text-sm text-center font-bold">{obj.stepTitle + ' PASO'}</h4>,
       }
     })
-    
+
     lastMobileSteps = this.props.lastData.map((obj,index) =>{
 
       return {
@@ -147,15 +146,15 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
 
 
   const Steps = () =>{
- 
+
 
     const data = [
         {
             info: "Identificamos cuando, donde y como compra tu cliente usando un set de disciplinas de investigación CX.",
             stepTitle:"PRIMER",
             infoTitle:"Agregamos valor a tu negocio y ofrecemos experiencias excepcionales",
-            img:"images/new-first-step.svg",
-            containerClass:"mt-40 mb-56 ml-auto w-11/12 py-32 mr-10 lg:mx-auto relative first-step-container ",
+            img:"images/first-step.svg",
+            containerClass:"mt-40 mb-56 ml-auto w-11/12 py-24 mr-10 lg:mx-auto relative container ",
             orientate:true,
             imgClass:"img-primer",
             id:"primero"
@@ -167,7 +166,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
             infoTitle:"Pensamos en la lógica y creamos un prototipo",
             img:"images/new-second-step.svg",
             imgClass:"absolute img-segundo",
-            containerClass:"w-11/12 py-56 ml-10 ",
+            containerClass:"w-11/12 py-48 mx-auto container",
             orientate:false,
             id:"segundo"
 
@@ -178,7 +177,7 @@ const setTitles = ({stepTitle, infoTitle, info},textClass,containerClass,index,i
           infoTitle:"Diseñamos tu nueva tienda virtual y alineamos la estética",
           img:"images/new-third-step.svg",
           imgClass:"absolute img-tercer",
-          containerClass:"lg:mb-32 xl:mb-48 w-11/12 ml-auto mr-10 relative third-step-container",
+          containerClass:"mt-56 mb-48 w-11/12 mx-auto relative container ",
           orientate:true,
           id:"tercero"
 
